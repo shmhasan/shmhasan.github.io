@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Close Cause — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="list.html">Causes</a>
+          <span class="sep">›</span>
+          <a href="detail.html">Cause Detail</a>
+          <span class="sep">›</span>
+          <span class="current">Close Cause</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Close Cause</h1>
+            <p class="page-subtitle">Finalize fundraising and publish closing summary</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-outline" onclick="showToast('Draft saved','info')">Save Draft</button>
+            <button class="btn btn-danger" onclick="showToast('Cause closed','success')">Close Cause</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-3" style="gap:1.5rem;">
+        <div class="card" style="grid-column:span 2;">
+          <div class="card-header">
+            <div class="card-title">Closing Summary</div>
+          </div>
+          <div class="card-body">
+            <form data-simulate>
+              <div class="form-group">
+                <label class="form-label">Closing Title</label>
+                <input class="form-control" value="Medical Emergency Support Completed" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Summary Message</label>
+                <textarea class="form-control" rows="5" data-maxlength="400">Alhamdulillah, the surgery and post-op care for Nasreen Begum have been completed. Funds were utilized for hospital bills, medication, and follow-up visits. JazakAllah khair to all contributors for your support.</textarea>
+              </div>
+              <div class="grid grid-2" style="gap:1rem;">
+                <div class="form-group">
+                  <label class="form-label">Total Collected</label>
+                  <input class="form-control" value="3750" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Total Disbursed</label>
+                  <input class="form-control" value="3750" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Upload Closing Documents</label>
+                <div class="upload-box">
+                  <div class="upload-icon">📎</div>
+                  <div>
+                    <div style="font-weight:600;">Upload receipts or summary PDF</div>
+                    <div class="text-sm text-muted">Drag & drop or click to upload</div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit">Save Closing Summary</button>
+                <button class="btn btn-outline" type="button" onclick="showToast('Preview opened','info')">Preview</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Cause Snapshot</div>
+          </div>
+          <div class="card-body" style="display:flex;flex-direction:column;gap:.75rem;">
+            <div>
+              <div class="text-sm text-muted">Cause</div>
+              <div style="font-weight:600;">Medical Emergency — Nasreen Begum</div>
+            </div>
+            <div>
+              <div class="text-sm text-muted">Target</div>
+              <div style="font-weight:600;">£4,200</div>
+            </div>
+            <div>
+              <div class="text-sm text-muted">Collected</div>
+              <div style="font-weight:700;">£3,750</div>
+              <div class="progress" style="margin-top:.35rem;"><div class="progress-bar success" data-progress="89"></div></div>
+            </div>
+            <div>
+              <div class="text-sm text-muted">Contributors</div>
+              <div style="font-weight:600;">23 members</div>
+            </div>
+            <div class="alert alert-warning">
+              <strong>Reminder:</strong> Closing a cause sends a notification to all contributors.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('causes', '../../');
+    renderTopbar('Close Cause', '../../');
+  });
+</script>
+</body>
+</html>

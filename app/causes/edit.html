@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Cause — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="list.html">Causes</a>
+          <span class="sep">›</span>
+          <a href="detail.html">Cause Detail</a>
+          <span class="sep">›</span>
+          <span class="current">Edit Cause</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Edit Cause</h1>
+            <p class="page-subtitle">Update cause information, targets, and status</p>
+          </div>
+          <div class="page-actions">
+            <a href="detail.html" class="btn btn-outline">View Cause</a>
+            <button class="btn btn-primary" onclick="showToast('Changes saved','success')">Save Changes</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-3" style="gap:1.5rem;">
+        <div class="card" style="grid-column:span 2;">
+          <div class="card-header">
+            <div class="card-title">Cause Details</div>
+          </div>
+          <div class="card-body">
+            <form data-simulate>
+              <div class="form-group">
+                <label class="form-label">Cause Title</label>
+                <input class="form-control" value="Medical Emergency — Nasreen Begum" />
+              </div>
+              <div class="grid grid-2" style="gap:1rem;">
+                <div class="form-group">
+                  <label class="form-label">Category</label>
+                  <select class="form-control">
+                    <option>Medical Emergency</option>
+                    <option>Death Support</option>
+                    <option>Zakat Fund</option>
+                    <option>Mosque Renovation</option>
+                    <option>Flood Relief</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Status</label>
+                  <select class="form-control">
+                    <option>Published</option>
+                    <option>Draft</option>
+                    <option>Closed</option>
+                  </select>
+                </div>
+              </div>
+              <div class="grid grid-2" style="gap:1rem;">
+                <div class="form-group">
+                  <label class="form-label">Target Amount</label>
+                  <input class="form-control" value="4200" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Close Date</label>
+                  <input type="date" class="form-control" value="2026-04-10" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Summary</label>
+                <textarea class="form-control" rows="4" data-maxlength="280">Nasreen Begum requires urgent medical support for surgery and post-op care. The community aims to reach the target by 10 April.</textarea>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Beneficiary Contact</label>
+                <input class="form-control" value="Sadia Karim · +880 1712 555 909" />
+              </div>
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit">Save Changes</button>
+                <button class="btn btn-outline" type="button" onclick="showToast('Draft saved','info')">Save as Draft</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Progress Snapshot</div>
+          </div>
+          <div class="card-body" style="display:flex;flex-direction:column;gap:.75rem;">
+            <div>
+              <div class="text-sm text-muted">Collected</div>
+              <div style="font-weight:700;font-size:1.25rem;">£3,750</div>
+            </div>
+            <div>
+              <div class="text-sm text-muted">Target</div>
+              <div style="font-weight:600;">£4,200</div>
+            </div>
+            <div>
+              <div class="text-sm text-muted">Contributors</div>
+              <div style="font-weight:600;">23 members</div>
+            </div>
+            <div>
+              <div class="text-sm text-muted">Progress</div>
+              <div class="progress" style="margin-top:.35rem;"><div class="progress-bar success" data-progress="89"></div></div>
+            </div>
+            <div class="alert alert-info">
+              <strong>Note:</strong> Edits are logged for audit review.
+            </div>
+            <a href="publish-review.html" class="btn btn-outline btn-sm">Review & Publish</a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('causes', '../../');
+    renderTopbar('Edit Cause', '../../');
+  });
+</script>
+</body>
+</html>
