@@ -89,7 +89,7 @@ const ROLE_CONFIGS = {
     role: 'Admin',
     avatar: 'RA',
     color: '#1B4F72',
-    dashboard: '../app/dashboard-admin.html',
+    dashboard: 'app/dashboard-admin.html',
     notifCount: 3,
   },
   treasurer: {
@@ -97,7 +97,7 @@ const ROLE_CONFIGS = {
     role: 'Treasurer',
     avatar: 'FI',
     color: '#2E86AB',
-    dashboard: '../app/dashboard-treasurer.html',
+    dashboard: 'app/dashboard-treasurer.html',
     notifCount: 2,
   },
   auditor: {
@@ -105,7 +105,7 @@ const ROLE_CONFIGS = {
     role: 'Auditor',
     avatar: 'JU',
     color: '#148F77',
-    dashboard: '../app/dashboard-auditor.html',
+    dashboard: 'app/dashboard-auditor.html',
     notifCount: 0,
   },
   member: {
@@ -113,16 +113,28 @@ const ROLE_CONFIGS = {
     role: 'Member',
     avatar: 'SK',
     color: '#7F8C8D',
-    dashboard: '../app/dashboard-member.html',
+    dashboard: 'app/dashboard-member.html',
     notifCount: 1,
   },
 };
+
+function getCurrentRole() {
+  return sessionStorage.getItem('demoRole') || 'admin';
+}
+
+function updateRoleSections() {
+  document.querySelectorAll('.sidebar-section').forEach(section => {
+    const visibleLinks = Array.from(section.querySelectorAll('.sidebar-link'))
+      .filter(link => link.style.display !== 'none');
+    section.style.display = visibleLinks.length ? '' : 'none';
+  });
+}
 
 function initRoleSwitcher() {
   const switcher = document.getElementById('roleSwitcher');
   if (!switcher) return;
 
-  const savedRole = sessionStorage.getItem('demoRole') || 'admin';
+  const savedRole = getCurrentRole();
   switcher.value = savedRole;
   applyRole(savedRole);
 
@@ -172,6 +184,14 @@ function applyRole(role) {
     const allowed = el.getAttribute('data-role').split(',').map(r => r.trim());
     el.style.display = allowed.includes(role) ? '' : 'none';
   });
+
+  // Update dashboard links after role switch
+  document.querySelectorAll('[data-dashboard-link]').forEach(link => {
+    const base = link.getAttribute('data-dashboard-base') || '';
+    link.setAttribute('href', `${base}${cfg.dashboard}`);
+  });
+
+  updateRoleSections();
 }
 
 /* ============================================================
@@ -530,7 +550,7 @@ function animateProgressBars() {
    15. NOTIFICATION COUNT
    ============================================================ */
 function updateNotifCount() {
-  const role = sessionStorage.getItem('demoRole') || 'admin';
+  const role = getCurrentRole();
   const cfg  = ROLE_CONFIGS?.[role];
   const badge = document.getElementById('notifBadge');
   if (badge && cfg) {
@@ -643,52 +663,54 @@ document.addEventListener('DOMContentLoaded', () => {
    19. SHARED SIDEBAR HTML (injected by pages that call it)
    ============================================================ */
 function renderSidebar(activePage, baseUrl = '') {
+  const role = getCurrentRole();
+  const dashboardHref = `${baseUrl}${ROLE_CONFIGS?.[role]?.dashboard || 'app/dashboard-admin.html'}`;
   const nav = [
     {
       section: 'Overview',
       items: [
-        { href: `${baseUrl}app/dashboard-admin.html`,     icon: '📊', label: 'Dashboard',    id: 'dashboard' },
-        { href: `${baseUrl}app/notifications/center.html`, icon: '🔔', label: 'Notifications', id: 'notifications', badge: 3 },
+        { href: dashboardHref, icon: '📊', label: 'Dashboard', id: 'dashboard', roles: ['admin','treasurer','auditor','member'], dashboard: true },
+        { href: `${baseUrl}app/notifications/center.html`, icon: '🔔', label: 'Notifications', id: 'notifications', badge: 3, roles: ['admin','treasurer','auditor','member'] },
       ]
     },
     {
       section: 'Organisation',
       items: [
-        { href: `${baseUrl}app/organization/overview.html`,           icon: '🏢', label: 'Overview',        id: 'org-overview' },
-        { href: `${baseUrl}app/organization/membership-requests.html`, icon: '📥', label: 'Requests',        id: 'membership', badge: 3 },
-        { href: `${baseUrl}app/members/list.html`,                    icon: '👥', label: 'Members',          id: 'members' },
-        { href: `${baseUrl}app/organization/roles.html`,              icon: '🔑', label: 'Roles',            id: 'roles' },
+        { href: `${baseUrl}app/organization/overview.html`,           icon: '🏢', label: 'Overview',        id: 'org-overview', roles: ['admin','treasurer','auditor'] },
+        { href: `${baseUrl}app/organization/membership-requests.html`, icon: '📥', label: 'Requests',        id: 'membership', badge: 3, roles: ['admin'] },
+        { href: `${baseUrl}app/members/list.html`,                    icon: '👥', label: 'Members',          id: 'members', roles: ['admin','auditor'] },
+        { href: `${baseUrl}app/organization/roles.html`,              icon: '🔑', label: 'Roles',            id: 'roles', roles: ['admin'] },
       ]
     },
     {
       section: 'Support',
       items: [
-        { href: `${baseUrl}app/causes/list.html`,         icon: '💚', label: 'Causes',        id: 'causes' },
-        { href: `${baseUrl}app/contributions/list.html`,  icon: '💰', label: 'Contributions', id: 'contributions' },
-        { href: `${baseUrl}app/receipts/list.html`,       icon: '🧾', label: 'Receipts',       id: 'receipts' },
-        { href: `${baseUrl}app/disbursements/list.html`,  icon: '📤', label: 'Disbursements', id: 'disbursements' },
+        { href: `${baseUrl}app/causes/list.html`,         icon: '💚', label: 'Causes',        id: 'causes', roles: ['admin','treasurer','auditor','member'] },
+        { href: `${baseUrl}app/contributions/list.html`,  icon: '💰', label: 'Contributions', id: 'contributions', roles: ['admin','treasurer','auditor','member'] },
+        { href: `${baseUrl}app/receipts/list.html`,       icon: '🧾', label: 'Receipts',       id: 'receipts', roles: ['admin','treasurer'] },
+        { href: `${baseUrl}app/disbursements/list.html`,  icon: '📤', label: 'Disbursements', id: 'disbursements', roles: ['admin','treasurer','auditor'] },
       ]
     },
     {
       section: 'Verification',
       items: [
-        { href: `${baseUrl}app/nominees/list.html`,       icon: '👨‍👩‍👧', label: 'Nominees',      id: 'nominees' },
-        { href: `${baseUrl}app/verification/queue.html`,  icon: '✅', label: 'Verify Queue',  id: 'verification' },
+        { href: `${baseUrl}app/nominees/list.html`,       icon: '👨‍👩‍👧', label: 'Nominees',      id: 'nominees', roles: ['admin','member'] },
+        { href: `${baseUrl}app/verification/queue.html`,  icon: '✅', label: 'Verify Queue',  id: 'verification', roles: ['admin','auditor'] },
       ]
     },
     {
       section: 'Reports & Audit',
       items: [
-        { href: `${baseUrl}app/reports/overview.html`,    icon: '📈', label: 'Reports',        id: 'reports' },
-        { href: `${baseUrl}app/audit/audit-log.html`,     icon: '🔍', label: 'Audit Log',      id: 'audit' },
-        { href: `${baseUrl}app/audit/activity-log.html`,  icon: '📋', label: 'Activity Log',   id: 'activity' },
+        { href: `${baseUrl}app/reports/overview.html`,    icon: '📈', label: 'Reports',        id: 'reports', roles: ['admin','treasurer','auditor'] },
+        { href: `${baseUrl}app/audit/audit-log.html`,     icon: '🔍', label: 'Audit Log',      id: 'audit', roles: ['admin','auditor'] },
+        { href: `${baseUrl}app/audit/activity-log.html`,  icon: '📋', label: 'Activity Log',   id: 'activity', roles: ['admin','auditor'] },
       ]
     },
     {
       section: 'Settings',
       items: [
-        { href: `${baseUrl}app/settings/profile.html`,    icon: '⚙️', label: 'Settings',       id: 'settings' },
-        { href: `${baseUrl}app/notifications/announcements.html`, icon: '📢', label: 'Announcements', id: 'announcements' },
+        { href: `${baseUrl}app/settings/profile.html`,    icon: '⚙️', label: 'Settings',       id: 'settings', roles: ['admin','treasurer','auditor','member'] },
+        { href: `${baseUrl}app/notifications/announcements.html`, icon: '📢', label: 'Announcements', id: 'announcements', roles: ['admin','treasurer','auditor','member'] },
       ]
     },
   ];
@@ -700,7 +722,9 @@ function renderSidebar(activePage, baseUrl = '') {
     group.items.forEach(item => {
       const active = item.id === activePage ? ' active' : '';
       const badge  = item.badge ? `<span class="nav-badge">${item.badge}</span>` : '';
-      html += `<a href="${item.href}" class="sidebar-link${active}">
+      const rolesAttr = item.roles ? ` data-role="${item.roles.join(',')}"` : '';
+      const dashAttr = item.dashboard ? ` data-dashboard-link data-dashboard-base="${baseUrl}"` : '';
+      html += `<a href="${item.href}" class="sidebar-link${active}"${rolesAttr}${dashAttr}>
         <span class="nav-icon">${item.icon}</span>
         <span class="nav-label">${item.label}</span>
         ${badge}
@@ -710,7 +734,10 @@ function renderSidebar(activePage, baseUrl = '') {
   });
 
   const el = document.getElementById('sidebarNav');
-  if (el) el.innerHTML = html;
+  if (el) {
+    el.innerHTML = html;
+    applyRole(role);
+  }
 }
 
 /* ============================================================
