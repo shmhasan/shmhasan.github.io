@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Approve Disbursement — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="list.html">Disbursements</a>
+          <span class="sep">›</span>
+          <a href="detail.html">DISB-2026-009</a>
+          <span class="sep">›</span>
+          <span class="current">Approve</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Review Disbursement</h1>
+            <p class="page-subtitle">DISB-2026-009 · Submitted 25 Mar 2026 · Pending your approval</p>
+          </div>
+          <div class="page-actions">
+            <a href="list.html" class="btn btn-outline">Back to List</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-warning" style="margin-bottom:1.5rem;">
+        <span class="alert-icon">⚠️</span>
+        <div>This disbursement is awaiting your approval. Review all details and supporting documents carefully before approving payment.</div>
+      </div>
+
+      <div class="grid grid-2" style="gap:1.5rem;align-items:start;">
+
+        <!-- Disbursement Summary -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Disbursement Summary</div>
+            <span class="badge badge-pending badge-dot">Pending Approval</span>
+          </div>
+
+          <div style="text-align:center;padding:1.5rem 0;border-bottom:1px solid var(--color-border-light);margin-bottom:1.25rem;">
+            <div style="font-size:3rem;font-weight:800;color:var(--color-primary);">£3,500</div>
+            <div style="font-size:.875rem;color:var(--color-text-muted);margin-top:.25rem;">Medical Emergency — Hassan Ali</div>
+          </div>
+
+          <table style="width:100%;font-size:.875rem;border-collapse:collapse;">
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);width:160px;">Reference</td>
+              <td style="padding:.625rem 0;font-family:monospace;font-weight:600;">DISB-2026-009</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Cause</td>
+              <td style="padding:.625rem 0;"><a href="../causes/detail.html">Medical Emergency — Hassan Ali</a></td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Recipient</td>
+              <td style="padding:.625rem 0;font-weight:600;">Hassan Ali Family</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Recipient Type</td>
+              <td style="padding:.625rem 0;">Medical beneficiary</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Amount</td>
+              <td style="padding:.625rem 0;font-weight:700;font-size:1.05rem;">£3,500.00</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Payment Method</td>
+              <td style="padding:.625rem 0;">Bank Transfer</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Submitted By</td>
+              <td style="padding:.625rem 0;">Farzana Islam (Treasurer)</td>
+            </tr>
+            <tr>
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Description</td>
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Partial disbursement to cover Hassan Ali's hospital treatment costs at Birmingham Queen Elizabeth Hospital. Remaining funds to follow upon receipt of final invoice.</td>
+            </tr>
+          </table>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:1.5rem;">
+
+          <!-- Recipient Bank Details -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Payment Destination</div></div>
+            <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.875rem;">
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-bg);border-radius:var(--radius-sm);">
+                <span style="color:var(--color-text-muted);">Account Name</span>
+                <span style="font-weight:600;">Hassan Ali</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-bg);border-radius:var(--radius-sm);">
+                <span style="color:var(--color-text-muted);">Sort Code</span>
+                <span style="font-weight:600;font-family:monospace;">40-22-07</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-bg);border-radius:var(--radius-sm);">
+                <span style="color:var(--color-text-muted);">Account No.</span>
+                <span style="font-weight:600;font-family:monospace;">12847563</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-bg);border-radius:var(--radius-sm);">
+                <span style="color:var(--color-text-muted);">Reference</span>
+                <span style="font-weight:600;font-family:monospace;">SWT-DISB-2026-009</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Supporting Documents -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Supporting Documents</div></div>
+            <div style="display:flex;flex-direction:column;gap:.5rem;">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:.625rem;background:var(--color-bg);border-radius:var(--radius-sm);font-size:.8rem;">
+                <span>📄 hospital_invoice_hassan_ali.pdf</span>
+                <button class="btn btn-sm btn-ghost" onclick="showToast('Document opened','info')">View</button>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:.625rem;background:var(--color-bg);border-radius:var(--radius-sm);font-size:.8rem;">
+                <span>📄 hassan_ali_id.jpg</span>
+                <button class="btn btn-sm btn-ghost" onclick="showToast('Document opened','info')">View</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fund Check -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Fund Availability Check</div></div>
+            <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.875rem;">
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-success-light);border-radius:var(--radius-sm);">
+                <span>Medical Emergency fund raised</span>
+                <span style="font-weight:700;color:var(--color-success);">£4,250</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-bg);border-radius:var(--radius-sm);">
+                <span style="color:var(--color-text-muted);">This disbursement</span>
+                <span style="font-weight:600;">−£3,500</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-bg);border-radius:var(--radius-sm);font-weight:700;">
+                <span>Remaining after approval</span>
+                <span style="color:var(--color-warning);">£750</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Approval Decision -->
+      <div class="card" style="margin-top:1.5rem;">
+        <div class="card-header"><div class="card-title">Approval Decision</div></div>
+        <div class="grid grid-2" style="gap:1.5rem;">
+          <div>
+            <div class="form-group">
+              <label class="form-label">Approval Notes</label>
+              <textarea class="form-control" rows="3" id="approvalNotes" placeholder="Add notes about your decision (recorded in audit log)..."></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label">If rejecting, reason:</label>
+              <select class="form-control" id="rejectReason">
+                <option value="">Select reason...</option>
+                <option>Insufficient funds</option>
+                <option>Incorrect bank details</option>
+                <option>Missing supporting documents</option>
+                <option>Amount disputed</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.75rem;justify-content:flex-end;">
+            <div class="alert alert-warning" style="margin:0;">
+              <span class="alert-icon">⚠️</span>
+              <div style="font-size:.8rem;">Approving will authorise Farzana Islam (Treasurer) to process a bank transfer of <strong>£3,500</strong> to Hassan Ali.</div>
+            </div>
+            <button class="btn btn-outline w-full" style="color:var(--color-danger);border-color:var(--color-danger);" onclick="rejectDisbursement()">✕ Reject</button>
+            <button class="btn btn-success w-full" style="font-size:1rem;" onclick="approveDisbursement()">✓ Approve Disbursement</button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('disbursements', '../../');
+    renderTopbar('Approve Disbursement', '../../');
+  });
+
+  function approveDisbursement() {
+    showToast('Disbursement approved! Treasurer has been notified to process payment.', 'success');
+    setTimeout(() => { window.location.href = 'list.html'; }, 1400);
+  }
+
+  function rejectDisbursement() {
+    const reason = document.getElementById('rejectReason').value;
+    if (!reason) { showToast('Please select a rejection reason', 'warning'); return; }
+    showToast('Disbursement rejected. Treasurer has been notified.', 'warning');
+    setTimeout(() => { window.location.href = 'list.html'; }, 1400);
+  }
+</script>
+</body>
+</html>

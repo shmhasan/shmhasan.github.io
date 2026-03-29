@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Members — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <span class="current">Members</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Members</h1>
+            <p class="page-subtitle">214 members in Sylhet Welfare Trust</p>
+          </div>
+          <div class="page-actions">
+            <a href="../organization/invite-member.html" class="btn btn-primary">+ Invite Member</a>
+            <a href="../reports/members.html" class="btn btn-outline">Export</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUMMARY STATS -->
+      <div class="quick-stats" style="margin-bottom:1.5rem;">
+        <div class="quick-stat-item"><div class="quick-stat-value">214</div><div class="quick-stat-label">Total Members</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-success);">198</div><div class="quick-stat-label">Active</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-warning);">5</div><div class="quick-stat-label">Pending</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-info);">3</div><div class="quick-stat-label">Under Review</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-danger);">4</div><div class="quick-stat-label">Suspended</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-accent);">186</div><div class="quick-stat-label">KYC Verified</div></div>
+      </div>
+
+      <div class="card">
+        <!-- TOOLBAR -->
+        <div class="table-toolbar">
+          <div class="table-filters">
+            <div class="search-box" style="width:240px;">
+              <span class="search-icon">🔍</span>
+              <input type="text" placeholder="Search by name, email..." data-search-table="membersTable" />
+            </div>
+            <select class="form-control" style="width:150px;" data-filter-table="membersTable" data-filter-col="2">
+              <option value="">All Roles</option>
+              <option>Admin</option>
+              <option>Treasurer</option>
+              <option>Auditor</option>
+              <option>Member</option>
+            </select>
+            <select class="form-control" style="width:150px;" data-filter-table="membersTable" data-filter-col="3">
+              <option value="">All Statuses</option>
+              <option>Active</option>
+              <option>Pending</option>
+              <option>Under Review</option>
+              <option>Suspended</option>
+            </select>
+          </div>
+          <span class="table-count">Showing 8 of 214</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="table" id="membersTable">
+            <thead>
+              <tr>
+                <th>Member</th>
+                <th>Phone</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>KYC</th>
+                <th>Joined</th>
+                <th>Contributions</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar" style="background:#1B4F72;">RA</div>
+                    <div>
+                      <div class="table-name"><a href="detail.html">Rahim Ahmed</a></div>
+                      <div class="table-sub">rahim.ahmed@example.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-sm text-muted">+44 7700 900123</td>
+                <td><span class="badge badge-primary">Admin</span></td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td><span class="badge badge-verified badge-dot">Verified</span></td>
+                <td class="text-sm text-muted">15 Mar 2014</td>
+                <td class="text-sm">34 · <strong>£15,800</strong></td>
+                <td>
+                  <div class="table-actions">
+                    <a href="detail.html" class="btn btn-sm btn-ghost">View</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar">SK</div>
+                    <div>
+                      <div class="table-name"><a href="detail.html">Sadia Karim</a></div>
+                      <div class="table-sub">sadia.karim@example.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-sm text-muted">+44 7700 900456</td>
+                <td><span class="badge badge-draft">Member</span></td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td><span class="badge badge-verified badge-dot">Verified</span></td>
+                <td class="text-sm text-muted">22 Jun 2015</td>
+                <td class="text-sm">22 · <strong>£8,400</strong></td>
+                <td>
+                  <div class="table-actions">
+                    <a href="detail.html" class="btn btn-sm btn-ghost">View</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar" style="background:#2E86AB;">FI</div>
+                    <div>
+                      <div class="table-name"><a href="detail.html">Farzana Islam</a></div>
+                      <div class="table-sub">farzana.islam@example.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-sm text-muted">+44 7700 900789</td>
+                <td><span class="badge badge-review">Treasurer</span></td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td><span class="badge badge-verified badge-dot">Verified</span></td>
+                <td class="text-sm text-muted">10 Jan 2016</td>
+                <td class="text-sm">45 · <strong>£22,000</strong></td>
+                <td>
+                  <div class="table-actions">
+                    <a href="detail.html" class="btn btn-sm btn-ghost">View</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar">IH</div>
+                    <div>
+                      <div class="table-name"><a href="detail.html">Imran Hossain</a></div>
+                      <div class="table-sub">imran.hossain@example.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-sm text-muted">+44 7700 900321</td>
+                <td><span class="badge badge-draft">Member</span></td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td><span class="badge badge-verified badge-dot">Verified</span></td>
+                <td class="text-sm text-muted">5 Sep 2017</td>
+                <td class="text-sm">18 · <strong>£6,200</strong></td>
+                <td>
+                  <div class="table-actions">
+                    <a href="detail.html" class="btn btn-sm btn-ghost">View</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar" style="background:var(--color-warning);">AK</div>
+                    <div>
+                      <div class="table-name"><a href="detail.html">Abdul Karim Choudhury</a></div>
+                      <div class="table-sub">akc@example.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-sm text-muted">+44 7700 900654</td>
+                <td><span class="badge badge-draft">Member</span></td>
+                <td><span class="badge badge-pending badge-dot">Pending</span></td>
+                <td><span class="badge badge-draft">Not Submitted</span></td>
+                <td class="text-sm text-muted">10 Dec 2024</td>
+                <td class="text-sm text-muted">0 · £0</td>
+                <td>
+                  <div class="table-actions">
+                    <a href="detail.html" class="btn btn-sm btn-ghost">View</a>
+                    <button class="btn btn-sm btn-success" onclick="showToast('Member activated','success')">Activate</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar">NB</div>
+                    <div>
+                      <div class="table-name"><a href="detail.html">Nasreen Begum</a></div>
+                      <div class="table-sub">nasreen.begum@example.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-sm text-muted">+44 7700 900987</td>
+                <td><span class="badge badge-draft">Member</span></td>
+                <td><span class="badge badge-review badge-dot">Under Review</span></td>
+                <td><span class="badge badge-review badge-dot">Submitted</span></td>
+                <td class="text-sm text-muted">14 Feb 2025</td>
+                <td class="text-sm">3 · <strong>£900</strong></td>
+                <td>
+                  <div class="table-actions">
+                    <a href="detail.html" class="btn btn-sm btn-ghost">View</a>
+                    <a href="../verification/member-review.html" class="btn btn-sm btn-outline">Review KYC</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar" style="background:#148F77;">JU</div>
+                    <div>
+                      <div class="table-name"><a href="detail.html">Jamal Uddin</a></div>
+                      <div class="table-sub">jamal.uddin@example.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-sm text-muted">+44 7700 901122</td>
+                <td><span class="badge badge-verified">Auditor</span></td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td><span class="badge badge-verified badge-dot">Verified</span></td>
+                <td class="text-sm text-muted">1 Apr 2019</td>
+                <td class="text-sm">28 · <strong>£12,400</strong></td>
+                <td>
+                  <div class="table-actions">
+                    <a href="detail.html" class="btn btn-sm btn-ghost">View</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar" style="background:var(--color-danger);">RS</div>
+                    <div>
+                      <div class="table-name"><a href="detail.html">Ruhul Amin Sheikh</a></div>
+                      <div class="table-sub">ruhul.sheikh@example.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-sm text-muted">+44 7700 901344</td>
+                <td><span class="badge badge-draft">Member</span></td>
+                <td><span class="badge badge-suspended badge-dot">Suspended</span></td>
+                <td><span class="badge badge-verified badge-dot">Verified</span></td>
+                <td class="text-sm text-muted">20 Nov 2020</td>
+                <td class="text-sm">12 · <strong>£3,800</strong></td>
+                <td>
+                  <div class="table-actions">
+                    <a href="detail.html" class="btn btn-sm btn-ghost">View</a>
+                    <button class="btn btn-sm btn-outline" onclick="showToast('Member reinstated','success')">Reinstate</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <span class="text-muted text-sm">Showing 8 of 214 members</span>
+          <div class="pagination-pages">
+            <span class="page-btn active">1</span>
+            <a href="#" class="page-btn">2</a>
+            <a href="#" class="page-btn">3</a>
+            <span style="padding:0 .25rem;color:var(--color-text-muted);">…</span>
+            <a href="#" class="page-btn">27</a>
+            <a href="#" class="page-btn" style="font-size:.75rem;">Next →</a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('members', '../../');
+    renderTopbar('Members', '../../');
+  });
+</script>
+</body>
+</html>

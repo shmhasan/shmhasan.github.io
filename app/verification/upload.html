@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upload Documents — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="queue.html">Verification</a>
+          <span class="sep">›</span>
+          <span class="current">Upload Documents</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Upload KYC Documents</h1>
+            <p class="page-subtitle">Submit your identity documents for verification</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-info" style="margin-bottom:1.5rem;">
+        <span class="alert-icon">ℹ️</span>
+        <div>Please upload clear, unobstructed photos or scans. Files must be JPG, PNG, or PDF. Maximum 5MB per file. Documents are reviewed within 1–2 business days.</div>
+      </div>
+
+      <div style="max-width:680px;">
+
+        <!-- Step indicator -->
+        <div class="stepper" style="margin-bottom:2rem;">
+          <div class="step active">
+            <div class="step-circle">1</div>
+            <div class="step-label">Choose Documents</div>
+          </div>
+          <div class="step-connector"></div>
+          <div class="step">
+            <div class="step-circle">2</div>
+            <div class="step-label">Upload Files</div>
+          </div>
+          <div class="step-connector"></div>
+          <div class="step">
+            <div class="step-circle">3</div>
+            <div class="step-label">Submit</div>
+          </div>
+        </div>
+
+        <!-- Document Type Selection -->
+        <div class="card" style="margin-bottom:1.5rem;">
+          <div class="card-header"><div class="card-title">Step 1: Select Document Types</div></div>
+          <div style="display:flex;flex-direction:column;gap:.75rem;">
+            <label class="form-check">
+              <input type="checkbox" checked />
+              <span class="form-check-label">
+                <strong>National ID (NID)</strong>
+                <span style="font-size:.8rem;color:var(--color-text-muted);display:block;">Government-issued identity card</span>
+              </span>
+            </label>
+            <label class="form-check">
+              <input type="checkbox" checked />
+              <span class="form-check-label">
+                <strong>Proof of Address</strong>
+                <span style="font-size:.8rem;color:var(--color-text-muted);display:block;">Utility bill or bank statement (dated within 3 months)</span>
+              </span>
+            </label>
+            <label class="form-check">
+              <input type="checkbox" />
+              <span class="form-check-label">
+                <strong>Passport</strong>
+                <span style="font-size:.8rem;color:var(--color-text-muted);display:block;">Valid passport (optional)</span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Upload Areas -->
+        <div class="card" style="margin-bottom:1.5rem;">
+          <div class="card-header"><div class="card-title">Step 2: Upload Files</div></div>
+
+          <div class="form-group">
+            <label class="form-label">National ID (NID) <span class="required">*</span></label>
+            <div style="border:2px dashed var(--color-border);border-radius:var(--radius-md);padding:2rem;text-align:center;cursor:pointer;transition:border-color .2s;" onclick="showToast('File picker would open','info')" onmouseover="this.style.borderColor='var(--color-primary)'" onmouseout="this.style.borderColor='var(--color-border)'">
+              <div style="font-size:2rem;margin-bottom:.5rem;">🪪</div>
+              <div style="font-size:.875rem;color:var(--color-text-muted);">Drag & drop or click to upload</div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);margin-top:.25rem;">JPG, PNG, PDF · Max 5MB</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Proof of Address <span class="required">*</span></label>
+            <div style="border:2px dashed var(--color-border);border-radius:var(--radius-md);padding:2rem;text-align:center;cursor:pointer;transition:border-color .2s;" onclick="showToast('File picker would open','info')" onmouseover="this.style.borderColor='var(--color-primary)'" onmouseout="this.style.borderColor='var(--color-border)'">
+              <div style="font-size:2rem;margin-bottom:.5rem;">📄</div>
+              <div style="font-size:.875rem;color:var(--color-text-muted);">Drag & drop or click to upload</div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);margin-top:.25rem;">JPG, PNG, PDF · Max 5MB</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Tips -->
+        <div class="card" style="margin-bottom:1.5rem;background:var(--color-info-light);border-color:var(--color-info);">
+          <div class="card-header"><div class="card-title" style="color:var(--color-info);">📸 Photo Tips</div></div>
+          <ul style="font-size:.875rem;color:var(--color-text-muted);line-height:1.8;padding-left:1.25rem;margin:0;">
+            <li>Ensure the document is fully visible with no cropped edges</li>
+            <li>Take photos in good lighting with no glare or shadows</li>
+            <li>All text must be clearly readable</li>
+            <li>Do not cover any part of the document</li>
+            <li>Selfies with the document are not required</li>
+          </ul>
+        </div>
+
+        <!-- Submit -->
+        <div class="card">
+          <div class="card-header"><div class="card-title">Step 3: Submit</div></div>
+          <p style="font-size:.875rem;color:var(--color-text-muted);margin-bottom:1.25rem;">By submitting, you confirm all documents are genuine. Submitting false documents may result in suspension.</p>
+          <div class="form-group">
+            <label class="form-check">
+              <input type="checkbox" id="consentCheck" />
+              <span class="form-check-label">I confirm the documents are genuine and belong to me or my nominee.</span>
+            </label>
+          </div>
+          <button class="btn btn-primary w-full" onclick="submitDocuments()">Submit for Review</button>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('verification', '../../');
+    renderTopbar('Upload Documents', '../../');
+  });
+
+  function submitDocuments() {
+    const consent = document.getElementById('consentCheck').checked;
+    if (!consent) { showToast('Please confirm documents are genuine','warning'); return; }
+    showToast('Documents submitted for review!', 'success');
+    setTimeout(() => { window.location.href = 'status.html'; }, 1200);
+  }
+</script>
+</body>
+</html>

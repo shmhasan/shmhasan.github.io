@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nominees — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <span class="current">Nominees</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Nominees</h1>
+            <p class="page-subtitle">All registered nominees across 214 members</p>
+          </div>
+          <div class="page-actions">
+            <a href="add.html" class="btn btn-primary">+ Add Nominee</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUMMARY STATS -->
+      <div class="quick-stats" style="margin-bottom:1.5rem;">
+        <div class="quick-stat-item"><div class="quick-stat-value">312</div><div class="quick-stat-label">Total Nominees</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-success);">287</div><div class="quick-stat-label">Verified</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-warning);">18</div><div class="quick-stat-label">Pending Review</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-danger);">7</div><div class="quick-stat-label">Rejected</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-text-muted);">178</div><div class="quick-stat-label">Members with Nominees</div></div>
+      </div>
+
+      <div class="card">
+        <!-- TOOLBAR -->
+        <div class="table-toolbar">
+          <div class="table-filters">
+            <div class="search-box" style="width:240px;">
+              <span class="search-icon">🔍</span>
+              <input type="text" placeholder="Search nominees or members..." data-search-table="nomineesTable" />
+            </div>
+            <select class="form-control" style="width:160px;" data-filter-table="nomineesTable" data-filter-col="3">
+              <option value="">All Relationships</option>
+              <option>Spouse</option>
+              <option>Son</option>
+              <option>Daughter</option>
+              <option>Parent</option>
+              <option>Sibling</option>
+              <option>Other</option>
+            </select>
+            <select class="form-control" style="width:160px;" data-filter-table="nomineesTable" data-filter-col="4">
+              <option value="">All Statuses</option>
+              <option>Verified</option>
+              <option>Pending Review</option>
+              <option>Rejected</option>
+            </select>
+          </div>
+          <span class="table-count">Showing 6 of 312</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="table" id="nomineesTable">
+            <thead>
+              <tr>
+                <th>Nominee</th>
+                <th>Member</th>
+                <th>Phone</th>
+                <th>Relationship</th>
+                <th>Status</th>
+                <th>Added</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar" style="background:#2E86AB;">FA</div>
+                    <div>
+                      <div class="table-name"><a href="detail.html">Fatima Ahmed</a></div>
+                      <div class="table-sub">fatima.ahmed@example.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-sm"><a href="../members/detail.html">Rahim Ahmed</a></td>
+                <td class="text-sm text-muted">+44 7700 900200</td>
+                <td class="text-sm">Spouse</td>
+                <td><span class="badge badge-verified badge-dot">Verified</span></td>
+                <td class="text-sm text-muted">15 Jan 2015</td>
+                <td>
+                  <div class="table-actions">
+                    <a href="detail.html" class="btn btn-sm btn-ghost">View</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar">ZA</div>
+                    <div>
+                      <div class="table-name"><a href="detail.html">Zaid Ahmed</a></div>
+                      <div class="table-sub">—</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-sm"><a href="../members/detail.html">Rahim Ahmed</a></td>
+                <td class="text-sm text-muted">—</td>
+                <td class="text-sm">Son</td>
+                <td><span class="badge badge-verified badge-dot">Verified</span></td>
+                <td class="text-sm text-muted">15 Jan 2015</td>
+                <td>
+                  <div class="table-actions">
+                    <a href="detail.html" class="btn btn-sm btn-ghost">View</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar">SA</div>
+                    <div>
+                      <div class="table-name"><a href="detail.html">Sara Ahmed</a></div>
+                      <div class="table-sub">—</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-sm"><a href="../members/detail.html">Rahim Ahmed</a></td>
+                <td class="text-sm text-muted">—</td>
+                <td class="text-sm">Daughter</td>
+                <td><span class="badge badge-review badge-dot">Pending Review</span></td>
+                <td class="text-sm text-muted">10 Mar 2026</td>
+                <td>
+                  <div class="table-actions">
+                    <a href="detail.html" class="btn btn-sm btn-ghost">View</a>
+                    <a href="review.html" class="btn btn-sm btn-outline">Review</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar" style="background:var(--color-accent);">MK</div>
+                    <div>
+                      <div class="table-name"><a href="detail.html">Mohammad Karim</a></div>
+                      <div class="table-sub">m.karim@example.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-sm"><a href="../members/detail.html">Sadia Karim</a></td>
+                <td class="text-sm text-muted">+44 7700 900501</td>
+                <td class="text-sm">Spouse</td>
+                <td><span class="badge badge-verified badge-dot">Verified</span></td>
+                <td class="text-sm text-muted">5 Aug 2015</td>
+                <td>
+                  <div class="table-actions">
+                    <a href="detail.html" class="btn btn-sm btn-ghost">View</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar" style="background:#148F77;">RI</div>
+                    <div>
+                      <div class="table-name"><a href="detail.html">Razia Islam</a></div>
+                      <div class="table-sub">razia.i@example.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-sm"><a href="../members/detail.html">Farzana Islam</a></td>
+                <td class="text-sm text-muted">+44 7700 900602</td>
+                <td class="text-sm">Parent</td>
+                <td><span class="badge badge-verified badge-dot">Verified</span></td>
+                <td class="text-sm text-muted">20 Feb 2016</td>
+                <td>
+                  <div class="table-actions">
+                    <a href="detail.html" class="btn btn-sm btn-ghost">View</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar" style="background:var(--color-danger);">AH</div>
+                    <div>
+                      <div class="table-name"><a href="detail.html">Ayesha Hossain</a></div>
+                      <div class="table-sub">ayesha.h@example.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-sm"><a href="../members/detail.html">Imran Hossain</a></td>
+                <td class="text-sm text-muted">+44 7700 900701</td>
+                <td class="text-sm">Spouse</td>
+                <td><span class="badge badge-review badge-dot">Pending Review</span></td>
+                <td class="text-sm text-muted">1 Mar 2026</td>
+                <td>
+                  <div class="table-actions">
+                    <a href="detail.html" class="btn btn-sm btn-ghost">View</a>
+                    <a href="review.html" class="btn btn-sm btn-outline">Review</a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <span class="text-muted text-sm">Showing 6 of 312 nominees</span>
+          <div class="pagination-pages">
+            <span class="page-btn active">1</span>
+            <a href="#" class="page-btn">2</a>
+            <a href="#" class="page-btn">3</a>
+            <span style="padding:0 .25rem;color:var(--color-text-muted);">…</span>
+            <a href="#" class="page-btn">52</a>
+            <a href="#" class="page-btn" style="font-size:.75rem;">Next →</a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('nominees', '../../');
+    renderTopbar('Nominees', '../../');
+  });
+</script>
+</body>
+</html>

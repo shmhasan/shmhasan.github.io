@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mark as Paid — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="list.html">Disbursements</a>
+          <span class="sep">›</span>
+          <a href="detail.html">DISB-2026-009</a>
+          <span class="sep">›</span>
+          <span class="current">Mark as Paid</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Mark as Paid</h1>
+            <p class="page-subtitle">DISB-2026-009 · Approved · Ready to process</p>
+          </div>
+          <div class="page-actions">
+            <a href="detail.html" class="btn btn-outline">Back to Detail</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Approved Banner -->
+      <div class="alert alert-success" style="margin-bottom:1.5rem;">
+        <span class="alert-icon">✅</span>
+        <div>This disbursement has been approved by Rahim Ahmed. You can now process the bank transfer and confirm payment below.</div>
+      </div>
+
+      <div class="grid grid-2" style="gap:1.5rem;align-items:start;">
+
+        <!-- Payment Confirmation Form -->
+        <div class="card">
+          <div class="card-header"><div class="card-title">Confirm Payment</div></div>
+
+          <!-- Summary -->
+          <div style="background:var(--color-bg);border-radius:var(--radius-md);padding:1.25rem;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+            <div>
+              <div style="font-size:.8rem;color:var(--color-text-muted);">Disbursement</div>
+              <div style="font-weight:700;">DISB-2026-009</div>
+            </div>
+            <div>
+              <div style="font-size:.8rem;color:var(--color-text-muted);">Recipient</div>
+              <div style="font-weight:700;">Hassan Ali Family</div>
+            </div>
+            <div>
+              <div style="font-size:.8rem;color:var(--color-text-muted);">Amount</div>
+              <div style="font-size:1.5rem;font-weight:800;color:var(--color-primary);">£3,500</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Payment Method <span class="required">*</span></label>
+            <select class="form-control">
+              <option selected>Bank Transfer</option>
+              <option>Cash</option>
+              <option>Mobile Banking (bKash / Nagad)</option>
+              <option>Cheque</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Payment Date <span class="required">*</span></label>
+            <input type="date" class="form-control" value="2026-03-29" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Transaction Reference <span class="required">*</span></label>
+            <input type="text" class="form-control" placeholder="e.g. bank transaction ID or reference number" />
+            <div class="form-hint">The reference from your bank or payment provider confirming the transfer.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Upload Payment Proof <span class="required">*</span></label>
+            <div style="border:2px dashed var(--color-border);border-radius:var(--radius-md);padding:1.75rem;text-align:center;cursor:pointer;transition:border-color .2s;" onclick="showToast('File picker would open','info')" onmouseover="this.style.borderColor='var(--color-primary)'" onmouseout="this.style.borderColor='var(--color-border)'">
+              <div style="font-size:1.75rem;margin-bottom:.375rem;">📎</div>
+              <div style="font-size:.875rem;color:var(--color-text-muted);">Upload bank transfer confirmation</div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);margin-top:.25rem;">PDF, JPG, PNG · Max 5MB</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Treasurer Notes <span class="optional">(optional)</span></label>
+            <textarea class="form-control" rows="3" placeholder="Any notes about this payment for the audit log..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-check">
+              <input type="checkbox" id="confirmCheck" />
+              <span class="form-check-label">I confirm the payment of <strong>£3,500</strong> has been transferred to Hassan Ali Family and the bank reference above is correct.</span>
+            </label>
+          </div>
+
+          <button class="btn btn-success w-full" style="font-size:1rem;padding:.875rem;" onclick="markPaid()">✓ Confirm Payment Made</button>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:1.5rem;">
+
+          <!-- Recipient Bank Details (read-only) -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Transfer To</div></div>
+            <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.875rem;">
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-bg);border-radius:var(--radius-sm);">
+                <span style="color:var(--color-text-muted);">Account Name</span>
+                <span style="font-weight:600;">Hassan Ali</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-bg);border-radius:var(--radius-sm);">
+                <span style="color:var(--color-text-muted);">Sort Code</span>
+                <span style="font-weight:600;font-family:monospace;">40-22-07</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-bg);border-radius:var(--radius-sm);">
+                <span style="color:var(--color-text-muted);">Account No.</span>
+                <span style="font-weight:600;font-family:monospace;">12847563</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-bg);border-radius:var(--radius-sm);">
+                <span style="color:var(--color-text-muted);">Reference</span>
+                <span style="font-weight:600;font-family:monospace;">SWT-DISB-2026-009</span>
+              </div>
+            </div>
+            <button class="btn btn-sm btn-outline w-full" style="margin-top:.875rem;" onclick="showToast('Bank details copied','success')">📋 Copy Bank Details</button>
+          </div>
+
+          <!-- Approval Record -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Approval Record</div></div>
+            <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.875rem;">
+              <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--color-border-light);">
+                <span style="color:var(--color-text-muted);">Approved By</span>
+                <span style="font-weight:600;">Rahim Ahmed</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--color-border-light);">
+                <span style="color:var(--color-text-muted);">Approved On</span>
+                <span style="font-weight:600;">27 Mar 2026 · 09:14</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem 0;">
+                <span style="color:var(--color-text-muted);">Approval Notes</span>
+                <span style="color:var(--color-text-muted);">Hospital invoice verified. Proceed.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- What happens next -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">What Happens Next?</div></div>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--color-success);"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Disbursement approved</div>
+                  <div class="timeline-meta">Completed · 27 Mar 2026</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--color-warning);border:2px solid var(--color-warning);background:white;"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title" style="color:var(--color-warning);">You confirm payment here</div>
+                  <div class="timeline-meta">Current step</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--color-border);"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title" style="color:var(--color-text-muted);">Status updated to Paid</div>
+                  <div class="timeline-meta">Audit log updated · Admin notified</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--color-border);"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title" style="color:var(--color-text-muted);">Cause fund balance updated</div>
+                  <div class="timeline-meta">£3,500 deducted from Medical Emergency fund</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('disbursements', '../../');
+    renderTopbar('Mark as Paid', '../../');
+  });
+
+  function markPaid() {
+    const confirmed = document.getElementById('confirmCheck').checked;
+    if (!confirmed) {
+      showToast('Please confirm the payment has been made', 'warning');
+      return;
+    }
+    showToast('Payment confirmed! Disbursement marked as Paid.', 'success');
+    setTimeout(() => { window.location.href = 'detail.html'; }, 1400);
+  }
+</script>
+</body>
+</html>

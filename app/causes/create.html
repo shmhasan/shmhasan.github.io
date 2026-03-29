@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Cause — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="list.html">Causes</a>
+          <span class="sep">›</span>
+          <span class="current">Create Cause</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Create New Cause</h1>
+            <p class="page-subtitle">Set up a new fundraising campaign or support fund</p>
+          </div>
+          <div class="page-actions">
+            <a href="list.html" class="btn btn-outline">Cancel</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="gap:1.5rem;align-items:start;">
+
+        <!-- Basic Details -->
+        <div class="card">
+          <div class="card-header"><div class="card-title">Cause Details</div></div>
+          <div class="form-group">
+            <label class="form-label">Cause Title <span class="required">*</span></label>
+            <input type="text" class="form-control" placeholder="e.g. Medical Emergency — Hassan Ali" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Cause Type <span class="required">*</span></label>
+            <select class="form-control" id="causeType">
+              <option value="recurring">Recurring — Regular periodic contributions</option>
+              <option value="onetime">One-time — Single collection campaign</option>
+              <option value="annual">Annual — Yearly collection (e.g. Zakat)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Category</label>
+            <select class="form-control">
+              <option>Death Support</option>
+              <option>Medical Emergency</option>
+              <option>Natural Disaster Relief</option>
+              <option>Education</option>
+              <option>Mosque / Infrastructure</option>
+              <option>Zakat / Sadaqah</option>
+              <option>Widow / Orphan Support</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Description <span class="required">*</span></label>
+            <textarea class="form-control" rows="5" placeholder="Describe the cause and what the funds will be used for..." data-maxlength="1000"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Cause Icon</label>
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;" id="emojiPicker">
+              <button type="button" class="btn btn-sm btn-outline emoji-btn" data-emoji="⚰️">⚰️</button>
+              <button type="button" class="btn btn-sm btn-outline emoji-btn" data-emoji="🏥">🏥</button>
+              <button type="button" class="btn btn-sm btn-outline emoji-btn" data-emoji="🕌">🕌</button>
+              <button type="button" class="btn btn-sm btn-outline emoji-btn" data-emoji="🌊">🌊</button>
+              <button type="button" class="btn btn-sm btn-outline emoji-btn" data-emoji="📚">📚</button>
+              <button type="button" class="btn btn-sm btn-outline emoji-btn" data-emoji="🤲">🤲</button>
+              <button type="button" class="btn btn-sm btn-outline emoji-btn" data-emoji="❤️">❤️</button>
+              <button type="button" class="btn btn-sm btn-outline emoji-btn" data-emoji="🆘">🆘</button>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:1.5rem;">
+
+          <!-- Financial Settings -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Financial Settings</div></div>
+            <div class="form-group">
+              <label class="form-label">Target Amount <span class="optional">(optional)</span></label>
+              <div style="position:relative;">
+                <span style="position:absolute;left:.875rem;top:50%;transform:translateY(-50%);color:var(--color-text-muted);font-weight:600;">£</span>
+                <input type="number" class="form-control" style="padding-left:2rem;" placeholder="e.g. 5000" min="0" />
+              </div>
+              <div class="form-hint">Leave blank for no fixed target (e.g. recurring funds).</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Contribution Amount <span class="optional">(optional)</span></label>
+              <div style="position:relative;">
+                <span style="position:absolute;left:.875rem;top:50%;transform:translateY(-50%);color:var(--color-text-muted);font-weight:600;">£</span>
+                <input type="number" class="form-control" style="padding-left:2rem;" placeholder="e.g. 500" min="0" />
+              </div>
+              <div class="form-hint">Set a fixed amount or leave blank to allow any amount.</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Frequency</label>
+              <select class="form-control">
+                <option>Monthly</option>
+                <option>Quarterly</option>
+                <option>Annually</option>
+                <option>One-off</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Dates -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Duration</div></div>
+            <div class="form-group">
+              <label class="form-label">Start Date <span class="required">*</span></label>
+              <input type="date" class="form-control" value="2026-04-01" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">End Date <span class="optional">(optional)</span></label>
+              <input type="date" class="form-control" />
+              <div class="form-hint">Leave blank for ongoing causes.</div>
+            </div>
+          </div>
+
+          <!-- Visibility -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Visibility &amp; Access</div></div>
+            <div style="display:flex;flex-direction:column;gap:.75rem;font-size:.875rem;">
+              <label class="form-check">
+                <input type="checkbox" checked />
+                <span class="form-check-label">Visible to all members</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" checked />
+                <span class="form-check-label">Require KYC verification to contribute</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" />
+                <span class="form-check-label">Require admin approval per contribution</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" checked />
+                <span class="form-check-label">Notify all members when published</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div style="display:flex;gap:.75rem;">
+            <button class="btn btn-outline w-full" onclick="saveDraft()">Save as Draft</button>
+            <button class="btn btn-primary w-full" onclick="window.location.href='publish-review.html'">Review &amp; Publish</button>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('causes', '../../');
+    renderTopbar('Create Cause', '../../');
+
+    document.querySelectorAll('.emoji-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.emoji-btn').forEach(b => {
+          b.classList.remove('btn-primary');
+          b.classList.add('btn-outline');
+        });
+        btn.classList.remove('btn-outline');
+        btn.classList.add('btn-primary');
+      });
+    });
+  });
+
+  function saveDraft() {
+    showToast('Cause saved as draft!', 'success');
+    setTimeout(() => { window.location.href = 'list.html'; }, 1200);
+  }
+</script>
+</body>
+</html>

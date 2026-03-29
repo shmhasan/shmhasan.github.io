@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contributions — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <span class="current">Contributions</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Contributions</h1>
+            <p class="page-subtitle">All member contributions across all causes</p>
+          </div>
+          <div class="page-actions">
+            <a href="contribute.html" class="btn btn-primary">+ Record Contribution</a>
+            <a href="../reports/collections.html" class="btn btn-outline">Export</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUMMARY STATS -->
+      <div class="quick-stats" style="margin-bottom:1.5rem;">
+        <div class="quick-stat-item"><div class="quick-stat-value">£38,200</div><div class="quick-stat-label">Total Collected</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-success);">£36,400</div><div class="quick-stat-label">Verified</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-warning);">£1,800</div><div class="quick-stat-label">Pending</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-text-muted);">412</div><div class="quick-stat-label">Total Entries</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-primary);">£500</div><div class="quick-stat-label">Avg. Contribution</div></div>
+      </div>
+
+      <div class="card">
+        <!-- TOOLBAR -->
+        <div class="table-toolbar">
+          <div class="table-filters">
+            <div class="search-box" style="width:240px;">
+              <span class="search-icon">🔍</span>
+              <input type="text" placeholder="Search member or cause..." data-search-table="contributionsTable" />
+            </div>
+            <select class="form-control" style="width:180px;" data-filter-table="contributionsTable" data-filter-col="2">
+              <option value="">All Causes</option>
+              <option>Death Support Fund</option>
+              <option>Medical Emergency</option>
+              <option>Mosque Renovation</option>
+              <option>Zakat 2025</option>
+            </select>
+            <select class="form-control" style="width:150px;" data-filter-table="contributionsTable" data-filter-col="4">
+              <option value="">All Statuses</option>
+              <option>Verified</option>
+              <option>Pending</option>
+              <option>Rejected</option>
+            </select>
+          </div>
+          <span class="table-count">Showing 7 of 412</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="table" id="contributionsTable">
+            <thead>
+              <tr>
+                <th>Member</th>
+                <th>Amount</th>
+                <th>Cause</th>
+                <th>Method</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar" style="background:#1B4F72;">RA</div>
+                    <div><div class="table-name"><a href="../members/detail.html">Rahim Ahmed</a></div></div>
+                  </div>
+                </td>
+                <td><strong>£500</strong></td>
+                <td class="text-sm">Death Support Fund</td>
+                <td class="text-sm text-muted">Bank Transfer</td>
+                <td><span class="badge badge-verified badge-dot">Verified</span></td>
+                <td class="text-sm text-muted">15 Mar 2026</td>
+                <td><div class="table-actions"><a href="detail.html" class="btn btn-sm btn-ghost">View</a></div></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar">SK</div>
+                    <div><div class="table-name"><a href="../members/detail.html">Sadia Karim</a></div></div>
+                  </div>
+                </td>
+                <td><strong>£500</strong></td>
+                <td class="text-sm">Death Support Fund</td>
+                <td class="text-sm text-muted">Bank Transfer</td>
+                <td><span class="badge badge-verified badge-dot">Verified</span></td>
+                <td class="text-sm text-muted">14 Mar 2026</td>
+                <td><div class="table-actions"><a href="detail.html" class="btn btn-sm btn-ghost">View</a></div></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar" style="background:#2E86AB;">FI</div>
+                    <div><div class="table-name"><a href="../members/detail.html">Farzana Islam</a></div></div>
+                  </div>
+                </td>
+                <td><strong>£500</strong></td>
+                <td class="text-sm">Death Support Fund</td>
+                <td class="text-sm text-muted">Bank Transfer</td>
+                <td><span class="badge badge-verified badge-dot">Verified</span></td>
+                <td class="text-sm text-muted">12 Mar 2026</td>
+                <td><div class="table-actions"><a href="detail.html" class="btn btn-sm btn-ghost">View</a></div></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar">IH</div>
+                    <div><div class="table-name"><a href="../members/detail.html">Imran Hossain</a></div></div>
+                  </div>
+                </td>
+                <td><strong>£500</strong></td>
+                <td class="text-sm">Death Support Fund</td>
+                <td class="text-sm text-muted">Bank Transfer</td>
+                <td><span class="badge badge-pending badge-dot">Pending</span></td>
+                <td class="text-sm text-muted">12 Mar 2026</td>
+                <td>
+                  <div class="table-actions">
+                    <a href="detail.html" class="btn btn-sm btn-ghost">View</a>
+                    <a href="review.html" class="btn btn-sm btn-outline">Review</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar" style="background:#1B4F72;">RA</div>
+                    <div><div class="table-name"><a href="../members/detail.html">Rahim Ahmed</a></div></div>
+                  </div>
+                </td>
+                <td><strong>£250</strong></td>
+                <td class="text-sm">Medical Emergency — Hassan Ali</td>
+                <td class="text-sm text-muted">Bank Transfer</td>
+                <td><span class="badge badge-verified badge-dot">Verified</span></td>
+                <td class="text-sm text-muted">28 Jan 2026</td>
+                <td><div class="table-actions"><a href="detail.html" class="btn btn-sm btn-ghost">View</a></div></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar" style="background:#148F77;">JU</div>
+                    <div><div class="table-name"><a href="../members/detail.html">Jamal Uddin</a></div></div>
+                  </div>
+                </td>
+                <td><strong>£500</strong></td>
+                <td class="text-sm">Death Support Fund</td>
+                <td class="text-sm text-muted">Bank Transfer</td>
+                <td><span class="badge badge-verified badge-dot">Verified</span></td>
+                <td class="text-sm text-muted">10 Mar 2026</td>
+                <td><div class="table-actions"><a href="detail.html" class="btn btn-sm btn-ghost">View</a></div></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar">NB</div>
+                    <div><div class="table-name"><a href="../members/detail.html">Nasreen Begum</a></div></div>
+                  </div>
+                </td>
+                <td><strong>£300</strong></td>
+                <td class="text-sm">Mosque Renovation Fund</td>
+                <td class="text-sm text-muted">Cash</td>
+                <td><span class="badge badge-pending badge-dot">Pending</span></td>
+                <td class="text-sm text-muted">18 Mar 2026</td>
+                <td>
+                  <div class="table-actions">
+                    <a href="detail.html" class="btn btn-sm btn-ghost">View</a>
+                    <a href="review.html" class="btn btn-sm btn-outline">Review</a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <span class="text-muted text-sm">Showing 7 of 412 contributions</span>
+          <div class="pagination-pages">
+            <span class="page-btn active">1</span>
+            <a href="#" class="page-btn">2</a>
+            <a href="#" class="page-btn">3</a>
+            <span style="padding:0 .25rem;color:var(--color-text-muted);">…</span>
+            <a href="#" class="page-btn">59</a>
+            <a href="#" class="page-btn" style="font-size:.75rem;">Next →</a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('contributions', '../../');
+    renderTopbar('Contributions', '../../');
+  });
+</script>
+</body>
+</html>

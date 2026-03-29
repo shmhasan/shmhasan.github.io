@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contribution Detail — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="list.html">Contributions</a>
+          <span class="sep">›</span>
+          <span class="current">CON-2026-0341</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Contribution Detail</h1>
+            <p class="page-subtitle">CON-2026-0341 · Submitted 15 Mar 2026</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-outline" onclick="showToast('Receipt downloaded','info')">Download Receipt</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="gap:1.5rem;align-items:start;">
+
+        <!-- Contribution Info -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Contribution Summary</div>
+            <span class="badge badge-verified badge-dot">Verified</span>
+          </div>
+
+          <div style="text-align:center;padding:1.5rem 0;border-bottom:1px solid var(--color-border-light);margin-bottom:1.25rem;">
+            <div style="font-size:3rem;font-weight:800;color:var(--color-primary);">£500</div>
+            <div style="font-size:.875rem;color:var(--color-text-muted);margin-top:.25rem;">Death Support Fund · March 2026</div>
+          </div>
+
+          <table style="width:100%;font-size:.875rem;border-collapse:collapse;">
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);width:150px;">Reference</td>
+              <td style="padding:.625rem 0;font-family:monospace;font-weight:600;">CON-2026-0341</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Member</td>
+              <td style="padding:.625rem 0;"><a href="../members/detail.html">Rahim Ahmed</a></td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Cause</td>
+              <td style="padding:.625rem 0;"><a href="../causes/detail.html">Death Support Fund</a></td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Amount</td>
+              <td style="padding:.625rem 0;font-weight:700;">£500.00</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Payment Method</td>
+              <td style="padding:.625rem 0;">Bank Transfer</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Payment Reference</td>
+              <td style="padding:.625rem 0;font-family:monospace;font-size:.8rem;">HSBC-20260315-4821</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Payment Date</td>
+              <td style="padding:.625rem 0;">15 Mar 2026</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Submitted On</td>
+              <td style="padding:.625rem 0;">15 Mar 2026 · 09:42</td>
+            </tr>
+            <tr>
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Notes</td>
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">March 2026 contribution</td>
+            </tr>
+          </table>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:1.5rem;">
+
+          <!-- Receipt -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Payment Receipt</div></div>
+            <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:var(--radius-md);height:160px;display:flex;align-items:center;justify-content:center;cursor:pointer;margin-bottom:.875rem;" onclick="showToast('Receipt viewer would open','info')">
+              <div style="text-align:center;color:var(--color-text-muted);">
+                <div style="font-size:2.5rem;">🏦</div>
+                <div style="font-size:.8rem;margin-top:.25rem;">bank_transfer_mar2026.jpg</div>
+                <div style="font-size:.75rem;margin-top:.125rem;">Click to view</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:.5rem;">
+              <button class="btn btn-sm btn-outline" style="flex:1;" onclick="showToast('Download started','info')">Download</button>
+              <button class="btn btn-sm btn-ghost" onclick="showToast('Zoomed','info')">🔍 Zoom</button>
+            </div>
+          </div>
+
+          <!-- Verification Info -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Verification</div></div>
+            <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.875rem;">
+              <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--color-border-light);">
+                <span style="color:var(--color-text-muted);">Status</span>
+                <span class="badge badge-verified badge-dot">Verified</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--color-border-light);">
+                <span style="color:var(--color-text-muted);">Verified By</span>
+                <span style="font-weight:500;">Farzana Islam</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--color-border-light);">
+                <span style="color:var(--color-text-muted);">Verified On</span>
+                <span style="font-weight:500;">16 Mar 2026 · 11:15</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem 0;">
+                <span style="color:var(--color-text-muted);">Reviewer Notes</span>
+                <span style="color:var(--color-text-muted);">Bank transfer confirmed</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Admin Actions -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Actions</div></div>
+            <div style="display:flex;flex-direction:column;gap:.625rem;">
+              <button class="btn btn-outline w-full" onclick="showToast('Receipt downloaded','info')">📄 Download Receipt PDF</button>
+              <button class="btn btn-ghost w-full text-danger" onclick="confirmAction('Reject this contribution? Member will be notified.',()=>showToast('Contribution rejected','warning'),'danger')">Reject Contribution</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="card" style="margin-top:1.5rem;">
+        <div class="card-header"><div class="card-title">Activity Timeline</div></div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--color-success);"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Contribution verified</div>
+              <div class="timeline-meta">Farzana Islam · 16 Mar 2026 · 11:15</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--color-primary);"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Receipt uploaded and contribution submitted</div>
+              <div class="timeline-meta">Rahim Ahmed · 15 Mar 2026 · 09:42</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('contributions', '../../');
+    renderTopbar('Contribution Detail', '../../');
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Organisation Profile — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="overview.html">Organisation</a>
+          <span class="sep">›</span>
+          <span class="current">Profile</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Organisation Profile</h1>
+            <p class="page-subtitle">Edit your organisation's public information and branding</p>
+          </div>
+          <div class="page-actions">
+            <a href="overview.html" class="btn btn-outline-muted">Cancel</a>
+            <button class="btn btn-primary" onclick="saveProfile()">Save Changes</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="gap:2rem;align-items:start;">
+
+        <!-- LEFT: FORM -->
+        <div style="grid-column: 1 / -1;">
+          <form id="profileForm">
+
+            <!-- Basic Info -->
+            <div class="card" style="margin-bottom:1.5rem;">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Basic Information</div>
+                  <div class="card-subtitle">Core details about your organisation</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Organisation Name <span class="required">*</span></label>
+                  <input type="text" class="form-control" value="Sylhet Welfare Trust" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Organisation Type <span class="required">*</span></label>
+                  <select class="form-control" required>
+                    <option selected>Welfare Association</option>
+                    <option>Mosque Fund</option>
+                    <option>Charitable Trust</option>
+                    <option>Community Group</option>
+                    <option>Religious Organisation</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Country <span class="required">*</span></label>
+                  <select class="form-control">
+                    <option selected>United Kingdom</option>
+                    <option>Bangladesh</option>
+                    <option>United States</option>
+                    <option>Canada</option>
+                    <option>Australia</option>
+                    <option>UAE</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">City</label>
+                  <input type="text" class="form-control" value="Birmingham" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Year Founded</label>
+                  <input type="number" class="form-control" value="2014" min="1900" max="2026" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Registration Number <span class="optional">(optional)</span></label>
+                  <input type="text" class="form-control" placeholder="e.g. Charity Commission #1234567" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Description</label>
+                <textarea class="form-control" rows="4" data-maxlength="600">A community-led welfare trust serving the Sylheti diaspora in the UK. We provide emergency financial support, death assistance, and educational grants to registered members and their families.</textarea>
+              </div>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="card" style="margin-bottom:1.5rem;">
+              <div class="card-header">
+                <div class="card-title">Contact Details</div>
+                <div class="card-subtitle">How members and the public can reach you</div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Contact Email</label>
+                  <input type="email" class="form-control" value="secretary@sylhetwelfare.org.uk" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Contact Phone</label>
+                  <input type="tel" class="form-control" value="+44 121 456 7890" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Website <span class="optional">(optional)</span></label>
+                <input type="url" class="form-control" placeholder="https://sylhetwelfare.org.uk" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Registered Address</label>
+                <textarea class="form-control" rows="2">42 Ladywood Road, Birmingham, B16 8SZ, United Kingdom</textarea>
+              </div>
+            </div>
+
+            <!-- Branding -->
+            <div class="card" style="margin-bottom:1.5rem;">
+              <div class="card-header">
+                <div class="card-title">Branding</div>
+                <div class="card-subtitle">Logo and visual identity</div>
+              </div>
+              <div class="form-row" style="align-items:start;">
+                <div class="form-group">
+                  <label class="form-label">Organisation Logo</label>
+                  <div class="file-upload-area" onclick="showToast('File picker would open here','info')">
+                    <div class="file-upload-icon">🕌</div>
+                    <div class="file-upload-title">Upload your logo</div>
+                    <div class="file-upload-hint">PNG or SVG, at least 200×200px. Max 2MB.</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Current Logo Preview</label>
+                  <div style="width:120px;height:120px;border:1px solid var(--color-border);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:var(--color-bg);">🕌</div>
+                  <div class="form-hint">Current logo — Sylhet Welfare Trust</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social & Links -->
+            <div class="card" style="margin-bottom:1.5rem;">
+              <div class="card-header">
+                <div class="card-title">Social Links <span class="optional" style="font-size:.8rem;font-weight:400;color:var(--color-text-muted);">optional</span></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Facebook Page</label>
+                  <div class="input-group">
+                    <span class="input-prefix" style="pointer-events:none;">facebook.com/</span>
+                    <input type="text" class="form-control has-prefix" style="padding-left:8.5rem;" placeholder="sylhetwelfaretrust" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">WhatsApp Group Link</label>
+                  <input type="url" class="form-control" placeholder="https://chat.whatsapp.com/..." />
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex;justify-content:flex-end;gap:1rem;">
+              <a href="overview.html" class="btn btn-outline-muted">Cancel</a>
+              <button type="submit" class="btn btn-primary btn-lg">Save Changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('org-overview', '../../');
+    renderTopbar('Organisation Profile', '../../');
+  });
+
+  function saveProfile() {
+    showToast('Profile saved successfully!', 'success');
+  }
+
+  document.getElementById('profileForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    saveProfile();
+  });
+</script>
+</body>
+</html>

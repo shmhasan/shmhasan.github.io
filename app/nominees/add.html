@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Nominee — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="list.html">Nominees</a>
+          <span class="sep">›</span>
+          <span class="current">Add Nominee</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Add Nominee</h1>
+            <p class="page-subtitle">Register a new nominee for a member</p>
+          </div>
+          <div class="page-actions">
+            <a href="list.html" class="btn btn-outline">Cancel</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-info" style="margin-bottom:1.5rem;">
+        <span class="alert-icon">ℹ️</span>
+        <div>Nominees must be reviewed and approved by an admin. The member will be notified once approved. You can add up to 5 nominees per member.</div>
+      </div>
+
+      <div class="grid grid-2" style="gap:1.5rem;align-items:start;">
+
+        <!-- Nominee Details -->
+        <div class="card">
+          <div class="card-header"><div class="card-title">Nominee Details</div></div>
+          <form id="nomineeForm">
+            <div class="form-group">
+              <label class="form-label">Member <span class="required">*</span></label>
+              <select class="form-control" required>
+                <option value="" disabled selected>Select a member...</option>
+                <option>Rahim Ahmed (mem-001)</option>
+                <option>Sadia Karim (mem-002)</option>
+                <option>Farzana Islam (mem-003)</option>
+                <option>Imran Hossain (mem-004)</option>
+                <option>Jamal Uddin (mem-005)</option>
+              </select>
+              <div class="form-hint">The member this nominee belongs to.</div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">First Name <span class="required">*</span></label>
+                <input type="text" class="form-control" placeholder="e.g. Fatima" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name <span class="required">*</span></label>
+                <input type="text" class="form-control" placeholder="e.g. Ahmed" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Relationship <span class="required">*</span></label>
+              <select class="form-control" required>
+                <option value="" disabled selected>Select relationship...</option>
+                <option>Spouse</option>
+                <option>Son</option>
+                <option>Daughter</option>
+                <option>Father</option>
+                <option>Mother</option>
+                <option>Brother</option>
+                <option>Sister</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Gender</label>
+                <select class="form-control">
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Prefer not to say</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" placeholder="+44 7700 000000" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" placeholder="nominee@example.com" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Address</label>
+              <textarea class="form-control" rows="2" placeholder="Full address of nominee..."></textarea>
+            </div>
+          </form>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:1.5rem;">
+
+          <!-- Identity Document -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Identity Document</div>
+                <div class="card-subtitle">Upload a copy of nominee's NID or passport</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Document Type</label>
+              <select class="form-control">
+                <option>National ID (NID)</option>
+                <option>Passport</option>
+                <option>Birth Certificate</option>
+                <option>Driving Licence</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Document Number</label>
+              <input type="text" class="form-control" placeholder="e.g. BD1234567" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Upload Document</label>
+              <div style="border:2px dashed var(--color-border);border-radius:var(--radius-md);padding:2rem;text-align:center;cursor:pointer;" onclick="showToast('File picker would open','info')">
+                <div style="font-size:2rem;margin-bottom:.5rem;">📎</div>
+                <div style="font-size:.875rem;color:var(--color-text-muted);">Click to upload or drag and drop</div>
+                <div style="font-size:.75rem;color:var(--color-text-muted);margin-top:.25rem;">JPG, PNG or PDF · Max 5MB</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Relationship Proof -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Relationship Proof <span class="optional">(recommended)</span></div>
+                <div class="card-subtitle">Marriage certificate, birth certificate, etc.</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Document Type</label>
+              <select class="form-control">
+                <option>Marriage Certificate</option>
+                <option>Birth Certificate</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div style="border:2px dashed var(--color-border);border-radius:var(--radius-md);padding:1.5rem;text-align:center;cursor:pointer;" onclick="showToast('File picker would open','info')">
+              <div style="font-size:1.5rem;margin-bottom:.25rem;">📄</div>
+              <div style="font-size:.8rem;color:var(--color-text-muted);">Upload relationship document</div>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div class="card">
+            <button class="btn btn-primary w-full" onclick="submitNominee()">Submit for Review</button>
+            <p style="font-size:.75rem;color:var(--color-text-muted);text-align:center;margin-top:.75rem;">Nominee will be added as 'Pending Review' until approved by an admin.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('nominees', '../../');
+    renderTopbar('Add Nominee', '../../');
+  });
+
+  function submitNominee() {
+    showToast('Nominee submitted for review!', 'success');
+    setTimeout(() => { window.location.href = 'list.html'; }, 1200);
+  }
+</script>
+</body>
+</html>

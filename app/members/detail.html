@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member Detail — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="list.html">Members</a>
+          <span class="sep">›</span>
+          <span class="current">Rahim Ahmed</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Rahim Ahmed</h1>
+            <p class="page-subtitle">Member since 15 Mar 2014 · mem-001</p>
+          </div>
+          <div class="page-actions">
+            <a href="profile.html" class="btn btn-outline">Edit Profile</a>
+            <button class="btn btn-ghost" onclick="showToast('Message sent','info')">Send Message</button>
+            <div class="dropdown" style="position:relative;">
+              <button class="btn btn-ghost" onclick="this.nextElementSibling.classList.toggle('show')">⋯ More</button>
+              <div class="dropdown-menu" style="right:0;">
+                <a class="dropdown-item" href="#" onclick="showToast('Export started','info');return false;">Export PDF</a>
+                <a class="dropdown-item" href="#" onclick="showToast('Contribution reminder sent','success');return false;">Send Reminder</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item text-danger" href="#" onclick="confirmAction('Suspend Rahim Ahmed?',()=>showToast('Member suspended','warning'),'danger');return false;">Suspend Member</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROFILE HEADER CARD -->
+      <div class="card" style="margin-bottom:1.5rem;">
+        <div style="display:flex;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;">
+          <div style="width:72px;height:72px;border-radius:50%;background:#1B4F72;display:flex;align-items:center;justify-content:center;color:white;font-size:1.5rem;font-weight:700;flex-shrink:0;">RA</div>
+          <div style="flex:1;min-width:200px;">
+            <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-bottom:.5rem;">
+              <h2 style="font-size:1.25rem;font-weight:700;margin:0;">Rahim Ahmed</h2>
+              <span class="badge badge-primary">Admin</span>
+              <span class="badge badge-active badge-dot">Active</span>
+              <span class="badge badge-verified badge-dot">KYC Verified</span>
+            </div>
+            <div style="display:flex;gap:1.5rem;flex-wrap:wrap;font-size:.85rem;color:var(--color-text-muted);">
+              <span>📧 rahim.ahmed@example.com</span>
+              <span>📱 +44 7700 900123</span>
+              <span>📍 Birmingham, UK</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:2rem;flex-shrink:0;flex-wrap:wrap;">
+            <div style="text-align:center;">
+              <div style="font-size:1.5rem;font-weight:700;color:var(--color-primary);">34</div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);">Contributions</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:1.5rem;font-weight:700;color:var(--color-success);">£15,800</div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);">Total Given</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:1.5rem;font-weight:700;color:var(--color-accent);">3</div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);">Nominees</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:1.5rem;font-weight:700;color:var(--color-text-muted);">12y</div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);">Member For</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABS -->
+      <div class="tabs" data-tab-group>
+        <button class="tab-btn active" data-tab-target="tab-overview">Overview</button>
+        <button class="tab-btn" data-tab-target="tab-contributions">Contributions</button>
+        <button class="tab-btn" data-tab-target="tab-nominees">Nominees</button>
+        <button class="tab-btn" data-tab-target="tab-activity">Activity</button>
+      </div>
+
+      <div data-tab-panels>
+
+        <!-- OVERVIEW TAB -->
+        <div class="tab-panel active" id="tab-overview">
+          <div class="grid grid-2" style="gap:1.5rem;align-items:start;">
+
+            <!-- Personal Details -->
+            <div class="card">
+              <div class="card-header"><div class="card-title">Personal Details</div><a href="profile.html" class="btn btn-sm btn-ghost">Edit</a></div>
+              <table style="width:100%;font-size:.875rem;border-collapse:collapse;">
+                <tr style="border-bottom:1px solid var(--color-border-light);">
+                  <td style="padding:.625rem 0;color:var(--color-text-muted);width:140px;">Full Name</td>
+                  <td style="padding:.625rem 0;font-weight:500;">Rahim Ahmed</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--color-border-light);">
+                  <td style="padding:.625rem 0;color:var(--color-text-muted);">Date of Birth</td>
+                  <td style="padding:.625rem 0;">14 May 1975</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--color-border-light);">
+                  <td style="padding:.625rem 0;color:var(--color-text-muted);">Gender</td>
+                  <td style="padding:.625rem 0;">Male</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--color-border-light);">
+                  <td style="padding:.625rem 0;color:var(--color-text-muted);">Nationality</td>
+                  <td style="padding:.625rem 0;">British-Bangladeshi</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--color-border-light);">
+                  <td style="padding:.625rem 0;color:var(--color-text-muted);">Phone</td>
+                  <td style="padding:.625rem 0;">+44 7700 900123</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--color-border-light);">
+                  <td style="padding:.625rem 0;color:var(--color-text-muted);">Email</td>
+                  <td style="padding:.625rem 0;">rahim.ahmed@example.com</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--color-border-light);">
+                  <td style="padding:.625rem 0;color:var(--color-text-muted);">Address</td>
+                  <td style="padding:.625rem 0;">42 Stratford Road, Birmingham B11 1QA</td>
+                </tr>
+                <tr>
+                  <td style="padding:.625rem 0;color:var(--color-text-muted);">Member ID</td>
+                  <td style="padding:.625rem 0;font-family:monospace;font-size:.8rem;">mem-001</td>
+                </tr>
+              </table>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:1.5rem;">
+              <!-- Membership Status -->
+              <div class="card">
+                <div class="card-header"><div class="card-title">Membership Status</div></div>
+                <div style="display:flex;flex-direction:column;gap:.75rem;font-size:.875rem;">
+                  <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--color-border-light);">
+                    <span style="color:var(--color-text-muted);">Status</span>
+                    <span class="badge badge-active badge-dot">Active</span>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--color-border-light);">
+                    <span style="color:var(--color-text-muted);">Role</span>
+                    <span class="badge badge-primary">Admin</span>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--color-border-light);">
+                    <span style="color:var(--color-text-muted);">KYC</span>
+                    <span class="badge badge-verified badge-dot">Verified</span>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--color-border-light);">
+                    <span style="color:var(--color-text-muted);">Joined</span>
+                    <span style="font-weight:500;">15 Mar 2014</span>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;padding:.5rem 0;">
+                    <span style="color:var(--color-text-muted);">Last Active</span>
+                    <span style="font-weight:500;">Today</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- KYC Summary -->
+              <div class="card">
+                <div class="card-header"><div class="card-title">KYC Documents</div><a href="../verification/member-review.html" class="btn btn-sm btn-ghost">View</a></div>
+                <div style="display:flex;flex-direction:column;gap:.625rem;font-size:.875rem;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;">
+                    <span>National ID</span>
+                    <span class="badge badge-verified badge-dot">Verified</span>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;">
+                    <span>Proof of Address</span>
+                    <span class="badge badge-verified badge-dot">Verified</span>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;">
+                    <span>Passport</span>
+                    <span class="badge badge-draft">Not Submitted</span>
+                  </div>
+                  <div style="margin-top:.5rem;padding:.5rem .75rem;background:var(--color-success-light);border-radius:var(--radius-sm);font-size:.8rem;color:var(--color-success);font-weight:600;">
+                    ✓ Identity fully verified — 15 Jan 2015
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTRIBUTIONS TAB -->
+        <div class="tab-panel" id="tab-contributions">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Contribution History</div>
+                <div class="card-subtitle">34 contributions · £15,800 total</div>
+              </div>
+              <a href="../contributions/list.html" class="btn btn-sm btn-outline">View All</a>
+            </div>
+            <div class="table-wrapper">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Cause</th>
+                    <th>Amount</th>
+                    <th>Method</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Receipt</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-sm">Death Support Fund — Mar 2026</td>
+                    <td><strong>£500</strong></td>
+                    <td class="text-sm text-muted">Bank Transfer</td>
+                    <td class="text-sm text-muted">15 Mar 2026</td>
+                    <td><span class="badge badge-verified">Verified</span></td>
+                    <td><a href="../receipts/detail.html" class="btn btn-sm btn-ghost">View</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm">Death Support Fund — Feb 2026</td>
+                    <td><strong>£500</strong></td>
+                    <td class="text-sm text-muted">Bank Transfer</td>
+                    <td class="text-sm text-muted">12 Feb 2026</td>
+                    <td><span class="badge badge-verified">Verified</span></td>
+                    <td><a href="../receipts/detail.html" class="btn btn-sm btn-ghost">View</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm">Medical Emergency — Hassan Ali</td>
+                    <td><strong>£250</strong></td>
+                    <td class="text-sm text-muted">Bank Transfer</td>
+                    <td class="text-sm text-muted">28 Jan 2026</td>
+                    <td><span class="badge badge-verified">Verified</span></td>
+                    <td><a href="../receipts/detail.html" class="btn btn-sm btn-ghost">View</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm">Death Support Fund — Jan 2026</td>
+                    <td><strong>£500</strong></td>
+                    <td class="text-sm text-muted">Bank Transfer</td>
+                    <td class="text-sm text-muted">14 Jan 2026</td>
+                    <td><span class="badge badge-verified">Verified</span></td>
+                    <td><a href="../receipts/detail.html" class="btn btn-sm btn-ghost">View</a></td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm">Zakat Collection 2025</td>
+                    <td><strong>£1,200</strong></td>
+                    <td class="text-sm text-muted">Bank Transfer</td>
+                    <td class="text-sm text-muted">5 Apr 2025</td>
+                    <td><span class="badge badge-verified">Verified</span></td>
+                    <td><a href="../receipts/detail.html" class="btn btn-sm btn-ghost">View</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="padding:.75rem 1rem;font-size:.8rem;color:var(--color-text-muted);">Showing 5 of 34 contributions</div>
+          </div>
+        </div>
+
+        <!-- NOMINEES TAB -->
+        <div class="tab-panel" id="tab-nominees">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Registered Nominees</div>
+                <div class="card-subtitle">People who may receive death support benefits</div>
+              </div>
+              <a href="../nominees/add.html" class="btn btn-sm btn-primary">+ Add Nominee</a>
+            </div>
+            <div class="table-wrapper">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Relationship</th>
+                    <th>Phone</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="table-member">
+                        <div class="table-avatar" style="background:#2E86AB;">FA</div>
+                        <div><div class="table-name">Fatima Ahmed</div><div class="table-sub">fatima.ahmed@example.com</div></div>
+                      </div>
+                    </td>
+                    <td class="text-sm">Spouse</td>
+                    <td class="text-sm text-muted">+44 7700 900200</td>
+                    <td><span class="badge badge-verified badge-dot">Verified</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="../nominees/detail.html" class="btn btn-sm btn-ghost">View</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="table-member">
+                        <div class="table-avatar">ZA</div>
+                        <div><div class="table-name">Zaid Ahmed</div><div class="table-sub">—</div></div>
+                      </div>
+                    </td>
+                    <td class="text-sm">Son</td>
+                    <td class="text-sm text-muted">—</td>
+                    <td><span class="badge badge-verified badge-dot">Verified</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="../nominees/detail.html" class="btn btn-sm btn-ghost">View</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="table-member">
+                        <div class="table-avatar">SA</div>
+                        <div><div class="table-name">Sara Ahmed</div><div class="table-sub">—</div></div>
+                      </div>
+                    </td>
+                    <td class="text-sm">Daughter</td>
+                    <td class="text-sm text-muted">—</td>
+                    <td><span class="badge badge-review badge-dot">Pending Review</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="../nominees/detail.html" class="btn btn-sm btn-ghost">View</a>
+                        <a href="../nominees/review.html" class="btn btn-sm btn-outline">Review</a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACTIVITY TAB -->
+        <div class="tab-panel" id="tab-activity">
+          <div class="card">
+            <div class="card-header"><div class="card-title">Recent Activity</div></div>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--color-success);"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Contribution verified — £500 (Mar 2026)</div>
+                  <div class="timeline-meta">Verified by Farzana Islam · 16 Mar 2026</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--color-primary);"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Contribution submitted — £500 to Death Support Fund</div>
+                  <div class="timeline-meta">15 Mar 2026</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--color-warning);"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Nominee Sara Ahmed added — pending review</div>
+                  <div class="timeline-meta">10 Mar 2026</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--color-success);"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Contribution verified — £500 (Feb 2026)</div>
+                  <div class="timeline-meta">Verified by Farzana Islam · 13 Feb 2026</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--color-primary);"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Membership request approved</div>
+                  <div class="timeline-meta">15 Mar 2014</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end tab panels -->
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('members', '../../');
+    renderTopbar('Member Detail', '../../');
+  });
+</script>
+</body>
+</html>

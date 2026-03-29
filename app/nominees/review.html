@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Review Nominee — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="list.html">Nominees</a>
+          <span class="sep">›</span>
+          <a href="detail.html">Sara Ahmed</a>
+          <span class="sep">›</span>
+          <span class="current">Review</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Review Nominee</h1>
+            <p class="page-subtitle">Sara Ahmed — submitted 10 Mar 2026 · 19 days ago</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-warning" style="margin-bottom:1.5rem;">
+        <span class="alert-icon">⚠️</span>
+        <div>This nominee is awaiting your review. Please check all submitted documents carefully before approving or rejecting.</div>
+      </div>
+
+      <div class="grid grid-2" style="gap:1.5rem;align-items:start;">
+
+        <!-- Nominee Info -->
+        <div class="card">
+          <div class="card-header"><div class="card-title">Nominee Details</div></div>
+          <table style="width:100%;font-size:.875rem;border-collapse:collapse;">
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.5rem 0;color:var(--color-text-muted);width:140px;">Name</td>
+              <td style="padding:.5rem 0;font-weight:600;">Sara Ahmed</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.5rem 0;color:var(--color-text-muted);">Relationship</td>
+              <td style="padding:.5rem 0;">Daughter</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.5rem 0;color:var(--color-text-muted);">Date of Birth</td>
+              <td style="padding:.5rem 0;">22 Aug 2004</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.5rem 0;color:var(--color-text-muted);">Gender</td>
+              <td style="padding:.5rem 0;">Female</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.5rem 0;color:var(--color-text-muted);">Phone</td>
+              <td style="padding:.5rem 0;color:var(--color-text-muted);">—</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.5rem 0;color:var(--color-text-muted);">Address</td>
+              <td style="padding:.5rem 0;">42 Stratford Road, Birmingham B11 1QA</td>
+            </tr>
+            <tr>
+              <td style="padding:.5rem 0;color:var(--color-text-muted);">Submitted By</td>
+              <td style="padding:.5rem 0;"><a href="../members/detail.html">Rahim Ahmed</a></td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Documents -->
+        <div class="card">
+          <div class="card-header"><div class="card-title">Submitted Documents</div></div>
+          <div style="display:flex;flex-direction:column;gap:.75rem;">
+
+            <div style="border:1px solid var(--color-border);border-radius:var(--radius-md);padding:1rem;">
+              <div style="font-weight:600;font-size:.875rem;margin-bottom:.5rem;">Birth Certificate</div>
+              <div style="background:var(--color-bg);border-radius:var(--radius-sm);height:100px;display:flex;align-items:center;justify-content:center;cursor:pointer;margin-bottom:.75rem;" onclick="showToast('Document viewer would open','info')">
+                <div style="text-align:center;color:var(--color-text-muted);">
+                  <div style="font-size:1.75rem;">📄</div>
+                  <div style="font-size:.75rem;">sara_birth_cert.pdf · Click to view</div>
+                </div>
+              </div>
+              <div style="display:flex;gap:.5rem;">
+                <button class="btn btn-sm btn-outline" onclick="showToast('Download started','info')">Download</button>
+                <button class="btn btn-sm btn-ghost" onclick="showToast('Zoomed in','info')">🔍 Zoom</button>
+              </div>
+            </div>
+
+            <div style="border:1px dashed var(--color-border);border-radius:var(--radius-md);padding:1rem;opacity:.65;">
+              <div style="font-weight:600;font-size:.875rem;margin-bottom:.25rem;">National ID / Passport</div>
+              <div style="font-size:.8rem;color:var(--color-text-muted);">Not submitted (under 18 — optional)</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Review Notes -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Review Notes</div>
+              <div class="card-subtitle">Visible in audit log only</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" rows="4" id="reviewNotes" placeholder="Add notes about your decision (optional)..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">If rejecting, reason:</label>
+            <select class="form-control" id="rejectReason">
+              <option value="">Select a reason...</option>
+              <option>Document unclear or illegible</option>
+              <option>Relationship not proven</option>
+              <option>Duplicate nominee</option>
+              <option>Member limit reached</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Checklist -->
+        <div class="card">
+          <div class="card-header"><div class="card-title">Reviewer Checklist</div></div>
+          <div style="display:flex;flex-direction:column;gap:.75rem;font-size:.875rem;">
+            <label class="form-check">
+              <input type="checkbox" id="chk1" />
+              <span class="form-check-label">Nominee name matches document</span>
+            </label>
+            <label class="form-check">
+              <input type="checkbox" id="chk2" />
+              <span class="form-check-label">Date of birth confirmed</span>
+            </label>
+            <label class="form-check">
+              <input type="checkbox" id="chk3" />
+              <span class="form-check-label">Relationship proven with supporting document</span>
+            </label>
+            <label class="form-check">
+              <input type="checkbox" id="chk4" />
+              <span class="form-check-label">Documents are legible and unaltered</span>
+            </label>
+            <label class="form-check">
+              <input type="checkbox" id="chk5" />
+              <span class="form-check-label">Not a duplicate of existing nominee</span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Decision Bar -->
+      <div class="approval-bar" style="margin-top:1.5rem;">
+        <div style="font-size:.875rem;color:var(--color-text-muted);">Sara Ahmed — Daughter of Rahim Ahmed</div>
+        <div style="display:flex;gap:.75rem;">
+          <button class="btn btn-ghost" onclick="window.location.href='list.html'">Skip for Now</button>
+          <button class="btn btn-outline" style="color:var(--color-danger);border-color:var(--color-danger);" onclick="rejectNominee()">✕ Reject</button>
+          <button class="btn btn-success" onclick="approveNominee()">✓ Approve Nominee</button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('nominees', '../../');
+    renderTopbar('Review Nominee', '../../');
+  });
+
+  function approveNominee() {
+    showToast('Nominee Sara Ahmed approved!', 'success');
+    setTimeout(() => { window.location.href = 'list.html'; }, 1200);
+  }
+
+  function rejectNominee() {
+    const reason = document.getElementById('rejectReason').value;
+    if (!reason) {
+      showToast('Please select a rejection reason', 'warning');
+      return;
+    }
+    showToast('Nominee rejected. Member has been notified.', 'warning');
+    setTimeout(() => { window.location.href = 'list.html'; }, 1200);
+  }
+</script>
+</body>
+</html>

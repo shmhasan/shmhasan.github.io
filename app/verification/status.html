@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verification Status — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="queue.html">Verification</a>
+          <span class="sep">›</span>
+          <span class="current">My Status</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">My Verification Status</h1>
+            <p class="page-subtitle">Track your KYC documents and verification progress</p>
+          </div>
+          <div class="page-actions">
+            <a href="upload.html" class="btn btn-primary">Upload Document</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overall Status -->
+      <div class="alert alert-success" style="margin-bottom:1.5rem;">
+        <span class="alert-icon">✅</span>
+        <div>
+          <strong>Fully Verified</strong> — Your identity has been verified. You can contribute to causes and register nominees.
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="gap:1.5rem;align-items:start;">
+
+        <!-- Status Cards -->
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+
+          <!-- What you can do -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Your Access Level</div></div>
+            <div style="display:flex;flex-direction:column;gap:.625rem;font-size:.875rem;">
+              <div style="display:flex;align-items:center;gap:.625rem;color:var(--color-success);">
+                <span>✅</span><span>View all active causes</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:.625rem;color:var(--color-success);">
+                <span>✅</span><span>Contribute to causes</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:.625rem;color:var(--color-success);">
+                <span>✅</span><span>Register nominees</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:.625rem;color:var(--color-success);">
+                <span>✅</span><span>View own contribution history</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:.625rem;color:var(--color-success);">
+                <span>✅</span><span>Receive disbursement if eligible</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Documents -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Submitted Documents</div></div>
+            <div style="display:flex;flex-direction:column;gap:.75rem;">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:.625rem;background:var(--color-success-light);border-radius:var(--radius-sm);">
+                <div>
+                  <div style="font-size:.875rem;font-weight:600;">National ID</div>
+                  <div style="font-size:.75rem;color:var(--color-text-muted);">Uploaded 12 Jan 2015</div>
+                </div>
+                <span class="badge badge-verified badge-dot">Verified</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:.625rem;background:var(--color-success-light);border-radius:var(--radius-sm);">
+                <div>
+                  <div style="font-size:.875rem;font-weight:600;">Proof of Address</div>
+                  <div style="font-size:.75rem;color:var(--color-text-muted);">Uploaded 12 Jan 2015</div>
+                </div>
+                <span class="badge badge-verified badge-dot">Verified</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:.625rem;background:var(--color-bg);border-radius:var(--radius-sm);opacity:.65;">
+                <div>
+                  <div style="font-size:.875rem;font-weight:600;">Passport <span style="font-weight:400;font-size:.75rem;">(optional)</span></div>
+                  <div style="font-size:.75rem;color:var(--color-text-muted);">Not submitted</div>
+                </div>
+                <span class="badge badge-draft">Not Submitted</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Timeline & Requirements -->
+        <div style="display:flex;flex-direction:column;gap:1.5rem;">
+
+          <div class="card">
+            <div class="card-header"><div class="card-title">Verification Timeline</div></div>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--color-success);"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Full verification complete</div>
+                  <div class="timeline-meta">15 Jan 2015</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--color-success);"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Proof of address verified</div>
+                  <div class="timeline-meta">15 Jan 2015 · Verified by Farzana Islam</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--color-success);"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">National ID verified</div>
+                  <div class="timeline-meta">15 Jan 2015 · Verified by Farzana Islam</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--color-primary);"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Documents submitted</div>
+                  <div class="timeline-meta">12 Jan 2015</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--color-primary);"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Account created</div>
+                  <div class="timeline-meta">15 Mar 2014</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header"><div class="card-title">Need Help?</div></div>
+            <p style="font-size:.875rem;color:var(--color-text-muted);margin-bottom:1rem;">If you have questions about your verification or need to update your documents, contact your organisation admin.</p>
+            <button class="btn btn-outline w-full" onclick="showToast('Message sent to admin','info')">📬 Contact Admin</button>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('verification', '../../');
+    renderTopbar('Verification Status', '../../');
+  });
+</script>
+</body>
+</html>

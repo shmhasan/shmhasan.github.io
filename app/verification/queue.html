@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verification Queue — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <span class="current">Verification</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Verification Queue</h1>
+            <p class="page-subtitle">Review pending KYC submissions for members and nominees</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUMMARY STATS -->
+      <div class="quick-stats" style="margin-bottom:1.5rem;">
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-warning);">21</div><div class="quick-stat-label">Pending Review</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-info);">3</div><div class="quick-stat-label">Member KYC</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-accent);">18</div><div class="quick-stat-label">Nominee Reviews</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-success);">186</div><div class="quick-stat-label">Verified This Year</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-text-muted);">1.4d</div><div class="quick-stat-label">Avg. Review Time</div></div>
+      </div>
+
+      <!-- TABS -->
+      <div class="tabs" data-tab-group>
+        <button class="tab-btn active" data-tab-target="tab-members">
+          Members <span class="tab-count">3</span>
+        </button>
+        <button class="tab-btn" data-tab-target="tab-nominees">
+          Nominees <span class="tab-count">18</span>
+        </button>
+      </div>
+
+      <div data-tab-panels>
+
+        <!-- MEMBER KYC -->
+        <div class="tab-panel active" id="tab-members">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Member KYC Queue</div>
+              <div class="search-box" style="width:220px;">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Search members..." data-search-table="memberKycTable" />
+              </div>
+            </div>
+            <div class="table-wrapper">
+              <table class="table" id="memberKycTable">
+                <thead>
+                  <tr>
+                    <th>Member</th>
+                    <th>Documents</th>
+                    <th>Submitted</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="table-member">
+                        <div class="table-avatar">NB</div>
+                        <div>
+                          <div class="table-name"><a href="../members/detail.html">Nasreen Begum</a></div>
+                          <div class="table-sub">nasreen.begum@example.com</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-sm">NID, Proof of Address</td>
+                    <td class="text-sm text-muted">20 Mar 2026 · 9 days ago</td>
+                    <td><span class="badge badge-review badge-dot">Under Review</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="member-review.html" class="btn btn-sm btn-primary">Review</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="table-member">
+                        <div class="table-avatar" style="background:var(--color-warning);">AK</div>
+                        <div>
+                          <div class="table-name"><a href="../members/detail.html">Abdul Karim Choudhury</a></div>
+                          <div class="table-sub">akc@example.com</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-sm text-muted">—</td>
+                    <td class="text-sm text-muted">Not submitted</td>
+                    <td><span class="badge badge-draft">Not Submitted</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button class="btn btn-sm btn-ghost" onclick="showToast('Reminder sent to Abdul Karim Choudhury','success')">Send Reminder</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="table-member">
+                        <div class="table-avatar" style="background:var(--color-success);">SR</div>
+                        <div>
+                          <div class="table-name"><a href="../members/detail.html">Shafiq Rahman</a></div>
+                          <div class="table-sub">shafiq.rahman@example.com</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-sm">NID</td>
+                    <td class="text-sm text-muted">28 Mar 2026 · 1 day ago</td>
+                    <td><span class="badge badge-review badge-dot">Under Review</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="member-review.html" class="btn btn-sm btn-primary">Review</a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOMINEE REVIEWS -->
+        <div class="tab-panel" id="tab-nominees">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Nominee Review Queue</div>
+              <div class="search-box" style="width:220px;">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Search nominees..." data-search-table="nomineeQueueTable" />
+              </div>
+            </div>
+            <div class="table-wrapper">
+              <table class="table" id="nomineeQueueTable">
+                <thead>
+                  <tr>
+                    <th>Nominee</th>
+                    <th>Member</th>
+                    <th>Relationship</th>
+                    <th>Documents</th>
+                    <th>Submitted</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><div class="table-member"><div class="table-avatar">SA</div><div><div class="table-name">Sara Ahmed</div></div></div></td>
+                    <td class="text-sm"><a href="../members/detail.html">Rahim Ahmed</a></td>
+                    <td class="text-sm">Daughter</td>
+                    <td class="text-sm">Birth Certificate</td>
+                    <td class="text-sm text-muted">10 Mar 2026</td>
+                    <td><a href="nominee-review.html" class="btn btn-sm btn-primary">Review</a></td>
+                  </tr>
+                  <tr>
+                    <td><div class="table-member"><div class="table-avatar" style="background:var(--color-danger);">AH</div><div><div class="table-name">Ayesha Hossain</div></div></div></td>
+                    <td class="text-sm"><a href="../members/detail.html">Imran Hossain</a></td>
+                    <td class="text-sm">Spouse</td>
+                    <td class="text-sm">NID, Marriage Cert.</td>
+                    <td class="text-sm text-muted">1 Mar 2026</td>
+                    <td><a href="nominee-review.html" class="btn btn-sm btn-primary">Review</a></td>
+                  </tr>
+                  <tr>
+                    <td><div class="table-member"><div class="table-avatar">TU</div><div><div class="table-name">Tasneem Uddin</div></div></div></td>
+                    <td class="text-sm"><a href="../members/detail.html">Jamal Uddin</a></td>
+                    <td class="text-sm">Spouse</td>
+                    <td class="text-sm">NID, Marriage Cert.</td>
+                    <td class="text-sm text-muted">25 Feb 2026</td>
+                    <td><a href="nominee-review.html" class="btn btn-sm btn-primary">Review</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="padding:.75rem 1rem;font-size:.8rem;color:var(--color-text-muted);">Showing 3 of 18 pending nominees</div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('verification', '../../');
+    renderTopbar('Verification Queue', '../../');
+  });
+</script>
+</body>
+</html>

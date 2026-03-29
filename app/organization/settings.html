@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Organisation Settings — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <style>
+    .setting-row { display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--color-border-light); }
+    .setting-row:last-child { border-bottom:none; }
+    .toggle { width:44px;height:24px;border-radius:12px;background:var(--color-bg-alt);border:none;cursor:pointer;position:relative;transition:background .2s; flex-shrink:0; }
+    .toggle.on { background:var(--color-primary); }
+    .toggle::after { content:'';position:absolute;width:18px;height:18px;border-radius:50%;background:white;top:3px;left:3px;transition:left .2s;box-shadow:0 1px 3px rgba(0,0,0,.2); }
+    .toggle.on::after { left:23px; }
+  </style>
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="overview.html">Organisation</a>
+          <span class="sep">›</span>
+          <span class="current">Settings</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Organisation Settings</h1>
+            <p class="page-subtitle">Configure how your organisation operates</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABS -->
+      <div class="tabs" data-tab-group>
+        <button class="tab-btn active" data-tab-target="tab-general">General</button>
+        <button class="tab-btn" data-tab-target="tab-membership">Membership</button>
+        <button class="tab-btn" data-tab-target="tab-financial">Financial</button>
+        <button class="tab-btn" data-tab-target="tab-notifications">Notifications</button>
+        <button class="tab-btn" data-tab-target="tab-danger" style="color:var(--color-danger);">Danger Zone</button>
+      </div>
+
+      <div data-tab-panels>
+
+        <!-- GENERAL -->
+        <div class="tab-panel active" id="tab-general">
+          <div class="card" style="max-width:680px;">
+            <div class="card-header"><div class="card-title">General Settings</div></div>
+            <div class="form-group">
+              <label class="form-label">Organisation Display Name</label>
+              <input type="text" class="form-control" value="Sylhet Welfare Trust" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Timezone</label>
+                <select class="form-control">
+                  <option selected>Europe/London (GMT+1)</option>
+                  <option>Asia/Dhaka (GMT+6)</option>
+                  <option>America/New_York (GMT-5)</option>
+                  <option>America/Toronto (GMT-5)</option>
+                  <option>Australia/Sydney (GMT+11)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Default Language</label>
+                <select class="form-control">
+                  <option selected>English</option>
+                  <option>Bengali (বাংলা)</option>
+                  <option>Sylheti</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Fiscal Year Start</label>
+              <select class="form-control">
+                <option>January (Jan – Dec)</option>
+                <option selected>April (Apr – Mar)</option>
+                <option>July (Jul – Jun)</option>
+              </select>
+              <div class="form-hint">Used for financial reports and year-end summaries.</div>
+            </div>
+            <button class="btn btn-primary" onclick="showToast('Settings saved!','success')">Save General Settings</button>
+          </div>
+        </div>
+
+        <!-- MEMBERSHIP -->
+        <div class="tab-panel" id="tab-membership">
+          <div class="card" style="max-width:680px;">
+            <div class="card-header"><div class="card-title">Membership Rules</div></div>
+            <div class="setting-row">
+              <div>
+                <div style="font-weight:600;font-size:.875rem;">Require admin approval for new members</div>
+                <div style="font-size:.8rem;color:var(--color-text-muted);">New join requests must be approved before the member is activated.</div>
+              </div>
+              <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+            </div>
+            <div class="setting-row">
+              <div>
+                <div style="font-weight:600;font-size:.875rem;">Require KYC verification</div>
+                <div style="font-size:.8rem;color:var(--color-text-muted);">Members must verify NID or passport before they can contribute or register nominees.</div>
+              </div>
+              <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+            </div>
+            <div class="setting-row">
+              <div>
+                <div style="font-weight:600;font-size:.875rem;">Allow nominee registration</div>
+                <div style="font-size:.8rem;color:var(--color-text-muted);">Verified members may register nominees to receive death support benefits.</div>
+              </div>
+              <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+            </div>
+            <div class="setting-row">
+              <div>
+                <div style="font-weight:600;font-size:.875rem;">Require nominee verification</div>
+                <div style="font-size:.8rem;color:var(--color-text-muted);">Nominees must be reviewed and approved by an admin.</div>
+              </div>
+              <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+            </div>
+            <div class="setting-row">
+              <div>
+                <div style="font-weight:600;font-size:.875rem;">Allow public join requests</div>
+                <div style="font-size:.8rem;color:var(--color-text-muted);">Non-members can find your organisation and send a join request.</div>
+              </div>
+              <button class="toggle" onclick="this.classList.toggle('on')"></button>
+            </div>
+            <div class="setting-row">
+              <div>
+                <div style="font-weight:600;font-size:.875rem;">Maximum nominees per member</div>
+              </div>
+              <select class="form-control" style="width:100px;">
+                <option>3</option>
+                <option selected>5</option>
+                <option>10</option>
+                <option>Unlimited</option>
+              </select>
+            </div>
+            <div style="margin-top:1.5rem;">
+              <button class="btn btn-primary" onclick="showToast('Membership settings saved!','success')">Save Membership Settings</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- FINANCIAL -->
+        <div class="tab-panel" id="tab-financial">
+          <div class="card" style="max-width:680px;">
+            <div class="card-header"><div class="card-title">Financial Configuration</div></div>
+            <div class="form-group">
+              <label class="form-label">Primary Currency</label>
+              <select class="form-control" style="max-width:300px;">
+                <option selected>GBP — British Pound (£)</option>
+                <option>BDT — Bangladeshi Taka (৳)</option>
+                <option>USD — US Dollar ($)</option>
+                <option>EUR — Euro (€)</option>
+                <option>CAD — Canadian Dollar</option>
+                <option>AUD — Australian Dollar</option>
+                <option>AED — UAE Dirham</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Accepted Payment Methods</label>
+              <div style="display:flex;flex-direction:column;gap:.5rem;">
+                <label class="form-check"><input type="checkbox" checked /><span class="form-check-label">Bank Transfer</span></label>
+                <label class="form-check"><input type="checkbox" checked /><span class="form-check-label">Cash (with receipt required)</span></label>
+                <label class="form-check"><input type="checkbox" checked /><span class="form-check-label">Mobile Banking (bKash, Nagad, Rocket)</span></label>
+                <label class="form-check"><input type="checkbox" /><span class="form-check-label">Card Payment</span></label>
+                <label class="form-check"><input type="checkbox" /><span class="form-check-label">Cheque</span></label>
+              </div>
+            </div>
+            <div class="setting-row">
+              <div>
+                <div style="font-weight:600;font-size:.875rem;">Require receipt for all contributions</div>
+                <div style="font-size:.8rem;color:var(--color-text-muted);">Members must upload proof of payment before a contribution is recorded.</div>
+              </div>
+              <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+            </div>
+            <div class="setting-row">
+              <div>
+                <div style="font-weight:600;font-size:.875rem;">Treasurer must approve contributions</div>
+                <div style="font-size:.8rem;color:var(--color-text-muted);">All contributions must be verified by the treasurer before counting.</div>
+              </div>
+              <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+            </div>
+            <div class="setting-row">
+              <div>
+                <div style="font-weight:600;font-size:.875rem;">Admin approval required for disbursements</div>
+                <div style="font-size:.8rem;color:var(--color-text-muted);">Disbursement requests must be approved by an admin before payment.</div>
+              </div>
+              <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+            </div>
+            <div style="margin-top:1.5rem;">
+              <button class="btn btn-primary" onclick="showToast('Financial settings saved!','success')">Save Financial Settings</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOTIFICATIONS -->
+        <div class="tab-panel" id="tab-notifications">
+          <div class="card" style="max-width:680px;">
+            <div class="card-header"><div class="card-title">Notification Triggers</div></div>
+            <div class="setting-row">
+              <div><div style="font-weight:600;font-size:.875rem;">New membership request</div><div style="font-size:.8rem;color:var(--color-text-muted);">Notify admins when someone requests to join.</div></div>
+              <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+            </div>
+            <div class="setting-row">
+              <div><div style="font-weight:600;font-size:.875rem;">Membership decision notification</div><div style="font-size:.8rem;color:var(--color-text-muted);">Notify applicant when approved or rejected.</div></div>
+              <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+            </div>
+            <div class="setting-row">
+              <div><div style="font-weight:600;font-size:.875rem;">Contribution submitted</div><div style="font-size:.8rem;color:var(--color-text-muted);">Notify treasurer when a new contribution is uploaded.</div></div>
+              <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+            </div>
+            <div class="setting-row">
+              <div><div style="font-weight:600;font-size:.875rem;">Contribution reviewed</div><div style="font-size:.8rem;color:var(--color-text-muted);">Notify member when contribution is approved or rejected.</div></div>
+              <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+            </div>
+            <div class="setting-row">
+              <div><div style="font-weight:600;font-size:.875rem;">Disbursement pending approval</div><div style="font-size:.8rem;color:var(--color-text-muted);">Notify admin when a disbursement request needs sign-off.</div></div>
+              <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+            </div>
+            <div class="setting-row">
+              <div><div style="font-weight:600;font-size:.875rem;">New cause published</div><div style="font-size:.8rem;color:var(--color-text-muted);">Notify all members when a new cause goes live.</div></div>
+              <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+            </div>
+            <div class="setting-row">
+              <div><div style="font-weight:600;font-size:.875rem;">Cause nearing target</div><div style="font-size:.8rem;color:var(--color-text-muted);">Notify admin when a cause reaches 80% of its goal.</div></div>
+              <button class="toggle" onclick="this.classList.toggle('on')"></button>
+            </div>
+            <div class="setting-row">
+              <div><div style="font-weight:600;font-size:.875rem;">Weekly summary email</div><div style="font-size:.8rem;color:var(--color-text-muted);">Send weekly digest to admin and treasurer.</div></div>
+              <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+            </div>
+            <div style="margin-top:1.5rem;">
+              <button class="btn btn-primary" onclick="showToast('Notification settings saved!','success')">Save Notification Settings</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- DANGER ZONE -->
+        <div class="tab-panel" id="tab-danger">
+          <div class="card" style="max-width:680px;border-color:var(--color-danger);">
+            <div class="card-header">
+              <div>
+                <div class="card-title" style="color:var(--color-danger);">Danger Zone</div>
+                <div class="card-subtitle">These actions are irreversible. Proceed with extreme caution.</div>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:1.25rem;border:1px solid var(--color-warning);border-radius:var(--radius-md);background:var(--color-warning-light);margin-bottom:1rem;">
+              <div>
+                <div style="font-weight:600;font-size:.875rem;margin-bottom:.25rem;">Suspend Organisation</div>
+                <div style="font-size:.8rem;color:var(--color-text-muted);">Temporarily disable the organisation. Members will not be able to log in. All data is preserved.</div>
+              </div>
+              <button class="btn btn-warning btn-sm" style="flex-shrink:0;margin-left:1.5rem;" onclick="confirmAction('Suspend Sylhet Welfare Trust? All members will lose access until reactivated.', () => showToast('Organisation suspended','warning'), 'danger')">Suspend Org</button>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:1.25rem;border:1px solid var(--color-danger);border-radius:var(--radius-md);background:var(--color-danger-light);">
+              <div>
+                <div style="font-weight:600;font-size:.875rem;margin-bottom:.25rem;color:var(--color-danger);">Delete Organisation</div>
+                <div style="font-size:.8rem;color:var(--color-text-muted);">Permanently delete this organisation and all associated data. This cannot be undone. All member data, contribution history, and audit logs will be lost.</div>
+              </div>
+              <button class="btn btn-danger btn-sm" style="flex-shrink:0;margin-left:1.5rem;" onclick="confirmAction('Permanently delete Sylhet Welfare Trust? This cannot be undone.', () => showToast('This action is disabled in demo mode','info'), 'danger')">Delete Org</button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end tab panels -->
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('org-overview', '../../');
+    renderTopbar('Organisation Settings', '../../');
+  });
+</script>
+</body>
+</html>

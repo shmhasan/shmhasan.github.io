@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reports — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <span class="current">Reports</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Reports</h1>
+            <p class="page-subtitle">Financial summaries and organisation analytics · FY 2025–26 (Apr–Mar)</p>
+          </div>
+          <div class="page-actions">
+            <a href="exports.html" class="btn btn-outline">Export Data</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PERIOD SELECTOR -->
+      <div class="card" style="margin-bottom:1.5rem;padding:.875rem 1.25rem;">
+        <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+          <span style="font-size:.875rem;font-weight:600;color:var(--color-text-muted);">Period:</span>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+            <button class="btn btn-sm btn-ghost" onclick="setPeriod(this)">This Month</button>
+            <button class="btn btn-sm btn-ghost" onclick="setPeriod(this)">Last Month</button>
+            <button class="btn btn-sm btn-ghost" onclick="setPeriod(this)">Last 3 Months</button>
+            <button class="btn btn-sm btn-primary" onclick="setPeriod(this)">This Year</button>
+            <button class="btn btn-sm btn-ghost" onclick="setPeriod(this)">Last Year</button>
+            <button class="btn btn-sm btn-ghost" onclick="setPeriod(this)">All Time</button>
+          </div>
+          <div style="display:flex;gap:.5rem;align-items:center;margin-left:auto;">
+            <input type="date" class="form-control" style="width:145px;font-size:.8rem;" value="2025-04-01" />
+            <span style="color:var(--color-text-muted);font-size:.875rem;">to</span>
+            <input type="date" class="form-control" style="width:145px;font-size:.8rem;" value="2026-03-30" />
+            <button class="btn btn-sm btn-outline" onclick="showToast('Custom range applied','success')">Apply</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOP-LINE KPIs -->
+      <div class="grid grid-4" style="margin-bottom:1.5rem;gap:1rem;">
+        <div class="card" style="text-align:center;padding:1.25rem;">
+          <div style="font-size:2rem;font-weight:800;color:var(--color-primary);">£38,200</div>
+          <div style="font-size:.8rem;color:var(--color-text-muted);margin-top:.25rem;">Total Collected</div>
+          <div style="font-size:.75rem;color:var(--color-success);margin-top:.375rem;">↑ 12% vs last year</div>
+        </div>
+        <div class="card" style="text-align:center;padding:1.25rem;">
+          <div style="font-size:2rem;font-weight:800;color:var(--color-danger);">£28,400</div>
+          <div style="font-size:.8rem;color:var(--color-text-muted);margin-top:.25rem;">Total Disbursed</div>
+          <div style="font-size:.75rem;color:var(--color-warning);margin-top:.375rem;">↑ 8% vs last year</div>
+        </div>
+        <div class="card" style="text-align:center;padding:1.25rem;">
+          <div style="font-size:2rem;font-weight:800;color:var(--color-success);">£9,800</div>
+          <div style="font-size:.8rem;color:var(--color-text-muted);margin-top:.25rem;">Net Balance</div>
+          <div style="font-size:.75rem;color:var(--color-success);margin-top:.375rem;">Across all causes</div>
+        </div>
+        <div class="card" style="text-align:center;padding:1.25rem;">
+          <div style="font-size:2rem;font-weight:800;color:var(--color-accent);">91%</div>
+          <div style="font-size:.8rem;color:var(--color-text-muted);margin-top:.25rem;">Collection Rate</div>
+          <div style="font-size:.75rem;color:var(--color-success);margin-top:.375rem;">194 / 214 members paid</div>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="gap:1.5rem;margin-bottom:1.5rem;">
+
+        <!-- Monthly Collections Chart -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Monthly Collections</div>
+              <div class="card-subtitle">FY 2025–26</div>
+            </div>
+            <a href="collections.html" class="btn btn-sm btn-ghost">Full Report →</a>
+          </div>
+          <div class="chart-area" id="collectionsChart" style="height:180px;display:flex;align-items:flex-end;gap:6px;padding:.5rem 0;">
+            <!-- bars rendered by JS -->
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--color-text-muted);margin-top:.5rem;padding:0 .25rem;">
+            <span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span>
+          </div>
+        </div>
+
+        <!-- Collections vs Disbursements -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Collections vs Disbursements</div>
+              <div class="card-subtitle">Last 6 months</div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.875rem;margin-top:.5rem;">
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:.375rem;">
+                <span style="color:var(--color-text-muted);">Oct 2025</span>
+                <span style="font-weight:600;">£3,100 collected · £0 disbursed</span>
+              </div>
+              <div style="display:flex;gap:4px;">
+                <div style="height:10px;background:var(--color-primary);border-radius:2px;width:62%;"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:.375rem;">
+                <span style="color:var(--color-text-muted);">Nov 2025</span>
+                <span style="font-weight:600;">£3,250 collected · £0 disbursed</span>
+              </div>
+              <div style="display:flex;gap:4px;">
+                <div style="height:10px;background:var(--color-primary);border-radius:2px;width:65%;"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:.375rem;">
+                <span style="color:var(--color-text-muted);">Dec 2025</span>
+                <span style="font-weight:600;">£3,100 collected · £0 disbursed</span>
+              </div>
+              <div style="display:flex;gap:4px;">
+                <div style="height:10px;background:var(--color-primary);border-radius:2px;width:62%;"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:.375rem;">
+                <span style="color:var(--color-text-muted);">Jan 2026</span>
+                <span style="font-weight:600;">£3,400 collected · £0 disbursed</span>
+              </div>
+              <div style="display:flex;gap:4px;">
+                <div style="height:10px;background:var(--color-primary);border-radius:2px;width:68%;"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:.375rem;">
+                <span style="color:var(--color-text-muted);">Feb 2026</span>
+                <span style="font-weight:600;">£3,200 collected · £8,500 disbursed</span>
+              </div>
+              <div style="display:flex;gap:4px;">
+                <div style="height:10px;background:var(--color-primary);border-radius:2px;width:64%;"></div>
+                <div style="height:10px;background:var(--color-danger);border-radius:2px;width:100%;opacity:.7;"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:.375rem;">
+                <span style="color:var(--color-text-muted);">Mar 2026</span>
+                <span style="font-weight:600;">£3,350 collected · £0 disbursed</span>
+              </div>
+              <div style="display:flex;gap:4px;">
+                <div style="height:10px;background:var(--color-primary);border-radius:2px;width:67%;"></div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:1rem;font-size:.75rem;margin-top:1rem;">
+            <span style="display:flex;align-items:center;gap:.375rem;"><span style="width:10px;height:10px;background:var(--color-primary);border-radius:2px;display:inline-block;"></span>Collections</span>
+            <span style="display:flex;align-items:center;gap:.375rem;"><span style="width:10px;height:10px;background:var(--color-danger);border-radius:2px;display:inline-block;"></span>Disbursements</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- REPORT LINKS -->
+      <div class="grid grid-3" style="gap:1rem;margin-bottom:1.5rem;">
+
+        <a href="collections.html" style="text-decoration:none;">
+          <div class="card" style="cursor:pointer;transition:box-shadow .15s;" onmouseover="this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.boxShadow=''">
+            <div style="display:flex;align-items:center;gap:.875rem;margin-bottom:.75rem;">
+              <div style="width:40px;height:40px;border-radius:var(--radius-md);background:var(--color-primary);display:flex;align-items:center;justify-content:center;color:white;font-size:1.1rem;">💰</div>
+              <div style="font-weight:700;">Collections Report</div>
+            </div>
+            <p style="font-size:.8rem;color:var(--color-text-muted);margin-bottom:.875rem;">Monthly and annual collection totals, per-cause breakdown, member compliance rates.</p>
+            <div style="display:flex;justify-content:space-between;font-size:.8rem;">
+              <span style="color:var(--color-text-muted);">Total this year</span>
+              <span style="font-weight:700;color:var(--color-primary);">£38,200</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="disbursements.html" style="text-decoration:none;">
+          <div class="card" style="cursor:pointer;transition:box-shadow .15s;" onmouseover="this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.boxShadow=''">
+            <div style="display:flex;align-items:center;gap:.875rem;margin-bottom:.75rem;">
+              <div style="width:40px;height:40px;border-radius:var(--radius-md);background:var(--color-danger);display:flex;align-items:center;justify-content:center;color:white;font-size:1.1rem;">📤</div>
+              <div style="font-weight:700;">Disbursements Report</div>
+            </div>
+            <p style="font-size:.8rem;color:var(--color-text-muted);margin-bottom:.875rem;">Payments made to beneficiaries, cause-level breakdown, pending approvals.</p>
+            <div style="display:flex;justify-content:space-between;font-size:.8rem;">
+              <span style="color:var(--color-text-muted);">Total this year</span>
+              <span style="font-weight:700;color:var(--color-danger);">£28,400</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="causes.html" style="text-decoration:none;">
+          <div class="card" style="cursor:pointer;transition:box-shadow .15s;" onmouseover="this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.boxShadow=''">
+            <div style="display:flex;align-items:center;gap:.875rem;margin-bottom:.75rem;">
+              <div style="width:40px;height:40px;border-radius:var(--radius-md);background:#148F77;display:flex;align-items:center;justify-content:center;color:white;font-size:1.1rem;">🎯</div>
+              <div style="font-weight:700;">Causes Report</div>
+            </div>
+            <p style="font-size:.8rem;color:var(--color-text-muted);margin-bottom:.875rem;">Per-cause progress, target vs collected, contributor counts, closure status.</p>
+            <div style="display:flex;justify-content:space-between;font-size:.8rem;">
+              <span style="color:var(--color-text-muted);">Active causes</span>
+              <span style="font-weight:700;color:#148F77;">3</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="members.html" style="text-decoration:none;">
+          <div class="card" style="cursor:pointer;transition:box-shadow .15s;" onmouseover="this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.boxShadow=''">
+            <div style="display:flex;align-items:center;gap:.875rem;margin-bottom:.75rem;">
+              <div style="width:40px;height:40px;border-radius:var(--radius-md);background:var(--color-accent);display:flex;align-items:center;justify-content:center;color:white;font-size:1.1rem;">👥</div>
+              <div style="font-weight:700;">Members Report</div>
+            </div>
+            <p style="font-size:.8rem;color:var(--color-text-muted);margin-bottom:.875rem;">Membership growth, KYC status, role distribution, contribution compliance per member.</p>
+            <div style="display:flex;justify-content:space-between;font-size:.8rem;">
+              <span style="color:var(--color-text-muted);">Total members</span>
+              <span style="font-weight:700;color:var(--color-accent);">214</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="exports.html" style="text-decoration:none;">
+          <div class="card" style="cursor:pointer;transition:box-shadow .15s;" onmouseover="this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.boxShadow=''">
+            <div style="display:flex;align-items:center;gap:.875rem;margin-bottom:.75rem;">
+              <div style="width:40px;height:40px;border-radius:var(--radius-md);background:#7F8C8D;display:flex;align-items:center;justify-content:center;color:white;font-size:1.1rem;">📥</div>
+              <div style="font-weight:700;">Export Data</div>
+            </div>
+            <p style="font-size:.8rem;color:var(--color-text-muted);margin-bottom:.875rem;">Download CSV or PDF exports for contributions, disbursements, members, and audit logs.</p>
+            <div style="font-size:.8rem;color:var(--color-text-muted);">CSV · PDF · Excel formats</div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- CAUSE BREAKDOWN TABLE -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Cause Breakdown</div>
+            <div class="card-subtitle">FY 2025–26</div>
+          </div>
+          <a href="causes.html" class="btn btn-sm btn-ghost">Full Report →</a>
+        </div>
+        <div class="table-wrapper">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Cause</th>
+                <th>Status</th>
+                <th>Collected</th>
+                <th>Disbursed</th>
+                <th>Balance</th>
+                <th>Contributors</th>
+                <th>Progress</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div style="display:flex;align-items:center;gap:.5rem;">
+                    <span>⚰️</span>
+                    <span class="text-sm" style="font-weight:600;">Death Support Fund</span>
+                  </div>
+                </td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td class="text-sm"><strong>£24,800</strong></td>
+                <td class="text-sm">£15,700</td>
+                <td class="text-sm" style="font-weight:600;color:var(--color-success);">£9,100</td>
+                <td class="text-sm text-muted">194</td>
+                <td style="width:120px;">
+                  <div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--color-primary);"></div></div>
+                  <div style="font-size:.7rem;color:var(--color-text-muted);margin-top:.25rem;">Ongoing</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="display:flex;align-items:center;gap:.5rem;">
+                    <span>🏥</span>
+                    <span class="text-sm" style="font-weight:600;">Medical Emergency — Hassan Ali</span>
+                  </div>
+                </td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td class="text-sm"><strong>£4,250</strong></td>
+                <td class="text-sm">£0</td>
+                <td class="text-sm" style="font-weight:600;color:var(--color-success);">£4,250</td>
+                <td class="text-sm text-muted">68</td>
+                <td style="width:120px;">
+                  <div class="progress-bar"><div class="progress-fill" style="width:85%;background:var(--color-success);"></div></div>
+                  <div style="font-size:.7rem;color:var(--color-text-muted);margin-top:.25rem;">85% of £5,000</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="display:flex;align-items:center;gap:.5rem;">
+                    <span>🕌</span>
+                    <span class="text-sm" style="font-weight:600;">Mosque Renovation Fund</span>
+                  </div>
+                </td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td class="text-sm"><strong>£9,150</strong></td>
+                <td class="text-sm">£0</td>
+                <td class="text-sm" style="font-weight:600;color:var(--color-success);">£9,150</td>
+                <td class="text-sm text-muted">42</td>
+                <td style="width:120px;">
+                  <div class="progress-bar"><div class="progress-fill" style="width:37%;background:var(--color-warning);"></div></div>
+                  <div style="font-size:.7rem;color:var(--color-text-muted);margin-top:.25rem;">37% of £25,000</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="display:flex;align-items:center;gap:.5rem;">
+                    <span>🤲</span>
+                    <span class="text-sm" style="font-weight:600;">Zakat Collection 2025</span>
+                  </div>
+                </td>
+                <td><span class="badge badge-closed">Closed</span></td>
+                <td class="text-sm"><strong>£18,400</strong></td>
+                <td class="text-sm">£12,700</td>
+                <td class="text-sm" style="font-weight:600;color:var(--color-text-muted);">£0</td>
+                <td class="text-sm text-muted">158</td>
+                <td style="width:120px;">
+                  <div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--color-text-muted);"></div></div>
+                  <div style="font-size:.7rem;color:var(--color-text-muted);margin-top:.25rem;">Closed</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('reports', '../../');
+    renderTopbar('Reports', '../../');
+
+    // Render monthly collections bar chart
+    const values = [2800, 3100, 2950, 3200, 3050, 2900, 3100, 3250, 3100, 3400, 3200, 3350];
+    const max = Math.max(...values);
+    const container = document.getElementById('collectionsChart');
+    values.forEach(v => {
+      const bar = document.createElement('div');
+      bar.style.cssText = `flex:1;background:var(--color-primary);border-radius:3px 3px 0 0;height:${Math.round((v/max)*100)}%;opacity:.85;cursor:pointer;transition:opacity .15s;`;
+      bar.title = `£${v.toLocaleString()}`;
+      bar.onmouseover = () => bar.style.opacity = '1';
+      bar.onmouseout = () => bar.style.opacity = '.85';
+      container.appendChild(bar);
+    });
+  });
+
+  function setPeriod(btn) {
+    document.querySelectorAll('.btn-primary.btn-sm').forEach(b => { b.classList.remove('btn-primary'); b.classList.add('btn-ghost'); });
+    btn.classList.remove('btn-ghost');
+    btn.classList.add('btn-primary');
+    showToast(`Period set to "${btn.textContent}"`, 'info');
+  }
+</script>
+</body>
+</html>

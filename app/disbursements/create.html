@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Disbursement — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="list.html">Disbursements</a>
+          <span class="sep">›</span>
+          <span class="current">New Disbursement</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Create Disbursement</h1>
+            <p class="page-subtitle">Record a new payment to a beneficiary</p>
+          </div>
+          <div class="page-actions">
+            <a href="list.html" class="btn btn-outline">Cancel</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-info" style="margin-bottom:1.5rem;">
+        <span class="alert-icon">ℹ️</span>
+        <div>Disbursements require admin approval before payment is processed. The admin will be notified to review this request.</div>
+      </div>
+
+      <div class="grid grid-2" style="gap:1.5rem;align-items:start;">
+
+        <!-- Disbursement Form -->
+        <div class="card">
+          <div class="card-header"><div class="card-title">Disbursement Details</div></div>
+
+          <div class="form-group">
+            <label class="form-label">Cause <span class="required">*</span></label>
+            <select class="form-control" required>
+              <option value="" disabled selected>Select a cause...</option>
+              <option>Death Support Fund</option>
+              <option>Medical Emergency — Hassan Ali</option>
+              <option>Mosque Renovation Fund</option>
+              <option>Widow Support — Amina Begum</option>
+              <option>Zakat Collection 2025</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Recipient Name <span class="required">*</span></label>
+            <input type="text" class="form-control" placeholder="e.g. Marium Khatun" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Recipient Type</label>
+            <select class="form-control">
+              <option>Nominee of deceased member</option>
+              <option>Medical beneficiary</option>
+              <option>Cause beneficiary</option>
+              <option>Organisation / Charity</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Amount <span class="required">*</span></label>
+            <div style="position:relative;">
+              <span style="position:absolute;left:.875rem;top:50%;transform:translateY(-50%);color:var(--color-text-muted);font-weight:600;">£</span>
+              <input type="number" class="form-control" style="padding-left:2rem;font-size:1.1rem;font-weight:600;" placeholder="0.00" min="1" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Payment Method <span class="required">*</span></label>
+            <select class="form-control">
+              <option>Bank Transfer</option>
+              <option>Cash</option>
+              <option>Mobile Banking (bKash / Nagad)</option>
+              <option>Cheque</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Proposed Payment Date</label>
+            <input type="date" class="form-control" value="2026-04-05" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Reason / Description <span class="required">*</span></label>
+            <textarea class="form-control" rows="4" placeholder="Describe why this disbursement is being made and what it covers..." required></textarea>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:1.5rem;">
+
+          <!-- Recipient Bank Details -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Recipient Bank Details</div></div>
+            <div class="form-group">
+              <label class="form-label">Account Name</label>
+              <input type="text" class="form-control" placeholder="Account holder name" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Sort Code</label>
+                <input type="text" class="form-control" placeholder="XX-XX-XX" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Account Number</label>
+                <input type="text" class="form-control" placeholder="8 digits" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Reference</label>
+              <input type="text" class="form-control" placeholder="Payment reference" value="SWT-DISB-2026" />
+            </div>
+          </div>
+
+          <!-- Supporting Documents -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Supporting Documents</div>
+                <div class="card-subtitle">e.g. death certificate, medical report, beneficiary ID</div>
+              </div>
+            </div>
+            <div style="border:2px dashed var(--color-border);border-radius:var(--radius-md);padding:1.75rem;text-align:center;cursor:pointer;" onclick="showToast('File picker would open','info')">
+              <div style="font-size:1.75rem;margin-bottom:.375rem;">📎</div>
+              <div style="font-size:.875rem;color:var(--color-text-muted);">Click to upload supporting documents</div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);margin-top:.25rem;">PDF, JPG, PNG · Max 5MB each</div>
+            </div>
+          </div>
+
+          <!-- Fund Availability Check -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Fund Availability</div></div>
+            <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.875rem;">
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-success-light);border-radius:var(--radius-sm);">
+                <span>Death Support Fund balance</span>
+                <span style="font-weight:700;color:var(--color-success);">£24,800</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-bg);border-radius:var(--radius-sm);">
+                <span style="color:var(--color-text-muted);">Pending disbursements</span>
+                <span style="font-weight:600;">−£3,500</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-bg);border-radius:var(--radius-sm);font-weight:700;">
+                <span>Available to disburse</span>
+                <span style="color:var(--color-primary);">£21,300</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div style="display:flex;flex-direction:column;gap:.625rem;">
+            <button class="btn btn-primary w-full" onclick="submitDisbursement()">Submit for Approval</button>
+            <p style="font-size:.75rem;color:var(--color-text-muted);text-align:center;">Admin will be notified to review and approve this disbursement.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('disbursements', '../../');
+    renderTopbar('Create Disbursement', '../../');
+  });
+
+  function submitDisbursement() {
+    showToast('Disbursement submitted for admin approval!', 'success');
+    setTimeout(() => { window.location.href = 'list.html'; }, 1400);
+  }
+</script>
+</body>
+</html>

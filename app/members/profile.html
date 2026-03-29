@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Profile — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="list.html">Members</a>
+          <span class="sep">›</span>
+          <a href="detail.html">Rahim Ahmed</a>
+          <span class="sep">›</span>
+          <span class="current">Edit Profile</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Edit Member Profile</h1>
+            <p class="page-subtitle">Update personal and contact details for Rahim Ahmed</p>
+          </div>
+          <div class="page-actions">
+            <a href="detail.html" class="btn btn-outline">Cancel</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="gap:1.5rem;align-items:start;">
+
+        <!-- Profile Photo -->
+        <div style="grid-column:1/-1;">
+          <div class="card">
+            <div style="display:flex;align-items:center;gap:1.5rem;">
+              <div style="width:72px;height:72px;border-radius:50%;background:#1B4F72;display:flex;align-items:center;justify-content:center;color:white;font-size:1.5rem;font-weight:700;flex-shrink:0;">RA</div>
+              <div>
+                <div style="font-weight:600;margin-bottom:.25rem;">Profile Photo</div>
+                <div style="font-size:.8rem;color:var(--color-text-muted);margin-bottom:.75rem;">JPG or PNG, maximum 2MB</div>
+                <div style="display:flex;gap:.75rem;">
+                  <button class="btn btn-sm btn-outline" onclick="showToast('Upload feature coming soon','info')">Upload Photo</button>
+                  <button class="btn btn-sm btn-ghost text-danger" onclick="showToast('Photo removed','warning')">Remove</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Information -->
+        <div class="card">
+          <div class="card-header"><div class="card-title">Personal Information</div></div>
+          <form id="profileForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">First Name <span class="required">*</span></label>
+                <input type="text" class="form-control" value="Rahim" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name <span class="required">*</span></label>
+                <input type="text" class="form-control" value="Ahmed" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Date of Birth</label>
+              <input type="date" class="form-control" value="1975-05-14" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Gender</label>
+                <select class="form-control">
+                  <option selected>Male</option>
+                  <option>Female</option>
+                  <option>Prefer not to say</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Nationality</label>
+                <input type="text" class="form-control" value="British-Bangladeshi" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Occupation</label>
+              <input type="text" class="form-control" value="Business Owner" />
+            </div>
+          </form>
+        </div>
+
+        <!-- Contact Details -->
+        <div class="card">
+          <div class="card-header"><div class="card-title">Contact Details</div></div>
+          <div class="form-group">
+            <label class="form-label">Email Address <span class="required">*</span></label>
+            <input type="email" class="form-control" value="rahim.ahmed@example.com" required />
+            <div class="form-hint">Used for login and notifications.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" value="+44 7700 900123" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Address Line 1</label>
+            <input type="text" class="form-control" value="42 Stratford Road" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Address Line 2</label>
+            <input type="text" class="form-control" value="" placeholder="Flat, floor, etc." />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">City</label>
+              <input type="text" class="form-control" value="Birmingham" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Postcode</label>
+              <input type="text" class="form-control" value="B11 1QA" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Country</label>
+            <select class="form-control">
+              <option selected>United Kingdom</option>
+              <option>Bangladesh</option>
+              <option>United States</option>
+              <option>Canada</option>
+              <option>Australia</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Emergency Contact -->
+        <div class="card">
+          <div class="card-header"><div class="card-title">Emergency Contact</div></div>
+          <div class="form-group">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" value="Fatima Ahmed" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Relationship</label>
+            <input type="text" class="form-control" value="Spouse" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone</label>
+            <input type="tel" class="form-control" value="+44 7700 900200" />
+          </div>
+        </div>
+
+        <!-- Additional Notes (Admin Only) -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Admin Notes</div>
+              <div class="card-subtitle">Internal notes — not visible to the member</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" rows="4" placeholder="Add internal notes about this member...">Co-founder of the trust. Primary admin contact since 2014.</textarea>
+          </div>
+        </div>
+
+        <!-- Save Actions -->
+        <div style="grid-column:1/-1;display:flex;gap:1rem;justify-content:flex-end;">
+          <a href="detail.html" class="btn btn-outline">Cancel</a>
+          <button class="btn btn-primary" onclick="saveProfile()">Save Changes</button>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('members', '../../');
+    renderTopbar('Edit Profile', '../../');
+  });
+
+  function saveProfile() {
+    showToast('Profile updated successfully!', 'success');
+    setTimeout(() => { window.location.href = 'detail.html'; }, 1200);
+  }
+</script>
+</body>
+</html>

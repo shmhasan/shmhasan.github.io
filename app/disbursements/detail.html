@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disbursement Detail — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="list.html">Disbursements</a>
+          <span class="sep">›</span>
+          <span class="current">DISB-2026-008</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Disbursement Detail</h1>
+            <p class="page-subtitle">DISB-2026-008 · Submitted 15 Feb 2026</p>
+          </div>
+          <div class="page-actions">
+            <a href="approve.html" class="btn btn-primary">Review &amp; Approve</a>
+            <button class="btn btn-outline" onclick="showToast('PDF downloaded','info')">Download PDF</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="gap:1.5rem;align-items:start;">
+
+        <!-- Main Details -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Disbursement Summary</div>
+            <span class="badge badge-active badge-dot">Paid</span>
+          </div>
+
+          <div style="text-align:center;padding:1.5rem 0;border-bottom:1px solid var(--color-border-light);margin-bottom:1.25rem;">
+            <div style="font-size:3rem;font-weight:800;color:var(--color-primary);">£8,500</div>
+            <div style="font-size:.875rem;color:var(--color-text-muted);margin-top:.25rem;">Death Support Fund · Jalal Miah Estate</div>
+          </div>
+
+          <table style="width:100%;font-size:.875rem;border-collapse:collapse;">
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);width:160px;">Reference</td>
+              <td style="padding:.625rem 0;font-family:monospace;font-weight:600;">DISB-2026-008</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Cause</td>
+              <td style="padding:.625rem 0;"><a href="../causes/detail.html">Death Support Fund</a></td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Recipient</td>
+              <td style="padding:.625rem 0;font-weight:600;">Marium Khatun</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Recipient Type</td>
+              <td style="padding:.625rem 0;">Nominee of Jalal Miah (mem-012)</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Amount</td>
+              <td style="padding:.625rem 0;font-weight:700;font-size:1.05rem;">£8,500.00</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Payment Method</td>
+              <td style="padding:.625rem 0;">Bank Transfer</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Payment Date</td>
+              <td style="padding:.625rem 0;">18 Feb 2026</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Submitted By</td>
+              <td style="padding:.625rem 0;">Farzana Islam (Treasurer)</td>
+            </tr>
+            <tr>
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Description</td>
+              <td style="padding:.625rem 0;color:var(--color-text-muted);">Death support payment for the family of Jalal Miah, covering funeral expenses and immediate financial relief for spouse Marium Khatun and dependants.</td>
+            </tr>
+          </table>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:1.5rem;">
+
+          <!-- Recipient Bank Details -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Recipient Bank Details</div></div>
+            <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.875rem;">
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-bg);border-radius:var(--radius-sm);">
+                <span style="color:var(--color-text-muted);">Account Name</span>
+                <span style="font-weight:600;">Marium Khatun</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-bg);border-radius:var(--radius-sm);">
+                <span style="color:var(--color-text-muted);">Sort Code</span>
+                <span style="font-weight:600;font-family:monospace;">30-91-24</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-bg);border-radius:var(--radius-sm);">
+                <span style="color:var(--color-text-muted);">Account No.</span>
+                <span style="font-weight:600;font-family:monospace;">47291083</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-bg);border-radius:var(--radius-sm);">
+                <span style="color:var(--color-text-muted);">Reference</span>
+                <span style="font-weight:600;font-family:monospace;">SWT-DISB-2026-008</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Approval Info -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Approval Record</div></div>
+            <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.875rem;">
+              <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--color-border-light);">
+                <span style="color:var(--color-text-muted);">Approved By</span>
+                <span style="font-weight:600;">Rahim Ahmed</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--color-border-light);">
+                <span style="color:var(--color-text-muted);">Approved On</span>
+                <span style="font-weight:600;">16 Feb 2026 · 14:22</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem 0;">
+                <span style="color:var(--color-text-muted);">Approval Notes</span>
+                <span style="color:var(--color-text-muted);">Verified nominee. Death cert confirmed.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Supporting Documents -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Supporting Documents</div></div>
+            <div style="display:flex;flex-direction:column;gap:.5rem;">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:.625rem;background:var(--color-bg);border-radius:var(--radius-sm);font-size:.8rem;">
+                <span>📄 death_certificate_jalal_miah.pdf</span>
+                <button class="btn btn-sm btn-ghost" onclick="showToast('Download started','info')">Download</button>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:.625rem;background:var(--color-bg);border-radius:var(--radius-sm);font-size:.8rem;">
+                <span>📄 nominee_id_marium_khatun.jpg</span>
+                <button class="btn btn-sm btn-ghost" onclick="showToast('Download started','info')">Download</button>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:.625rem;background:var(--color-bg);border-radius:var(--radius-sm);font-size:.8rem;">
+                <span>📄 bank_transfer_confirmation.pdf</span>
+                <button class="btn btn-sm btn-ghost" onclick="showToast('Download started','info')">Download</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="card" style="margin-top:1.5rem;">
+        <div class="card-header"><div class="card-title">Activity Timeline</div></div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--color-success);"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Payment confirmed — £8,500 transferred to Marium Khatun</div>
+              <div class="timeline-meta">Farzana Islam · 18 Feb 2026</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--color-success);"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Disbursement approved by admin</div>
+              <div class="timeline-meta">Rahim Ahmed · 16 Feb 2026 · 14:22</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--color-primary);"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Disbursement request submitted</div>
+              <div class="timeline-meta">Farzana Islam · 15 Feb 2026 · 10:05</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--color-danger);"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Jalal Miah passed away — disbursement triggered</div>
+              <div class="timeline-meta">10 Feb 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('disbursements', '../../');
+    renderTopbar('Disbursement Detail', '../../');
+  });
+</script>
+</body>
+</html>

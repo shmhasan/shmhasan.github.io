@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Role Management — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="overview.html">Organisation</a>
+          <span class="sep">›</span>
+          <span class="current">Roles</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Role Management</h1>
+            <p class="page-subtitle">Assign and review access roles for organisation members</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROLE CARDS -->
+      <div class="grid grid-4" style="margin-bottom:2rem;">
+        <div class="card" style="border-top:3px solid #1B4F72;">
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;">
+            <div style="width:36px;height:36px;border-radius:var(--radius-md);background:#1B4F72;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;">🔑</div>
+            <div style="font-weight:700;">Admin</div>
+          </div>
+          <p style="font-size:.8rem;color:var(--color-text-muted);margin-bottom:.875rem;">Full platform access. Manage members, causes, approvals, and organisation settings.</p>
+          <div style="font-size:.75rem;color:var(--color-text-muted);margin-bottom:.5rem;">Permissions:</div>
+          <div style="display:flex;flex-wrap:wrap;gap:.3rem;">
+            <span class="tag">Members</span><span class="tag">Causes</span><span class="tag">Verify</span><span class="tag">Settings</span><span class="tag">All actions</span>
+          </div>
+          <div style="margin-top:.875rem;padding:.5rem .75rem;background:var(--color-bg);border-radius:var(--radius-sm);font-size:.8rem;font-weight:600;color:#1B4F72;">1 member in this role</div>
+        </div>
+        <div class="card" style="border-top:3px solid #2E86AB;">
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;">
+            <div style="width:36px;height:36px;border-radius:var(--radius-md);background:#2E86AB;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;">💰</div>
+            <div style="font-weight:700;">Treasurer</div>
+          </div>
+          <p style="font-size:.8rem;color:var(--color-text-muted);margin-bottom:.875rem;">Manage contributions, verify receipts, process disbursements, and export financial reports.</p>
+          <div style="font-size:.75rem;color:var(--color-text-muted);margin-bottom:.5rem;">Permissions:</div>
+          <div style="display:flex;flex-wrap:wrap;gap:.3rem;">
+            <span class="tag">Contributions</span><span class="tag">Receipts</span><span class="tag">Disbursements</span><span class="tag">Reports</span>
+          </div>
+          <div style="margin-top:.875rem;padding:.5rem .75rem;background:var(--color-bg);border-radius:var(--radius-sm);font-size:.8rem;font-weight:600;color:#2E86AB;">1 member in this role</div>
+        </div>
+        <div class="card" style="border-top:3px solid #148F77;">
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;">
+            <div style="width:36px;height:36px;border-radius:var(--radius-md);background:#148F77;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;">🔍</div>
+            <div style="font-weight:700;">Auditor</div>
+          </div>
+          <p style="font-size:.8rem;color:var(--color-text-muted);margin-bottom:.875rem;">Read-only access to all financial data, audit logs, and reports. Cannot make changes.</p>
+          <div style="font-size:.75rem;color:var(--color-text-muted);margin-bottom:.5rem;">Permissions:</div>
+          <div style="display:flex;flex-wrap:wrap;gap:.3rem;">
+            <span class="tag">View All</span><span class="tag">Audit Log</span><span class="tag">Reports</span><span class="tag">Export</span>
+          </div>
+          <div style="margin-top:.875rem;padding:.5rem .75rem;background:var(--color-bg);border-radius:var(--radius-sm);font-size:.8rem;font-weight:600;color:#148F77;">1 member in this role</div>
+        </div>
+        <div class="card" style="border-top:3px solid #7F8C8D;">
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;">
+            <div style="width:36px;height:36px;border-radius:var(--radius-md);background:#7F8C8D;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;">👤</div>
+            <div style="font-weight:700;">Member</div>
+          </div>
+          <p style="font-size:.8rem;color:var(--color-text-muted);margin-bottom:.875rem;">Contribute to causes, manage own nominees, view own profile and contribution history.</p>
+          <div style="font-size:.75rem;color:var(--color-text-muted);margin-bottom:.5rem;">Permissions:</div>
+          <div style="display:flex;flex-wrap:wrap;gap:.3rem;">
+            <span class="tag">Contribute</span><span class="tag">Nominees</span><span class="tag">Own profile</span>
+          </div>
+          <div style="margin-top:.875rem;padding:.5rem .75rem;background:var(--color-bg);border-radius:var(--radius-sm);font-size:.8rem;font-weight:600;color:#7F8C8D;">211 members in this role</div>
+        </div>
+      </div>
+
+      <!-- MEMBER ROLES TABLE -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Member Role Assignments</div>
+            <div class="card-subtitle">View and change roles for all active members</div>
+          </div>
+          <div class="table-filters">
+            <div class="search-box" style="width:220px;">
+              <span class="search-icon">🔍</span>
+              <input type="text" placeholder="Search members..." data-search-table="rolesTable" />
+            </div>
+            <select class="form-control" style="width:160px;" data-filter-table="rolesTable" data-filter-col="2">
+              <option value="">All Roles</option>
+              <option>Admin</option>
+              <option>Treasurer</option>
+              <option>Auditor</option>
+              <option>Member</option>
+            </select>
+          </div>
+        </div>
+        <div class="table-wrapper">
+          <table class="table" id="rolesTable">
+            <thead>
+              <tr>
+                <th>Member</th>
+                <th>Email</th>
+                <th>Current Role</th>
+                <th>Status</th>
+                <th>Since</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="table-member"><div class="table-avatar" style="background:#1B4F72;">RA</div><div><div class="table-name">Rahim Ahmed</div></div></div></td>
+                <td class="text-muted text-sm">rahim.ahmed@example.com</td>
+                <td><span class="badge badge-primary">Admin</span></td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td class="text-muted text-sm">15 Mar 2014</td>
+                <td><button class="btn btn-sm btn-ghost" disabled>Cannot change own role</button></td>
+              </tr>
+              <tr>
+                <td><div class="table-member"><div class="table-avatar" style="background:#2E86AB;">FI</div><div><div class="table-name">Farzana Islam</div></div></div></td>
+                <td class="text-muted text-sm">farzana.islam@example.com</td>
+                <td><span class="badge badge-review">Treasurer</span></td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td class="text-muted text-sm">10 Jan 2016</td>
+                <td><button class="btn btn-sm btn-outline" data-modal-open="changeRoleModal" onclick="setRoleTarget('Farzana Islam','treasurer')">Change Role</button></td>
+              </tr>
+              <tr>
+                <td><div class="table-member"><div class="table-avatar" style="background:#148F77;">JU</div><div><div class="table-name">Jamal Uddin</div></div></div></td>
+                <td class="text-muted text-sm">jamal.uddin@example.com</td>
+                <td><span class="badge badge-verified">Auditor</span></td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td class="text-muted text-sm">1 Apr 2019</td>
+                <td><button class="btn btn-sm btn-outline" data-modal-open="changeRoleModal" onclick="setRoleTarget('Jamal Uddin','auditor')">Change Role</button></td>
+              </tr>
+              <tr>
+                <td><div class="table-member"><div class="table-avatar">SK</div><div><div class="table-name">Sadia Karim</div></div></div></td>
+                <td class="text-muted text-sm">sadia.karim@example.com</td>
+                <td><span class="badge badge-draft">Member</span></td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td class="text-muted text-sm">22 Jun 2015</td>
+                <td><button class="btn btn-sm btn-outline" data-modal-open="changeRoleModal" onclick="setRoleTarget('Sadia Karim','member')">Change Role</button></td>
+              </tr>
+              <tr>
+                <td><div class="table-member"><div class="table-avatar">IH</div><div><div class="table-name">Imran Hossain</div></div></div></td>
+                <td class="text-muted text-sm">imran.hossain@example.com</td>
+                <td><span class="badge badge-draft">Member</span></td>
+                <td><span class="badge badge-active badge-dot">Active</span></td>
+                <td class="text-muted text-sm">5 Sep 2017</td>
+                <td><button class="btn btn-sm btn-outline" data-modal-open="changeRoleModal" onclick="setRoleTarget('Imran Hossain','member')">Change Role</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <span>Showing 5 of 214 members</span>
+          <div class="pagination-pages">
+            <span class="page-btn active">1</span>
+            <a href="#" class="page-btn">2</a>
+            <a href="#" class="page-btn">3</a>
+            <span style="padding:0 .25rem;color:var(--color-text-muted);">…</span>
+            <a href="#" class="page-btn">22</a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- CHANGE ROLE MODAL -->
+<div class="modal-overlay" id="changeRoleModal">
+  <div class="modal modal-sm">
+    <div class="modal-header">
+      <h3 class="modal-title">Change Role</h3>
+      <button class="modal-close" data-modal-close>✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:.875rem;color:var(--color-text-muted);margin-bottom:1.25rem;">Changing role for: <strong id="roleTargetName">—</strong></p>
+      <div class="form-group">
+        <label class="form-label">New Role</label>
+        <select class="form-control" id="newRoleSelect">
+          <option value="admin">Admin — Full access</option>
+          <option value="treasurer">Treasurer — Finance access</option>
+          <option value="auditor">Auditor — Read-only</option>
+          <option value="member" selected>Member — Standard</option>
+        </select>
+      </div>
+      <div class="alert alert-warning" style="margin-top:.75rem;">
+        <span class="alert-icon">⚠️</span>
+        <div style="font-size:.8rem;">Changing a role takes effect immediately. The member will be notified.</div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline-muted" data-modal-close>Cancel</button>
+      <button class="btn btn-primary" onclick="confirmRoleChange()">Save Role</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('roles', '../../');
+    renderTopbar('Role Management', '../../');
+  });
+
+  function setRoleTarget(name, currentRole) {
+    document.getElementById('roleTargetName').textContent = name;
+    document.getElementById('newRoleSelect').value = currentRole;
+  }
+
+  function confirmRoleChange() {
+    const name = document.getElementById('roleTargetName').textContent;
+    const role = document.getElementById('newRoleSelect').value;
+    closeModal('changeRoleModal');
+    showToast(`Role updated to "${role}" for ${name}`, 'success');
+  }
+</script>
+</body>
+</html>

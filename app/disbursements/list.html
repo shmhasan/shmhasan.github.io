@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disbursements — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <span class="current">Disbursements</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Disbursements</h1>
+            <p class="page-subtitle">Payments made to beneficiaries from cause funds</p>
+          </div>
+          <div class="page-actions">
+            <a href="create.html" class="btn btn-primary">+ New Disbursement</a>
+            <a href="../reports/disbursements.html" class="btn btn-outline">Export</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUMMARY STATS -->
+      <div class="quick-stats" style="margin-bottom:1.5rem;">
+        <div class="quick-stat-item"><div class="quick-stat-value">£28,400</div><div class="quick-stat-label">Total Disbursed</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-success);">£24,900</div><div class="quick-stat-label">Paid</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-warning);">£3,500</div><div class="quick-stat-label">Pending Approval</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-text-muted);">18</div><div class="quick-stat-label">Total Records</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-primary);">£1,578</div><div class="quick-stat-label">Avg. Disbursement</div></div>
+      </div>
+
+      <div class="card">
+        <div class="table-toolbar">
+          <div class="table-filters">
+            <div class="search-box" style="width:240px;">
+              <span class="search-icon">🔍</span>
+              <input type="text" placeholder="Search recipient or cause..." data-search-table="disbursementsTable" />
+            </div>
+            <select class="form-control" style="width:180px;" data-filter-table="disbursementsTable" data-filter-col="2">
+              <option value="">All Causes</option>
+              <option>Death Support Fund</option>
+              <option>Medical Emergency</option>
+              <option>Mosque Renovation</option>
+            </select>
+            <select class="form-control" style="width:160px;" data-filter-table="disbursementsTable" data-filter-col="4">
+              <option value="">All Statuses</option>
+              <option>Paid</option>
+              <option>Pending Approval</option>
+              <option>Approved</option>
+              <option>Rejected</option>
+            </select>
+          </div>
+          <span class="table-count">Showing 5 of 18</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="table" id="disbursementsTable">
+            <thead>
+              <tr>
+                <th>Recipient</th>
+                <th>Amount</th>
+                <th>Cause</th>
+                <th>Method</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar" style="background:var(--color-accent);">MK</div>
+                    <div>
+                      <div class="table-name">Marium Khatun</div>
+                      <div class="table-sub">Nominee of Jalal Miah (mem-012)</div>
+                    </div>
+                  </div>
+                </td>
+                <td><strong>£8,500</strong></td>
+                <td class="text-sm">Death Support Fund</td>
+                <td class="text-sm text-muted">Bank Transfer</td>
+                <td><span class="badge badge-active badge-dot">Paid</span></td>
+                <td class="text-sm text-muted">18 Feb 2026</td>
+                <td><div class="table-actions"><a href="detail.html" class="btn btn-sm btn-ghost">View</a></div></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar">HF</div>
+                    <div>
+                      <div class="table-name">Hassan Ali Family</div>
+                      <div class="table-sub">Medical Emergency beneficiary</div>
+                    </div>
+                  </div>
+                </td>
+                <td><strong>£3,500</strong></td>
+                <td class="text-sm">Medical Emergency — Hassan Ali</td>
+                <td class="text-sm text-muted">Bank Transfer</td>
+                <td><span class="badge badge-pending badge-dot">Pending Approval</span></td>
+                <td class="text-sm text-muted">25 Mar 2026</td>
+                <td>
+                  <div class="table-actions">
+                    <a href="detail.html" class="btn btn-sm btn-ghost">View</a>
+                    <a href="approve.html" class="btn btn-sm btn-primary">Approve</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar">AB</div>
+                    <div>
+                      <div class="table-name">Amina Begum</div>
+                      <div class="table-sub">Widow Support beneficiary</div>
+                    </div>
+                  </div>
+                </td>
+                <td><strong>£3,200</strong></td>
+                <td class="text-sm">Widow Support — Amina Begum</td>
+                <td class="text-sm text-muted">Bank Transfer</td>
+                <td><span class="badge badge-active badge-dot">Paid</span></td>
+                <td class="text-sm text-muted">15 Jan 2026</td>
+                <td><div class="table-actions"><a href="detail.html" class="btn btn-sm btn-ghost">View</a></div></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar">KU</div>
+                    <div>
+                      <div class="table-name">Kamal Uddin Estate</div>
+                      <div class="table-sub">Nominee of Kamal Uddin (mem-047)</div>
+                    </div>
+                  </div>
+                </td>
+                <td><strong>£7,200</strong></td>
+                <td class="text-sm">Death Support Fund</td>
+                <td class="text-sm text-muted">Bank Transfer</td>
+                <td><span class="badge badge-active badge-dot">Paid</span></td>
+                <td class="text-sm text-muted">20 Sep 2025</td>
+                <td><div class="table-actions"><a href="detail.html" class="btn btn-sm btn-ghost">View</a></div></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar" style="background:var(--color-success);">ZF</div>
+                    <div>
+                      <div class="table-name">Zakat Fund Recipients</div>
+                      <div class="table-sub">Multiple beneficiaries — Zakat 2025</div>
+                    </div>
+                  </div>
+                </td>
+                <td><strong>£6,500</strong></td>
+                <td class="text-sm">Zakat Collection 2025</td>
+                <td class="text-sm text-muted">Bank Transfer</td>
+                <td><span class="badge badge-active badge-dot">Paid</span></td>
+                <td class="text-sm text-muted">5 May 2025</td>
+                <td><div class="table-actions"><a href="detail.html" class="btn btn-sm btn-ghost">View</a></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <span class="text-muted text-sm">Showing 5 of 18 disbursements</span>
+          <div class="pagination-pages">
+            <span class="page-btn active">1</span>
+            <a href="#" class="page-btn">2</a>
+            <a href="#" class="page-btn">3</a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('disbursements', '../../');
+    renderTopbar('Disbursements', '../../');
+  });
+</script>
+</body>
+</html>

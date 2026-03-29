@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nominee Documents — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="list.html">Nominees</a>
+          <span class="sep">›</span>
+          <a href="detail.html">Fatima Ahmed</a>
+          <span class="sep">›</span>
+          <span class="current">Documents</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Nominee Documents</h1>
+            <p class="page-subtitle">Identity and relationship documents for Fatima Ahmed</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-primary" onclick="showToast('Upload feature coming soon','info')">+ Upload Document</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="gap:1.5rem;">
+
+        <!-- National ID -->
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <div>
+              <div style="font-weight:700;font-size:.95rem;">National ID (NID)</div>
+              <div style="font-size:.8rem;color:var(--color-text-muted);">Uploaded 12 Jan 2015</div>
+            </div>
+            <span class="badge badge-verified badge-dot">Verified</span>
+          </div>
+          <!-- Document preview placeholder -->
+          <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:var(--radius-md);height:160px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;cursor:pointer;" onclick="showToast('Document viewer would open','info')">
+            <div style="text-align:center;color:var(--color-text-muted);">
+              <div style="font-size:2.5rem;">🪪</div>
+              <div style="font-size:.8rem;margin-top:.25rem;">nom_fa_nid.jpg</div>
+              <div style="font-size:.75rem;margin-top:.25rem;">Click to view</div>
+            </div>
+          </div>
+          <div style="font-size:.8rem;margin-bottom:.75rem;">
+            <div style="display:flex;justify-content:space-between;padding:.25rem 0;">
+              <span style="color:var(--color-text-muted);">Document No.</span>
+              <span style="font-family:monospace;">BD-9876543</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:.25rem 0;">
+              <span style="color:var(--color-text-muted);">File Size</span>
+              <span>1.2 MB</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:.25rem 0;">
+              <span style="color:var(--color-text-muted);">Verified By</span>
+              <span>Rahim Ahmed</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:.25rem 0;">
+              <span style="color:var(--color-text-muted);">Verified On</span>
+              <span>15 Jan 2015</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:.5rem;">
+            <button class="btn btn-sm btn-outline" style="flex:1;" onclick="showToast('Download started','info')">Download</button>
+            <button class="btn btn-sm btn-ghost text-danger" onclick="confirmAction('Remove this document?',()=>showToast('Document removed','warning'),'danger')">Remove</button>
+          </div>
+        </div>
+
+        <!-- Marriage Certificate -->
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <div>
+              <div style="font-weight:700;font-size:.95rem;">Marriage Certificate</div>
+              <div style="font-size:.8rem;color:var(--color-text-muted);">Uploaded 12 Jan 2015</div>
+            </div>
+            <span class="badge badge-verified badge-dot">Verified</span>
+          </div>
+          <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:var(--radius-md);height:160px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;cursor:pointer;" onclick="showToast('Document viewer would open','info')">
+            <div style="text-align:center;color:var(--color-text-muted);">
+              <div style="font-size:2.5rem;">📄</div>
+              <div style="font-size:.8rem;margin-top:.25rem;">marriage_cert.pdf</div>
+              <div style="font-size:.75rem;margin-top:.25rem;">Click to view</div>
+            </div>
+          </div>
+          <div style="font-size:.8rem;margin-bottom:.75rem;">
+            <div style="display:flex;justify-content:space-between;padding:.25rem 0;">
+              <span style="color:var(--color-text-muted);">Document Type</span>
+              <span>Marriage Certificate</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:.25rem 0;">
+              <span style="color:var(--color-text-muted);">File Size</span>
+              <span>890 KB</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:.25rem 0;">
+              <span style="color:var(--color-text-muted);">Verified By</span>
+              <span>Rahim Ahmed</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:.25rem 0;">
+              <span style="color:var(--color-text-muted);">Verified On</span>
+              <span>15 Jan 2015</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:.5rem;">
+            <button class="btn btn-sm btn-outline" style="flex:1;" onclick="showToast('Download started','info')">Download</button>
+            <button class="btn btn-sm btn-ghost text-danger" onclick="confirmAction('Remove this document?',()=>showToast('Document removed','warning'),'danger')">Remove</button>
+          </div>
+        </div>
+
+        <!-- Upload New -->
+        <div class="card" style="border:2px dashed var(--color-border);cursor:pointer;" onclick="showToast('Upload feature coming soon','info')">
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;gap:.75rem;color:var(--color-text-muted);">
+            <div style="font-size:2rem;">➕</div>
+            <div style="font-weight:600;font-size:.875rem;">Upload Another Document</div>
+            <div style="font-size:.8rem;text-align:center;">Add any supporting documents such as birth certificate, guardian proof, or other identity documents.</div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('nominees', '../../');
+    renderTopbar('Nominee Documents', '../../');
+  });
+</script>
+</body>
+</html>

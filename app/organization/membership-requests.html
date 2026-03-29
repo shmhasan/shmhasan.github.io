@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Membership Requests — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <style>
+    .request-card { background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;margin-bottom:1rem;transition:box-shadow .15s; }
+    .request-card:hover { box-shadow:var(--shadow-sm); }
+    .request-header { display:flex;align-items:flex-start;gap:1rem;margin-bottom:.875rem; }
+    .request-avatar { width:44px;height:44px;border-radius:50%;background:var(--color-primary);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.875rem;flex-shrink:0; }
+    .request-msg { font-size:.8rem;color:var(--color-text-muted);background:var(--color-bg);border-left:3px solid var(--color-border);padding:.625rem .875rem;border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin-bottom:.875rem;font-style:italic; }
+  </style>
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="overview.html">Organisation</a>
+          <span class="sep">›</span>
+          <span class="current">Membership Requests</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Membership Requests</h1>
+            <p class="page-subtitle">Review and approve new member applications</p>
+          </div>
+          <div class="page-actions">
+            <a href="invite-member.html" class="btn btn-primary">+ Invite Member</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABS -->
+      <div class="tabs" data-tab-group>
+        <button class="tab-btn active" data-tab-target="tab-pending">
+          Pending <span class="tab-count">3</span>
+        </button>
+        <button class="tab-btn" data-tab-target="tab-approved">
+          Approved <span class="tab-count">1</span>
+        </button>
+        <button class="tab-btn" data-tab-target="tab-rejected">
+          Rejected <span class="tab-count">1</span>
+        </button>
+      </div>
+
+      <div data-tab-panels>
+
+        <!-- PENDING -->
+        <div class="tab-panel active" id="tab-pending">
+          <div class="alert alert-warning" style="margin-bottom:1.5rem;">
+            <span class="alert-icon">⚠️</span>
+            <div>3 requests are awaiting your review. Pending requests expire after 30 days.</div>
+            <button class="alert-dismiss">✕</button>
+          </div>
+
+          <!-- Request 1 -->
+          <div class="request-card" id="req-001">
+            <div class="request-header">
+              <div class="request-avatar">TM</div>
+              <div style="flex:1;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                  <div>
+                    <div style="font-weight:700;font-size:.95rem;">Tarek Miah</div>
+                    <div style="font-size:.8rem;color:var(--color-text-muted);">tarek.miah@example.com · +44 7800 100200</div>
+                  </div>
+                  <div style="text-align:right;">
+                    <span class="badge badge-pending badge-dot">Pending</span>
+                    <div style="font-size:.75rem;color:var(--color-text-muted);margin-top:.25rem;">27 Mar 2026 · 2 hours ago</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="request-msg">"I am a long-time resident of the Birmingham Bangladeshi community and would like to join to support the welfare activities."</div>
+            <div data-action-group style="display:flex;gap:.75rem;align-items:center;">
+              <button class="btn btn-success btn-sm" data-action="approve" data-label="Tarek Miah's membership request">✓ Approve</button>
+              <button class="btn btn-outline btn-sm" style="color:var(--color-danger);border-color:var(--color-danger);" data-action="reject" data-label="Tarek Miah's membership request">✕ Reject</button>
+              <button class="btn btn-ghost btn-sm" onclick="showToast('Message sent to Tarek Miah','info')">💬 Send Message</button>
+              <span style="margin-left:auto;font-size:.75rem;color:var(--color-text-muted);">No prior history</span>
+            </div>
+          </div>
+
+          <!-- Request 2 -->
+          <div class="request-card" id="req-002">
+            <div class="request-header">
+              <div class="request-avatar" style="background:var(--color-accent);">MK</div>
+              <div style="flex:1;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                  <div>
+                    <div style="font-weight:700;font-size:.95rem;">Marium Khatun</div>
+                    <div style="font-size:.8rem;color:var(--color-text-muted);">marium.k@example.com · +44 7800 100300</div>
+                  </div>
+                  <div style="text-align:right;">
+                    <span class="badge badge-pending badge-dot">Pending</span>
+                    <div style="font-size:.75rem;color:var(--color-text-muted);margin-top:.25rem;">26 Mar 2026 · Yesterday</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="request-msg">"My late husband was a member. I would like to continue the family connection and contribute."</div>
+            <div class="alert alert-info" style="margin-bottom:.75rem;padding:.5rem .875rem;">
+              <span class="alert-icon" style="font-size:.9rem;">ℹ️</span>
+              <div style="font-size:.8rem;">Family connection: Late husband was member Jalal Miah (mem-012, deceased).</div>
+            </div>
+            <div data-action-group style="display:flex;gap:.75rem;align-items:center;">
+              <button class="btn btn-success btn-sm" data-action="approve" data-label="Marium Khatun's membership request">✓ Approve</button>
+              <button class="btn btn-outline btn-sm" style="color:var(--color-danger);border-color:var(--color-danger);" data-action="reject" data-label="Marium Khatun's membership request">✕ Reject</button>
+              <button class="btn btn-ghost btn-sm" onclick="showToast('Message sent','info')">💬 Send Message</button>
+            </div>
+          </div>
+
+          <!-- Request 3 -->
+          <div class="request-card" id="req-003">
+            <div class="request-header">
+              <div class="request-avatar" style="background:var(--color-success);">SR</div>
+              <div style="flex:1;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                  <div>
+                    <div style="font-weight:700;font-size:.95rem;">Shafiq Rahman</div>
+                    <div style="font-size:.8rem;color:var(--color-text-muted);">shafiq.rahman@example.com · +44 7800 100400</div>
+                  </div>
+                  <div style="text-align:right;">
+                    <span class="badge badge-pending badge-dot">Pending</span>
+                    <div style="font-size:.75rem;color:var(--color-text-muted);margin-top:.25rem;">24 Mar 2026 · 5 days ago</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="request-msg">"Referred by brother Rahim Ahmed. Keen to contribute to the death support fund."</div>
+            <div class="alert alert-success" style="margin-bottom:.75rem;padding:.5rem .875rem;">
+              <span class="alert-icon" style="font-size:.9rem;">✅</span>
+              <div style="font-size:.8rem;">Referred by Rahim Ahmed (Admin) — verified referral.</div>
+            </div>
+            <div data-action-group style="display:flex;gap:.75rem;align-items:center;">
+              <button class="btn btn-success btn-sm" data-action="approve" data-label="Shafiq Rahman's membership request">✓ Approve</button>
+              <button class="btn btn-outline btn-sm" style="color:var(--color-danger);border-color:var(--color-danger);" data-action="reject" data-label="Shafiq Rahman's membership request">✕ Reject</button>
+              <button class="btn btn-ghost btn-sm" onclick="showToast('Message sent','info')">💬 Send Message</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- APPROVED -->
+        <div class="tab-panel" id="tab-approved">
+          <div class="table-wrapper">
+            <table class="table">
+              <thead>
+                <tr><th>Member</th><th>Email</th><th>Requested</th><th>Approved</th><th>Approved By</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><div class="table-member"><div class="table-avatar">DK</div><div><div class="table-name">Dilnoza Khanom</div></div></div></td>
+                  <td class="text-muted text-sm">dilnoza.k@example.com</td>
+                  <td class="text-muted text-sm">20 Mar 2026</td>
+                  <td class="text-muted text-sm">20 Mar 2026</td>
+                  <td class="text-sm">Rahim Ahmed</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- REJECTED -->
+        <div class="tab-panel" id="tab-rejected">
+          <div class="table-wrapper">
+            <table class="table">
+              <thead>
+                <tr><th>Applicant</th><th>Email</th><th>Requested</th><th>Rejected</th><th>Actions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><div class="table-member"><div class="table-avatar">KC</div><div><div class="table-name">Kabir Chowdhury</div></div></div></td>
+                  <td class="text-muted text-sm">kabir.c@example.com</td>
+                  <td class="text-muted text-sm">18 Mar 2026</td>
+                  <td class="text-muted text-sm">19 Mar 2026</td>
+                  <td><button class="btn btn-sm btn-ghost" onclick="showToast('Reconsideration opened','info')">Reconsider</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('membership', '../../');
+    renderTopbar('Membership Requests', '../../');
+  });
+</script>
+</body>
+</html>

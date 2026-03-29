@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member KYC Review — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="queue.html">Verification</a>
+          <span class="sep">›</span>
+          <span class="current">Member Review — Nasreen Begum</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Member KYC Review</h1>
+            <p class="page-subtitle">Nasreen Begum · Submitted 20 Mar 2026</p>
+          </div>
+          <div class="page-actions">
+            <a href="queue.html" class="btn btn-outline">Back to Queue</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-warning" style="margin-bottom:1.5rem;">
+        <span class="alert-icon">⚠️</span>
+        <div>Review all documents carefully. Once approved, the member will be able to contribute to causes and register nominees.</div>
+      </div>
+
+      <div class="grid grid-2" style="gap:1.5rem;align-items:start;">
+
+        <!-- Member Info -->
+        <div class="card">
+          <div class="card-header"><div class="card-title">Member Profile</div></div>
+          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem;">
+            <div style="width:52px;height:52px;border-radius:50%;background:var(--color-primary);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;">NB</div>
+            <div>
+              <div style="font-weight:700;">Nasreen Begum</div>
+              <div style="font-size:.8rem;color:var(--color-text-muted);">nasreen.begum@example.com</div>
+              <div style="font-size:.8rem;color:var(--color-text-muted);">+44 7700 900987 · mem-006</div>
+            </div>
+          </div>
+          <table style="width:100%;font-size:.875rem;border-collapse:collapse;">
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.5rem 0;color:var(--color-text-muted);width:130px;">Date of Birth</td>
+              <td style="padding:.5rem 0;">12 Sep 1982</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.5rem 0;color:var(--color-text-muted);">Nationality</td>
+              <td style="padding:.5rem 0;">British-Bangladeshi</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.5rem 0;color:var(--color-text-muted);">Address</td>
+              <td style="padding:.5rem 0;">18 Lozells Road, Birmingham B19 2TA</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-light);">
+              <td style="padding:.5rem 0;color:var(--color-text-muted);">Joined</td>
+              <td style="padding:.5rem 0;">14 Feb 2025</td>
+            </tr>
+            <tr>
+              <td style="padding:.5rem 0;color:var(--color-text-muted);">Current Status</td>
+              <td style="padding:.5rem 0;"><span class="badge badge-review badge-dot">Under Review</span></td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Submitted Documents -->
+        <div class="card">
+          <div class="card-header"><div class="card-title">Submitted Documents</div></div>
+          <div style="display:flex;flex-direction:column;gap:.875rem;">
+
+            <div style="border:1px solid var(--color-border);border-radius:var(--radius-md);padding:1rem;">
+              <div style="font-weight:600;font-size:.875rem;margin-bottom:.5rem;">National ID (NID)</div>
+              <div style="background:var(--color-bg);border-radius:var(--radius-sm);height:120px;display:flex;align-items:center;justify-content:center;cursor:pointer;margin-bottom:.75rem;" onclick="showToast('Document viewer would open','info')">
+                <div style="text-align:center;color:var(--color-text-muted);">
+                  <div style="font-size:2rem;">🪪</div>
+                  <div style="font-size:.75rem;">nb_nid.jpg · 1.4MB · Click to view</div>
+                </div>
+              </div>
+              <div style="display:flex;gap:.5rem;">
+                <button class="btn btn-sm btn-outline" onclick="showToast('Download started','info')">Download</button>
+                <button class="btn btn-sm btn-ghost" onclick="showToast('Zoomed','info')">🔍 Zoom</button>
+              </div>
+            </div>
+
+            <div style="border:1px solid var(--color-border);border-radius:var(--radius-md);padding:1rem;">
+              <div style="font-weight:600;font-size:.875rem;margin-bottom:.5rem;">Proof of Address</div>
+              <div style="background:var(--color-bg);border-radius:var(--radius-sm);height:120px;display:flex;align-items:center;justify-content:center;cursor:pointer;margin-bottom:.75rem;" onclick="showToast('Document viewer would open','info')">
+                <div style="text-align:center;color:var(--color-text-muted);">
+                  <div style="font-size:2rem;">📄</div>
+                  <div style="font-size:.75rem;">nb_proof_address.pdf · 780KB · Click to view</div>
+                </div>
+              </div>
+              <div style="display:flex;gap:.5rem;">
+                <button class="btn btn-sm btn-outline" onclick="showToast('Download started','info')">Download</button>
+                <button class="btn btn-sm btn-ghost" onclick="showToast('Zoomed','info')">🔍 Zoom</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Checklist -->
+        <div class="card">
+          <div class="card-header"><div class="card-title">Verification Checklist</div></div>
+          <div style="display:flex;flex-direction:column;gap:.75rem;font-size:.875rem;">
+            <label class="form-check"><input type="checkbox" /><span class="form-check-label">Name on document matches registered name</span></label>
+            <label class="form-check"><input type="checkbox" /><span class="form-check-label">Date of birth confirmed</span></label>
+            <label class="form-check"><input type="checkbox" /><span class="form-check-label">Document is valid and not expired</span></label>
+            <label class="form-check"><input type="checkbox" /><span class="form-check-label">Photo is clear and identifiable</span></label>
+            <label class="form-check"><input type="checkbox" /><span class="form-check-label">Proof of address matches registered address</span></label>
+            <label class="form-check"><input type="checkbox" /><span class="form-check-label">Documents appear unaltered/genuine</span></label>
+          </div>
+        </div>
+
+        <!-- Decision -->
+        <div class="card">
+          <div class="card-header"><div class="card-title">Review Decision</div></div>
+          <div class="form-group">
+            <label class="form-label">Notes (internal)</label>
+            <textarea class="form-control" rows="3" placeholder="Add review notes..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">If rejecting, select reason:</label>
+            <select class="form-control" id="memberRejectReason">
+              <option value="">Select reason...</option>
+              <option>Document unclear or illegible</option>
+              <option>Name mismatch</option>
+              <option>Document expired</option>
+              <option>Address mismatch</option>
+              <option>Suspected fraud</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+            <button class="btn btn-outline w-full" style="color:var(--color-danger);border-color:var(--color-danger);" onclick="rejectMember()">✕ Reject KYC</button>
+            <button class="btn btn-success w-full" onclick="approveMember()">✓ Approve KYC</button>
+          </div>
+          <div class="form-hint" style="text-align:center;margin-top:.75rem;">Member will be notified by email of your decision.</div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('verification', '../../');
+    renderTopbar('Member KYC Review', '../../');
+  });
+
+  function approveMember() {
+    showToast('KYC approved! Nasreen Begum is now verified.', 'success');
+    setTimeout(() => { window.location.href = 'queue.html'; }, 1200);
+  }
+
+  function rejectMember() {
+    const reason = document.getElementById('memberRejectReason').value;
+    if (!reason) { showToast('Please select a rejection reason','warning'); return; }
+    showToast('KYC rejected. Member notified.', 'warning');
+    setTimeout(() => { window.location.href = 'queue.html'; }, 1200);
+  }
+</script>
+</body>
+</html>

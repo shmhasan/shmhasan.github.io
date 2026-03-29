@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contribute — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="../causes/list.html">Causes</a>
+          <span class="sep">›</span>
+          <a href="../causes/detail.html">Death Support Fund</a>
+          <span class="sep">›</span>
+          <span class="current">Contribute</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Make a Contribution</h1>
+            <p class="page-subtitle">Death Support Fund · April 2026</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="gap:1.5rem;align-items:start;">
+
+        <!-- Contribution Form -->
+        <div class="card">
+          <div class="card-header"><div class="card-title">Contribution Details</div></div>
+
+          <div class="form-group">
+            <label class="form-label">Cause <span class="required">*</span></label>
+            <select class="form-control">
+              <option selected>Death Support Fund (Recurring)</option>
+              <option>Medical Emergency — Hassan Ali</option>
+              <option>Mosque Renovation Fund</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Amount <span class="required">*</span></label>
+            <div style="position:relative;">
+              <span style="position:absolute;left:.875rem;top:50%;transform:translateY(-50%);color:var(--color-text-muted);font-weight:600;">£</span>
+              <input type="number" class="form-control" id="amountInput" style="padding-left:2rem;font-size:1.25rem;font-weight:700;" value="500" min="1" />
+            </div>
+            <div style="display:flex;gap:.5rem;margin-top:.625rem;">
+              <button type="button" class="btn btn-sm btn-outline" onclick="setAmount(100)">£100</button>
+              <button type="button" class="btn btn-sm btn-outline" onclick="setAmount(250)">£250</button>
+              <button type="button" class="btn btn-sm btn-primary" onclick="setAmount(500)">£500</button>
+              <button type="button" class="btn btn-sm btn-outline" onclick="setAmount(1000)">£1,000</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Payment Method <span class="required">*</span></label>
+            <select class="form-control" id="paymentMethod" onchange="toggleReceiptHint()">
+              <option value="bank">Bank Transfer</option>
+              <option value="cash">Cash</option>
+              <option value="mobile">Mobile Banking (bKash / Nagad)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Payment Date <span class="required">*</span></label>
+            <input type="date" class="form-control" value="2026-03-29" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Payment Reference <span class="optional">(optional)</span></label>
+            <input type="text" class="form-control" placeholder="e.g. bank transfer reference, transaction ID" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Upload Receipt <span class="required">*</span></label>
+            <div style="border:2px dashed var(--color-border);border-radius:var(--radius-md);padding:1.75rem;text-align:center;cursor:pointer;transition:border-color .2s;" onclick="showToast('File picker would open','info')" onmouseover="this.style.borderColor='var(--color-primary)'" onmouseout="this.style.borderColor='var(--color-border)'">
+              <div style="font-size:1.75rem;margin-bottom:.375rem;">📎</div>
+              <div style="font-size:.875rem;color:var(--color-text-muted);">Click to upload proof of payment</div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);margin-top:.25rem;">JPG, PNG or PDF · Max 5MB</div>
+            </div>
+            <div class="form-hint" id="receiptHint">A receipt or screenshot of the bank transfer is required for verification.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Notes <span class="optional">(optional)</span></label>
+            <textarea class="form-control" rows="2" placeholder="Any additional notes for the treasurer..."></textarea>
+          </div>
+
+          <button class="btn btn-primary w-full" style="font-size:1rem;padding:.875rem;" onclick="submitContribution()">Submit Contribution</button>
+          <p style="font-size:.75rem;color:var(--color-text-muted);text-align:center;margin-top:.75rem;">Your contribution will be reviewed by the treasurer before being counted.</p>
+        </div>
+
+        <!-- Side Info -->
+        <div style="display:flex;flex-direction:column;gap:1.5rem;">
+
+          <!-- Cause Summary -->
+          <div class="card">
+            <div class="card-header">
+              <div style="display:flex;align-items:center;gap:.625rem;">
+                <span style="font-size:1.25rem;">⚰️</span>
+                <div class="card-title">Death Support Fund</div>
+              </div>
+              <span class="badge badge-active badge-dot">Active</span>
+            </div>
+            <p style="font-size:.875rem;color:var(--color-text-muted);line-height:1.6;margin-bottom:1rem;">Monthly contributions to support families of deceased members. Every member contributes £500 per month.</p>
+            <div style="display:flex;justify-content:space-between;font-size:.875rem;padding:.5rem 0;border-top:1px solid var(--color-border-light);">
+              <span style="color:var(--color-text-muted);">Your last contribution</span>
+              <span style="font-weight:600;">£500 · 15 Mar 2026</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:.875rem;padding:.5rem 0;border-top:1px solid var(--color-border-light);">
+              <span style="color:var(--color-text-muted);">Your total contributed</span>
+              <span style="font-weight:600;color:var(--color-primary);">£15,800</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:.875rem;padding:.5rem 0;border-top:1px solid var(--color-border-light);">
+              <span style="color:var(--color-text-muted);">This month collected</span>
+              <span style="font-weight:600;">194 / 214 members</span>
+            </div>
+          </div>
+
+          <!-- Bank Details -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Bank Transfer Details</div></div>
+            <div style="font-size:.875rem;display:flex;flex-direction:column;gap:.5rem;">
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-bg);border-radius:var(--radius-sm);">
+                <span style="color:var(--color-text-muted);">Account Name</span>
+                <span style="font-weight:600;">Sylhet Welfare Trust</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-bg);border-radius:var(--radius-sm);">
+                <span style="color:var(--color-text-muted);">Sort Code</span>
+                <span style="font-weight:600;font-family:monospace;">20-45-11</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-bg);border-radius:var(--radius-sm);">
+                <span style="color:var(--color-text-muted);">Account No.</span>
+                <span style="font-weight:600;font-family:monospace;">83741920</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:.5rem;background:var(--color-bg);border-radius:var(--radius-sm);">
+                <span style="color:var(--color-text-muted);">Reference</span>
+                <span style="font-weight:600;font-family:monospace;">MEM001-APR26</span>
+              </div>
+            </div>
+            <button class="btn btn-sm btn-outline w-full" style="margin-top:.875rem;" onclick="showToast('Bank details copied','success')">📋 Copy Details</button>
+          </div>
+
+          <!-- What happens next -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">What Happens Next?</div></div>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--color-primary);"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">You submit this form</div>
+                  <div class="timeline-meta">Contribution recorded as Pending</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--color-warning);"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Treasurer reviews your receipt</div>
+                  <div class="timeline-meta">Usually within 1–2 business days</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--color-success);"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Contribution verified</div>
+                  <div class="timeline-meta">You receive a confirmation notification</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('contributions', '../../');
+    renderTopbar('Contribute', '../../');
+  });
+
+  function setAmount(val) {
+    document.getElementById('amountInput').value = val;
+    document.querySelectorAll('.btn-sm.btn-primary').forEach(b => { b.classList.remove('btn-primary'); b.classList.add('btn-outline'); });
+    event.target.classList.remove('btn-outline');
+    event.target.classList.add('btn-primary');
+  }
+
+  function submitContribution() {
+    showToast('Contribution submitted! Awaiting treasurer review.', 'success');
+    setTimeout(() => { window.location.href = 'list.html'; }, 1400);
+  }
+</script>
+</body>
+</html>

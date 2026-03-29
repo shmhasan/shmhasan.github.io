@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verification Status — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="list.html">Members</a>
+          <span class="sep">›</span>
+          <a href="detail.html">Rahim Ahmed</a>
+          <span class="sep">›</span>
+          <span class="current">Verification Status</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Verification Status</h1>
+            <p class="page-subtitle">KYC and identity verification for Rahim Ahmed</p>
+          </div>
+          <div class="page-actions">
+            <a href="../verification/upload.html" class="btn btn-primary">Upload Document</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- OVERALL STATUS BANNER -->
+      <div class="alert alert-success" style="margin-bottom:1.5rem;">
+        <span class="alert-icon">✅</span>
+        <div>
+          <strong>Fully Verified</strong> — All required documents have been reviewed and approved. This member is authorised to contribute and register nominees.
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="gap:1.5rem;align-items:start;">
+
+        <!-- Documents -->
+        <div class="card">
+          <div class="card-header"><div class="card-title">Submitted Documents</div></div>
+          <div style="display:flex;flex-direction:column;gap:1rem;">
+
+            <!-- NID -->
+            <div style="border:1px solid var(--color-border);border-radius:var(--radius-md);padding:1rem;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.75rem;">
+                <div>
+                  <div style="font-weight:600;font-size:.875rem;">National ID (NID)</div>
+                  <div style="font-size:.8rem;color:var(--color-text-muted);">Uploaded 12 Jan 2015</div>
+                </div>
+                <span class="badge badge-verified badge-dot">Verified</span>
+              </div>
+              <div style="background:var(--color-bg);border-radius:var(--radius-sm);padding:.75rem;font-size:.8rem;color:var(--color-text-muted);display:flex;justify-content:space-between;align-items:center;">
+                <span>📄 nid_rahim_ahmed.jpg</span>
+                <button class="btn btn-sm btn-ghost" onclick="showToast('Document opened','info')">View</button>
+              </div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);margin-top:.5rem;">Verified by Farzana Islam on 15 Jan 2015</div>
+            </div>
+
+            <!-- Proof of Address -->
+            <div style="border:1px solid var(--color-border);border-radius:var(--radius-md);padding:1rem;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.75rem;">
+                <div>
+                  <div style="font-weight:600;font-size:.875rem;">Proof of Address</div>
+                  <div style="font-size:.8rem;color:var(--color-text-muted);">Uploaded 12 Jan 2015</div>
+                </div>
+                <span class="badge badge-verified badge-dot">Verified</span>
+              </div>
+              <div style="background:var(--color-bg);border-radius:var(--radius-sm);padding:.75rem;font-size:.8rem;color:var(--color-text-muted);display:flex;justify-content:space-between;align-items:center;">
+                <span>📄 utility_bill_jan2015.pdf</span>
+                <button class="btn btn-sm btn-ghost" onclick="showToast('Document opened','info')">View</button>
+              </div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);margin-top:.5rem;">Verified by Farzana Islam on 15 Jan 2015</div>
+            </div>
+
+            <!-- Passport — not submitted -->
+            <div style="border:1px dashed var(--color-border);border-radius:var(--radius-md);padding:1rem;opacity:.65;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem;">
+                <div>
+                  <div style="font-weight:600;font-size:.875rem;">Passport <span style="font-weight:400;font-size:.75rem;">(optional)</span></div>
+                  <div style="font-size:.8rem;color:var(--color-text-muted);">Not submitted</div>
+                </div>
+                <span class="badge badge-draft">Not Submitted</span>
+              </div>
+              <a href="../verification/upload.html" class="btn btn-sm btn-outline" style="margin-top:.5rem;">Upload Passport</a>
+            </div>
+
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:1.5rem;">
+
+          <!-- KYC Checklist -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Verification Checklist</div></div>
+            <div style="display:flex;flex-direction:column;gap:.75rem;">
+              <div style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;">
+                <span style="color:var(--color-success);font-size:1rem;">✅</span>
+                <span>Identity document submitted</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;">
+                <span style="color:var(--color-success);font-size:1rem;">✅</span>
+                <span>Identity document verified by admin</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;">
+                <span style="color:var(--color-success);font-size:1rem;">✅</span>
+                <span>Proof of address submitted</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;">
+                <span style="color:var(--color-success);font-size:1rem;">✅</span>
+                <span>Proof of address verified by admin</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;">
+                <span style="color:var(--color-success);font-size:1rem;">✅</span>
+                <span>Member activated</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;">
+                <span style="color:var(--color-success);font-size:1rem;">✅</span>
+                <span>Allowed to contribute to causes</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;">
+                <span style="color:var(--color-success);font-size:1rem;">✅</span>
+                <span>Allowed to register nominees</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Verification History -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Verification History</div></div>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--color-success);"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Proof of address verified</div>
+                  <div class="timeline-meta">Farzana Islam · 15 Jan 2015</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--color-success);"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">National ID verified</div>
+                  <div class="timeline-meta">Farzana Islam · 15 Jan 2015</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--color-primary);"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Documents uploaded</div>
+                  <div class="timeline-meta">Rahim Ahmed · 12 Jan 2015</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--color-primary);"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Account created</div>
+                  <div class="timeline-meta">15 Mar 2014</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Admin Actions (admin only) -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Admin Actions</div></div>
+            <div style="display:flex;flex-direction:column;gap:.75rem;">
+              <a href="../verification/member-review.html" class="btn btn-outline w-full">View Full KYC Review</a>
+              <button class="btn btn-ghost w-full text-danger" onclick="confirmAction('Revoke KYC verification for Rahim Ahmed? This will prevent contributions and nominee registration.',()=>showToast('KYC revoked','warning'),'danger')">Revoke Verification</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('members', '../../');
+    renderTopbar('Verification Status', '../../');
+  });
+</script>
+</body>
+</html>

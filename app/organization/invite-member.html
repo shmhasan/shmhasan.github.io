@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invite Member — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="overview.html">Organisation</a>
+          <span class="sep">›</span>
+          <span class="current">Invite Member</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Invite Member</h1>
+            <p class="page-subtitle">Add new members to Sylhet Welfare Trust</p>
+          </div>
+          <div class="page-actions">
+            <a href="membership-requests.html" class="btn btn-outline">View Requests</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="gap:1.5rem;align-items:start;margin-bottom:2rem;">
+
+        <!-- Email Invite -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">📧 Invite by Email</div>
+              <div class="card-subtitle">Send a personal invitation to a specific person</div>
+            </div>
+          </div>
+          <form id="inviteForm">
+            <div class="form-group">
+              <label class="form-label">Full Name <span class="required">*</span></label>
+              <input type="text" class="form-control" placeholder="e.g. Karim Chowdhury" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address <span class="required">*</span></label>
+              <input type="email" class="form-control" placeholder="karim@example.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Assign Role</label>
+              <select class="form-control">
+                <option selected>Member</option>
+                <option>Treasurer</option>
+                <option>Auditor</option>
+                <option>Admin</option>
+              </select>
+              <div class="form-hint">You can change this after they join.</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Personal Message <span class="optional">(optional)</span></label>
+              <textarea class="form-control" rows="3" placeholder="Add a personal note to your invitation..." data-maxlength="300">Assalamu Alaikum, I'd like to invite you to join Sylhet Welfare Trust on Ummah Platform. Please use the link below to create your account and join our community.</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-full">Send Invitation</button>
+          </form>
+        </div>
+
+        <!-- Share Link -->
+        <div style="display:flex;flex-direction:column;gap:1.5rem;">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">🔗 Share Invite Link</div>
+                <div class="card-subtitle">Anyone with this link can request to join</div>
+              </div>
+            </div>
+            <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:.875rem 1rem;font-size:.8rem;font-family:monospace;word-break:break-all;color:var(--color-text-muted);margin-bottom:1rem;">
+              https://ummahplatform.com/join/SWT-2026-K8M3P
+            </div>
+            <div style="display:flex;gap:.75rem;">
+              <button class="btn btn-primary" style="flex:1;" onclick="copyLink()">📋 Copy Link</button>
+              <button class="btn btn-outline" onclick="showToast('Link regenerated!','success')">🔄 Regenerate</button>
+            </div>
+            <div class="form-hint" style="margin-top:.75rem;">This link expires in 30 days. Members who join via this link will need admin approval.</div>
+          </div>
+
+          <!-- Bulk Invite -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">📋 Bulk Invite</div>
+                <div class="card-subtitle">Invite multiple people at once</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Addresses</label>
+              <textarea class="form-control" rows="5" placeholder="Enter one email per line:&#10;rahim@example.com&#10;sadia@example.com&#10;imran@example.com"></textarea>
+              <div class="form-hint">One email address per line. Maximum 50 per batch.</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Assign Role (for all)</label>
+              <select class="form-control">
+                <option selected>Member</option>
+                <option>Auditor</option>
+              </select>
+            </div>
+            <button class="btn btn-outline w-full" onclick="showToast('Bulk invitations sent!','success')">Send Bulk Invitations</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RECENT INVITES -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Recent Invitations</div>
+          <span class="text-muted text-sm">Last 30 days</span>
+        </div>
+        <div class="table-wrapper">
+          <table class="table" id="invitesTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Sent</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="table-member"><div class="table-avatar">DK</div><div><div class="table-name">Dilnoza Khanom</div></div></div></td>
+                <td class="text-muted text-sm">dilnoza.k@example.com</td>
+                <td><span class="badge badge-info">Member</span></td>
+                <td class="text-muted text-sm">20 Mar 2026</td>
+                <td><span class="badge badge-active badge-dot">Joined</span></td>
+                <td><span class="text-muted text-sm">—</span></td>
+              </tr>
+              <tr>
+                <td><div class="table-member"><div class="table-avatar">TM</div><div><div class="table-name">Tarek Miah</div></div></div></td>
+                <td class="text-muted text-sm">tarek.miah@example.com</td>
+                <td><span class="badge badge-info">Member</span></td>
+                <td class="text-muted text-sm">25 Mar 2026</td>
+                <td><span class="badge badge-pending badge-dot">Pending</span></td>
+                <td><div class="table-actions"><button class="btn btn-sm btn-ghost text-danger" onclick="showToast('Invitation revoked','warning')">Revoke</button></div></td>
+              </tr>
+              <tr>
+                <td><div class="table-member"><div class="table-avatar">SR</div><div><div class="table-name">Shafiq Rahman</div></div></div></td>
+                <td class="text-muted text-sm">shafiq.rahman@example.com</td>
+                <td><span class="badge badge-info">Member</span></td>
+                <td class="text-muted text-sm">24 Mar 2026</td>
+                <td><span class="badge badge-pending badge-dot">Pending</span></td>
+                <td><div class="table-actions"><button class="btn btn-sm btn-ghost text-danger" onclick="showToast('Invitation revoked','warning')">Revoke</button></div></td>
+              </tr>
+              <tr>
+                <td><div class="table-member"><div class="table-avatar">NB</div><div><div class="table-name">Nasreen Begum</div></div></div></td>
+                <td class="text-muted text-sm">nasreen.b@example.com</td>
+                <td><span class="badge badge-info">Member</span></td>
+                <td class="text-muted text-sm">14 Feb 2026</td>
+                <td><span class="badge badge-active badge-dot">Joined</span></td>
+                <td><span class="text-muted text-sm">—</span></td>
+              </tr>
+              <tr>
+                <td><div class="table-member"><div class="table-avatar">KC</div><div><div class="table-name">Kabir Chowdhury</div></div></div></td>
+                <td class="text-muted text-sm">kabir.c@example.com</td>
+                <td><span class="badge badge-info">Member</span></td>
+                <td class="text-muted text-sm">10 Feb 2026</td>
+                <td><span class="badge badge-rejected badge-dot">Rejected</span></td>
+                <td><button class="btn btn-sm btn-ghost" onclick="showToast('Invitation resent!','success')">Resend</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('membership', '../../');
+    renderTopbar('Invite Member', '../../');
+  });
+
+  function copyLink() {
+    navigator.clipboard?.writeText('https://ummahplatform.com/join/SWT-2026-K8M3P')
+      .catch(() => {});
+    showToast('Invite link copied to clipboard!', 'success');
+  }
+
+  document.getElementById('inviteForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('[type=submit]');
+    btn.disabled = true; btn.textContent = 'Sending...';
+    setTimeout(() => {
+      btn.disabled = false; btn.textContent = 'Send Invitation';
+      showToast('Invitation sent successfully!', 'success');
+      this.reset();
+    }, 900);
+  });
+</script>
+</body>
+</html>
