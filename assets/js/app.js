@@ -146,6 +146,46 @@ function initRoleSwitcher() {
   });
 }
 
+/* ============================================================
+   3B. THEME SWITCHER (Default / Mono)
+   ============================================================ */
+function getTheme() {
+  return localStorage.getItem('uiTheme') || 'default';
+}
+
+function applyTheme(theme) {
+  const links = Array.from(document.querySelectorAll('link[rel="stylesheet"]'));
+  const main = links.find(l => (l.getAttribute('href') || '').includes('assets/css/styles'));
+  if (!main) return;
+
+  const href = main.getAttribute('href') || '';
+  const baseHref = href.includes('styles-mono.css')
+    ? href.replace('styles-mono.css', 'styles.css')
+    : href;
+
+  const nextHref = theme === 'mono'
+    ? baseHref.replace('styles.css', 'styles-mono.css')
+    : baseHref;
+
+  if (href !== nextHref) main.setAttribute('href', nextHref);
+  document.documentElement.setAttribute('data-theme', theme);
+}
+
+function initThemeSwitcher() {
+  applyTheme(getTheme());
+
+  const switcher = document.getElementById('themeSwitcher');
+  if (!switcher) return;
+
+  switcher.value = getTheme();
+  switcher.addEventListener('change', (e) => {
+    const theme = e.target.value;
+    localStorage.setItem('uiTheme', theme);
+    applyTheme(theme);
+    showToast(`Theme set to ${theme === 'mono' ? 'Mono' : 'Default'}`, 'info');
+  });
+}
+
 function applyRole(role) {
   const cfg = ROLE_CONFIGS[role];
   if (!cfg) return;
@@ -645,6 +685,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSidebar();
   initActiveNav();
   initRoleSwitcher();
+  initThemeSwitcher();
   initModals();
   initTabs();
   initSearch();
@@ -755,6 +796,13 @@ function renderTopbar(pageTitle, baseUrl = '') {
     </div>
     <div class="topbar-right">
       <div class="role-switcher">
+        <span>Theme:</span>
+        <select id="themeSwitcher">
+          <option value="default">Default</option>
+          <option value="mono">Mono</option>
+        </select>
+      </div>
+      <div class="role-switcher">
         <span>Demo:</span>
         <select id="roleSwitcher">
           <option value="admin">Admin</option>
@@ -778,6 +826,7 @@ function renderTopbar(pageTitle, baseUrl = '') {
 
   // Re-init role switcher after inject
   initRoleSwitcher();
+  initThemeSwitcher();
   initTopbarSearch();
   initSidebar();
 }
