@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Settings — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <span class="current">Settings</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Profile Settings</h1>
+            <p class="page-subtitle">Manage your personal information and profile</p>
+          </div>
+          <div class="page-actions">
+            <a href="security.html" class="btn btn-outline">Security</a>
+            <a href="preferences.html" class="btn btn-outline">Preferences</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-3" style="gap:1.5rem;">
+        <div class="card" style="grid-column:span 2;">
+          <div class="card-header">
+            <div class="card-title">Personal Details</div>
+          </div>
+          <div class="card-body">
+            <form data-simulate>
+              <div class="grid grid-2" style="gap:1rem;">
+                <div class="form-group">
+                  <label class="form-label">First Name</label>
+                  <input class="form-control" value="Rahim" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Last Name</label>
+                  <input class="form-control" value="Ahmed" />
+                </div>
+              </div>
+              <div class="grid grid-2" style="gap:1rem;">
+                <div class="form-group">
+                  <label class="form-label">Email</label>
+                  <input class="form-control" value="rahim.ahmed@ummah.org" />
+                  <div class="form-hint">Used for login and notifications.</div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Phone</label>
+                  <input class="form-control" value="+44 7900 123 456" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Address</label>
+                <input class="form-control" value="17 Green Street, London E7" />
+              </div>
+              <div class="grid grid-2" style="gap:1rem;">
+                <div class="form-group">
+                  <label class="form-label">City</label>
+                  <input class="form-control" value="London" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Postcode</label>
+                  <input class="form-control" value="E7 8QP" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Bio</label>
+                <textarea class="form-control" rows="3" data-maxlength="160">Admin at Sylhet Welfare Trust. Focused on community support and transparency.</textarea>
+              </div>
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit">Save Changes</button>
+                <button class="btn btn-outline" type="button" onclick="showToast('Changes discarded','info')">Discard</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Profile Photo</div>
+          </div>
+          <div class="card-body" style="display:flex;flex-direction:column;gap:1rem;align-items:center;">
+            <div class="avatar-xl" style="width:96px;height:96px;border-radius:50%;background:#1B4F72;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;">RA</div>
+            <div class="text-sm text-muted">JPG, PNG up to 2MB</div>
+            <div style="display:flex;gap:.5rem;">
+              <button class="btn btn-outline" onclick="showToast('Upload dialog opened','info')">Upload</button>
+              <button class="btn btn-ghost" onclick="showToast('Photo removed','warning')">Remove</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:1.5rem;">
+        <div class="card-header">
+          <div class="card-title">Organization Context</div>
+          <span class="badge badge-info">Admin</span>
+        </div>
+        <div class="card-body" style="display:flex;gap:1.5rem;align-items:center;">
+          <div class="stat-card" style="--stat-color:#1B4F72;--stat-bg:#EBF5FB;min-width:180px;">
+            <div class="stat-card-icon">🏢</div>
+            <div class="stat-card-value">Sylhet Welfare Trust</div>
+            <div class="stat-card-label">Primary Organization</div>
+          </div>
+          <div>
+            <div style="font-weight:600;margin-bottom:.25rem;">Roles</div>
+            <div class="badge badge-verified" style="margin-right:.5rem;">Admin</div>
+            <div class="badge badge-info">Approver</div>
+            <div class="text-sm text-muted" style="margin-top:.5rem;">Last role update: 12 Mar 2026</div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('settings', '../../');
+    renderTopbar('Profile Settings', '../../');
+  });
+</script>
+</body>
+</html>

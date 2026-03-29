@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security Settings — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <span class="current">Settings</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Security Settings</h1>
+            <p class="page-subtitle">Protect your account and review access logs</p>
+          </div>
+          <div class="page-actions">
+            <a href="profile.html" class="btn btn-outline">Profile</a>
+            <a href="preferences.html" class="btn btn-outline">Preferences</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="gap:1.5rem;">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Change Password</div>
+          </div>
+          <div class="card-body">
+            <form data-simulate>
+              <div class="form-group">
+                <label class="form-label">Current Password</label>
+                <input class="form-control" type="password" value="password" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">New Password</label>
+                <input class="form-control" type="password" placeholder="New strong password" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Confirm New Password</label>
+                <input class="form-control" type="password" placeholder="Re-type new password" />
+              </div>
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit">Update Password</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Two-Factor Authentication</div>
+          </div>
+          <div class="card-body">
+            <div class="alert alert-info" style="margin-bottom:1rem;">
+              <strong>Recommended:</strong> Enable 2FA for all admin users.
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+              <div>
+                <div style="font-weight:600;">Authenticator App</div>
+                <div class="text-sm text-muted">Use Google Authenticator or Authy</div>
+              </div>
+              <button class="btn btn-outline" onclick="showToast('2FA setup initiated','info')">Enable</button>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <div>
+                <div style="font-weight:600;">SMS Backup</div>
+                <div class="text-sm text-muted">+44 7900 123 456</div>
+              </div>
+              <button class="btn btn-ghost" onclick="showToast('Backup updated','success')">Update</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:1.5rem;">
+        <div class="card-header">
+          <div class="card-title">Recent Login Activity</div>
+          <a href="../audit/audit-log.html" class="btn btn-ghost btn-sm">View Audit Log →</a>
+        </div>
+        <div class="table-wrapper">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Device</th>
+                <th>Location</th>
+                <th>IP</th>
+                <th>Status</th>
+                <th>Last Active</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Chrome · MacOS</td>
+                <td>London, UK</td>
+                <td style="font-family:monospace;">82.18.90.44</td>
+                <td><span class="badge badge-verified badge-dot">Active</span></td>
+                <td class="text-sm text-muted">Just now</td>
+              </tr>
+              <tr>
+                <td>Safari · iPhone</td>
+                <td>London, UK</td>
+                <td style="font-family:monospace;">82.18.90.12</td>
+                <td><span class="badge badge-info badge-dot">Active</span></td>
+                <td class="text-sm text-muted">2 hours ago</td>
+              </tr>
+              <tr>
+                <td>Edge · Windows</td>
+                <td>Dhaka, BD</td>
+                <td style="font-family:monospace;">103.48.111.98</td>
+                <td><span class="badge badge-warning badge-dot">Review</span></td>
+                <td class="text-sm text-muted">Yesterday</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('settings', '../../');
+    renderTopbar('Security Settings', '../../');
+  });
+</script>
+</body>
+</html>

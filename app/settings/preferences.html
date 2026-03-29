@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preferences — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <span class="current">Settings</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Preferences</h1>
+            <p class="page-subtitle">Customize notifications and display settings</p>
+          </div>
+          <div class="page-actions">
+            <a href="profile.html" class="btn btn-outline">Profile</a>
+            <a href="security.html" class="btn btn-outline">Security</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="gap:1.5rem;">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Notification Preferences</div>
+          </div>
+          <div class="card-body">
+            <div class="form-group" style="display:flex;align-items:center;justify-content:space-between;">
+              <div>
+                <div style="font-weight:600;">Membership approvals</div>
+                <div class="text-sm text-muted">Notify me when a member is approved or rejected.</div>
+              </div>
+              <input type="checkbox" checked />
+            </div>
+            <div class="form-group" style="display:flex;align-items:center;justify-content:space-between;">
+              <div>
+                <div style="font-weight:600;">Receipt verification</div>
+                <div class="text-sm text-muted">Receive updates for receipt reviews and outcomes.</div>
+              </div>
+              <input type="checkbox" checked />
+            </div>
+            <div class="form-group" style="display:flex;align-items:center;justify-content:space-between;">
+              <div>
+                <div style="font-weight:600;">Disbursement approvals</div>
+                <div class="text-sm text-muted">Alert me when disbursements are approved or paid.</div>
+              </div>
+              <input type="checkbox" />
+            </div>
+            <div class="form-group" style="display:flex;align-items:center;justify-content:space-between;">
+              <div>
+                <div style="font-weight:600;">Announcements</div>
+                <div class="text-sm text-muted">Community-wide announcements and events.</div>
+              </div>
+              <input type="checkbox" checked />
+            </div>
+            <button class="btn btn-primary" onclick="showToast('Preferences saved','success')">Save Preferences</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Display & Language</div>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label class="form-label">Default Dashboard</label>
+              <select class="form-control">
+                <option>Admin Dashboard</option>
+                <option>Treasurer Dashboard</option>
+                <option>Auditor Dashboard</option>
+                <option>Member Dashboard</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Language</label>
+              <select class="form-control">
+                <option>English</option>
+                <option>Bangla</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Time Zone</label>
+              <select class="form-control">
+                <option>Europe/London</option>
+                <option>Asia/Dhaka</option>
+                <option>America/New_York</option>
+              </select>
+            </div>
+            <button class="btn btn-outline" onclick="showToast('Display settings updated','success')">Update Display</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:1.5rem;">
+        <div class="card-header">
+          <div class="card-title">Digest Schedule</div>
+          <span class="badge badge-info">Weekly</span>
+        </div>
+        <div class="card-body">
+          <div class="grid grid-3" style="gap:1rem;">
+            <div class="stat-card" style="--stat-color:#2E86AB;--stat-bg:#EBF5FB;">
+              <div class="stat-card-icon">📅</div>
+              <div class="stat-card-value">Mondays</div>
+              <div class="stat-card-label">Weekly Summary</div>
+            </div>
+            <div class="stat-card" style="--stat-color:#27AE60;--stat-bg:#EAFAF1;">
+              <div class="stat-card-icon">🕒</div>
+              <div class="stat-card-value">08:00</div>
+              <div class="stat-card-label">Delivery Time</div>
+            </div>
+            <div class="stat-card" style="--stat-color:#F39C12;--stat-bg:#FDEBD0;">
+              <div class="stat-card-icon">📨</div>
+              <div class="stat-card-value">Email + In-App</div>
+              <div class="stat-card-label">Channel</div>
+            </div>
+          </div>
+          <div style="margin-top:1rem;">
+            <button class="btn btn-primary" onclick="showToast('Digest schedule saved','success')">Save Schedule</button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('settings', '../../');
+    renderTopbar('Preferences', '../../');
+  });
+</script>
+</body>
+</html>
