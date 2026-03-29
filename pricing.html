@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .pricing-hero { background:var(--color-primary);color:white;padding:4rem 2rem;text-align:center; }
+    .toggle-wrap { display:flex;align-items:center;gap:1rem;justify-content:center;margin:2rem 0; }
+    .toggle-btn {
+      padding:.4rem 1.25rem;border-radius:var(--radius-full);font-size:.875rem;
+      font-weight:600;cursor:pointer;border:2px solid var(--color-border);
+      background:transparent;color:var(--color-text-muted);transition:all .2s;
+    }
+    .toggle-btn.active { background:var(--color-primary);color:white;border-color:var(--color-primary); }
+    .save-badge {
+      background:var(--color-success-light);color:var(--color-success);
+      font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:var(--radius-full);
+    }
+    .faq-item { border-bottom:1px solid var(--color-border);padding:1.25rem 0; cursor:pointer; }
+    .faq-q { display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:.9rem; }
+    .faq-a { font-size:.875rem;color:var(--color-text-muted);margin-top:.75rem;display:none; }
+    .faq-item.open .faq-a { display:block; }
+    .faq-item.open .faq-icon { transform:rotate(45deg); }
+    .faq-icon { transition:transform .2s; font-size:1.2rem;color:var(--color-text-muted); }
+  </style>
+</head>
+<body class="public-page">
+
+<nav class="public-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-icon">U</div>Ummah Platform</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a><a href="about.html">About</a>
+      <a href="features.html">Features</a>
+      <a href="pricing.html" class="active">Pricing</a><a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-outline-muted btn-sm">Sign In</a>
+      <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<section class="pricing-hero">
+  <div class="public-main">
+    <h1 style="font-size:2.5rem;margin-bottom:1rem;">Simple, transparent pricing</h1>
+    <p style="opacity:.85;max-width:520px;margin:0 auto;">Start free, grow with your community. No hidden fees, no per-transaction charges.</p>
+    <div class="toggle-wrap">
+      <button class="toggle-btn active" onclick="setBilling('monthly',this)">Monthly</button>
+      <button class="toggle-btn" onclick="setBilling('annual',this)">Annual <span class="save-badge">Save 20%</span></button>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="grid grid-3" style="gap:2rem;align-items:start;">
+
+      <!-- FREE -->
+      <div class="pricing-card">
+        <div class="pricing-label">Community (Free)</div>
+        <div class="pricing-price" id="free-price">£0</div>
+        <div class="pricing-period">Forever free · up to 50 members</div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><span class="check">✓</span> 1 organisation</div>
+          <div class="pricing-feature"><span class="check">✓</span> Up to 50 members</div>
+          <div class="pricing-feature"><span class="check">✓</span> Up to 5 active causes</div>
+          <div class="pricing-feature"><span class="check">✓</span> Contribution tracking</div>
+          <div class="pricing-feature"><span class="check">✓</span> Receipt upload</div>
+          <div class="pricing-feature"><span class="check">✓</span> Basic reports</div>
+          <div class="pricing-feature"><span class="cross">–</span> KYC verification</div>
+          <div class="pricing-feature"><span class="cross">–</span> Nominee management</div>
+          <div class="pricing-feature"><span class="cross">–</span> Audit log</div>
+          <div class="pricing-feature"><span class="cross">–</span> CSV export</div>
+        </div>
+        <a href="register.html" class="btn btn-outline w-full">Start Free</a>
+      </div>
+
+      <!-- PRO (FEATURED) -->
+      <div class="pricing-card featured">
+        <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--color-primary);color:white;font-size:.7rem;font-weight:700;padding:.3rem .9rem;border-radius:var(--radius-full);white-space:nowrap;">Most Popular</div>
+        <div class="pricing-label">Professional</div>
+        <div class="pricing-price" id="pro-price">£29</div>
+        <div class="pricing-period" id="pro-period">per month · up to 500 members</div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><span class="check">✓</span> 1 organisation</div>
+          <div class="pricing-feature"><span class="check">✓</span> Up to 500 members</div>
+          <div class="pricing-feature"><span class="check">✓</span> Unlimited causes</div>
+          <div class="pricing-feature"><span class="check">✓</span> Full contribution workflow</div>
+          <div class="pricing-feature"><span class="check">✓</span> KYC / NID verification</div>
+          <div class="pricing-feature"><span class="check">✓</span> Nominee management</div>
+          <div class="pricing-feature"><span class="check">✓</span> Disbursement workflows</div>
+          <div class="pricing-feature"><span class="check">✓</span> Full audit log</div>
+          <div class="pricing-feature"><span class="check">✓</span> CSV export</div>
+          <div class="pricing-feature"><span class="check">✓</span> Email support</div>
+        </div>
+        <a href="register.html" class="btn btn-primary w-full">Start Free Trial</a>
+      </div>
+
+      <!-- ENTERPRISE -->
+      <div class="pricing-card">
+        <div class="pricing-label">Enterprise</div>
+        <div class="pricing-price">Custom</div>
+        <div class="pricing-period">Tailored to your needs</div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><span class="check">✓</span> Multiple organisations</div>
+          <div class="pricing-feature"><span class="check">✓</span> Unlimited members</div>
+          <div class="pricing-feature"><span class="check">✓</span> Custom roles &amp; permissions</div>
+          <div class="pricing-feature"><span class="check">✓</span> Dedicated account manager</div>
+          <div class="pricing-feature"><span class="check">✓</span> Priority support (SLA)</div>
+          <div class="pricing-feature"><span class="check">✓</span> Data export &amp; API access</div>
+          <div class="pricing-feature"><span class="check">✓</span> Custom branding</div>
+          <div class="pricing-feature"><span class="check">✓</span> Training sessions</div>
+          <div class="pricing-feature"><span class="check">✓</span> GDPR compliance support</div>
+          <div class="pricing-feature"><span class="check">✓</span> Onboarding assistance</div>
+        </div>
+        <a href="contact.html" class="btn btn-outline w-full">Contact Sales</a>
+      </div>
+
+    </div>
+
+    <!-- COMPARE TABLE -->
+    <div style="margin-top:4rem;">
+      <h3 style="text-align:center;margin-bottom:2rem;font-size:1.5rem;">Full Feature Comparison</h3>
+      <div class="table-wrapper">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th class="text-center">Community (Free)</th>
+              <th class="text-center">Professional</th>
+              <th class="text-center">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="font-weight:600;color:var(--color-text-muted);" colspan="4">Organisation & Members</td></tr>
+            <tr><td>Number of organisations</td><td class="text-center">1</td><td class="text-center">1</td><td class="text-center">Unlimited</td></tr>
+            <tr><td>Members</td><td class="text-center">Up to 50</td><td class="text-center">Up to 500</td><td class="text-center">Unlimited</td></tr>
+            <tr><td>Admin roles</td><td class="text-center">2</td><td class="text-center">10</td><td class="text-center">Unlimited</td></tr>
+            <tr><td>KYC verification</td><td class="text-center">✕</td><td class="text-center text-success">✓</td><td class="text-center text-success">✓</td></tr>
+            <tr><td>Nominee management</td><td class="text-center">✕</td><td class="text-center text-success">✓</td><td class="text-center text-success">✓</td></tr>
+            <tr><td style="font-weight:600;color:var(--color-text-muted);" colspan="4">Causes & Finance</td></tr>
+            <tr><td>Active causes</td><td class="text-center">5</td><td class="text-center">Unlimited</td><td class="text-center">Unlimited</td></tr>
+            <tr><td>Contribution tracking</td><td class="text-center text-success">✓</td><td class="text-center text-success">✓</td><td class="text-center text-success">✓</td></tr>
+            <tr><td>Disbursement workflows</td><td class="text-center">✕</td><td class="text-center text-success">✓</td><td class="text-center text-success">✓</td></tr>
+            <tr><td>Multi-currency (BDT/GBP)</td><td class="text-center">✕</td><td class="text-center text-success">✓</td><td class="text-center text-success">✓</td></tr>
+            <tr><td style="font-weight:600;color:var(--color-text-muted);" colspan="4">Reports & Compliance</td></tr>
+            <tr><td>Basic reports</td><td class="text-center text-success">✓</td><td class="text-center text-success">✓</td><td class="text-center text-success">✓</td></tr>
+            <tr><td>Audit log</td><td class="text-center">✕</td><td class="text-center text-success">✓</td><td class="text-center text-success">✓</td></tr>
+            <tr><td>CSV export</td><td class="text-center">✕</td><td class="text-center text-success">✓</td><td class="text-center text-success">✓</td></tr>
+            <tr><td>API access</td><td class="text-center">✕</td><td class="text-center">✕</td><td class="text-center text-success">✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO REQUEST -->
+<section class="section section-alt">
+  <div class="section-inner" style="max-width:640px;margin:0 auto;text-align:center;">
+    <div style="font-size:2.5rem;margin-bottom:1rem;">📞</div>
+    <h2 style="font-size:1.75rem;margin-bottom:1rem;">Not sure which plan is right?</h2>
+    <p style="color:var(--color-text-muted);margin-bottom:2rem;">Book a free 30-minute demo call with our team. We'll walk you through the platform and recommend the best fit for your organisation.</p>
+    <a href="contact.html" class="btn btn-primary btn-lg">Request a Free Demo</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="section-inner" style="max-width:720px;margin:0 auto;">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div id="faqList">
+      <div class="faq-item">
+        <div class="faq-q">Can I upgrade or downgrade at any time? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. You can upgrade or downgrade your plan at any time. Changes take effect from your next billing cycle. Downgrades will not delete your data — but feature access will be restricted to your new plan's limits.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is there a contract or minimum term? <span class="faq-icon">+</span></div>
+        <div class="faq-a">No contracts. Monthly plans can be cancelled any time. Annual plans are billed upfront for 12 months but can be cancelled with a pro-rata refund within 30 days.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How is member data protected? <span class="faq-icon">+</span></div>
+        <div class="faq-a">All member data is encrypted at rest and in transit. KYC documents are stored in secure, access-controlled storage. We are GDPR compliant and never share member data with third parties.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can multiple organisations share a plan? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Professional plans support a single organisation. If you manage multiple organisations (e.g. a parent charity with local chapters), contact us for Enterprise pricing which supports multiple organisations under one account.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you support Zakat fund management specifically? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. Ummah Platform was designed with Zakat, Sadaqah, and Islamic welfare funds in mind. You can create Zakat-specific causes, set collection periods, and document distributions to eligible recipients (Asnaf).</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is there a free trial for Professional? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes — the Professional plan includes a 30-day free trial. No credit card required to start. You'll have access to all Pro features during the trial period.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" style="background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-accent) 100%);padding:4rem 2rem;text-align:center;color:white;">
+  <div class="section-inner">
+    <h2 style="font-size:2rem;margin-bottom:1rem;">Start for free today</h2>
+    <p style="opacity:.85;max-width:480px;margin:0 auto 2rem;">No card required. No setup fee. Just a better way to manage your community funds.</p>
+    <a href="register.html" class="btn btn-white btn-lg">Create Free Account</a>
+  </div>
+</section>
+
+<footer class="public-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div><div class="nav-logo" style="color:white;margin-bottom:1rem;"><div class="logo-icon">U</div>Ummah Platform</div><p class="footer-brand">Transparent, trustworthy fund management for community organisations worldwide.</p></div>
+      <div><div class="footer-col-title">Platform</div><div class="footer-links"><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="contact.html">Contact</a></div></div>
+      <div><div class="footer-col-title">Product</div><div class="footer-links"><a href="register.html">Get Started</a><a href="login.html">Sign In</a><a href="app/dashboard-admin.html">Demo</a><a href="help.html">Help</a></div></div>
+      <div><div class="footer-col-title">Legal</div><div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms</a></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Ummah Platform.</span><span>Built with ❤️ for community organisations</span></div>
+  </div>
+</footer>
+
+<script src="assets/js/mock-data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+  let billing = 'monthly';
+  function setBilling(type, btn) {
+    billing = type;
+    document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const prices = { monthly: { pro: '£29', period: 'per month · up to 500 members' }, annual: { pro: '£23', period: 'per month, billed annually · up to 500 members' }};
+    document.getElementById('pro-price').textContent  = prices[type].pro;
+    document.getElementById('pro-period').textContent = prices[type].period;
+  }
+
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('open');
+    });
+  });
+</script>
+</body>
+</html>

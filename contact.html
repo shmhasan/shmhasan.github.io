@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .contact-hero { background:var(--color-primary);color:white;padding:4rem 2rem;text-align:center; }
+    .contact-layout { display:grid;grid-template-columns:1fr 1.5fr;gap:4rem;max-width:960px;margin:0 auto; }
+    .contact-info-item { display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.5rem; }
+    .contact-icon { width:44px;height:44px;border-radius:var(--radius-md);background:var(--color-bg);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0; }
+    .success-box { background:var(--color-success-light);border:1px solid var(--color-success);border-radius:var(--radius-lg);padding:2rem;text-align:center;display:none; }
+  </style>
+</head>
+<body class="public-page">
+
+<nav class="public-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-icon">U</div>Ummah Platform</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a><a href="about.html">About</a>
+      <a href="features.html">Features</a><a href="pricing.html">Pricing</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-outline-muted btn-sm">Sign In</a>
+      <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<section class="contact-hero">
+  <div class="public-main">
+    <h1 style="font-size:2.5rem;margin-bottom:1rem;">Get in Touch</h1>
+    <p style="opacity:.85;max-width:500px;margin:0 auto;">Have questions, want a demo, or need help setting up your organisation? We're here to help.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="contact-layout">
+      <!-- INFO -->
+      <div>
+        <h3 style="margin-bottom:1.5rem;">Contact Information</h3>
+        <div class="contact-info-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <div style="font-weight:600;font-size:.875rem;margin-bottom:.25rem;">Email Us</div>
+            <div style="font-size:.875rem;color:var(--color-text-muted);">hello@ummahplatform.com</div>
+            <div style="font-size:.8rem;color:var(--color-text-light);">Response within 24 hours</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div style="font-weight:600;font-size:.875rem;margin-bottom:.25rem;">Call Us</div>
+            <div style="font-size:.875rem;color:var(--color-text-muted);">+44 (0) 121 456 7890</div>
+            <div style="font-size:.8rem;color:var(--color-text-light);">Mon–Fri, 9am–5pm GMT</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon">💬</div>
+          <div>
+            <div style="font-weight:600;font-size:.875rem;margin-bottom:.25rem;">WhatsApp</div>
+            <div style="font-size:.875rem;color:var(--color-text-muted);">+44 7700 900 000</div>
+            <div style="font-size:.8rem;color:var(--color-text-light);">Quick replies during office hours</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div style="font-weight:600;font-size:.875rem;margin-bottom:.25rem;">Office</div>
+            <div style="font-size:.875rem;color:var(--color-text-muted);">Innovation Birmingham<br />Faraday Wharf, Holt Street<br />Birmingham, B7 4BB</div>
+          </div>
+        </div>
+
+        <hr style="margin:2rem 0;" />
+        <h4 style="margin-bottom:1rem;">Useful Links</h4>
+        <div style="display:flex;flex-direction:column;gap:.5rem;">
+          <a href="app/dashboard-admin.html" class="btn btn-outline btn-sm" style="width:fit-content;">🖥️ Open Live Demo</a>
+          <a href="pricing.html" class="btn btn-outline btn-sm" style="width:fit-content;">💰 View Pricing</a>
+          <a href="help.html" class="btn btn-outline btn-sm" style="width:fit-content;">❓ Help &amp; FAQ</a>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div>
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Send us a message</div>
+              <div class="card-subtitle">Or request a free product demo</div>
+            </div>
+          </div>
+
+          <div class="success-box" id="successBox">
+            <div style="font-size:2.5rem;margin-bottom:.75rem;">✅</div>
+            <h3 style="color:var(--color-success);margin-bottom:.5rem;">Message Sent!</h3>
+            <p style="font-size:.875rem;color:var(--color-text-muted);">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+          </div>
+
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">First Name <span class="required">*</span></label>
+                <input type="text" class="form-control" placeholder="Rahim" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name <span class="required">*</span></label>
+                <input type="text" class="form-control" placeholder="Ahmed" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address <span class="required">*</span></label>
+              <input type="email" class="form-control" placeholder="rahim@example.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Organisation Name <span class="optional">(optional)</span></label>
+              <input type="text" class="form-control" placeholder="e.g. Sylhet Welfare Trust" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Organisation Size</label>
+              <select class="form-control">
+                <option value="">Select approximate number of members</option>
+                <option>Under 50 members</option>
+                <option>50–200 members</option>
+                <option>200–500 members</option>
+                <option>500+ members</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Subject <span class="required">*</span></label>
+              <select class="form-control" required>
+                <option value="">Select a reason</option>
+                <option>Request a product demo</option>
+                <option>Pricing enquiry</option>
+                <option>Technical support</option>
+                <option>Partnership enquiry</option>
+                <option>General question</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message <span class="required">*</span></label>
+              <textarea class="form-control" rows="5" placeholder="Tell us about your organisation and how we can help..." required data-maxlength="1000"></textarea>
+            </div>
+            <div class="form-check" style="margin-bottom:1.5rem;">
+              <input type="checkbox" required />
+              <label class="form-check-label">I agree to the <a href="#">Privacy Policy</a> and consent to Ummah Platform contacting me regarding my enquiry.</label>
+            </div>
+            <button type="submit" class="btn btn-primary w-full btn-lg">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO CTA -->
+<section class="section section-alt">
+  <div class="section-inner" style="max-width:640px;margin:0 auto;text-align:center;">
+    <div style="font-size:2.5rem;margin-bottom:1rem;">🖥️</div>
+    <h2 style="font-size:1.75rem;margin-bottom:1rem;">Prefer to see it first?</h2>
+    <p style="color:var(--color-text-muted);margin-bottom:2rem;">Explore the interactive demo dashboard without signing up. Click through all features as Admin, Treasurer, Auditor, or Member.</p>
+    <a href="app/dashboard-admin.html" class="btn btn-primary btn-lg">Open Demo Dashboard</a>
+  </div>
+</section>
+
+<footer class="public-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div><div class="nav-logo" style="color:white;margin-bottom:1rem;"><div class="logo-icon">U</div>Ummah Platform</div><p class="footer-brand">Transparent, trustworthy fund management for community organisations worldwide.</p></div>
+      <div><div class="footer-col-title">Platform</div><div class="footer-links"><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="contact.html">Contact</a></div></div>
+      <div><div class="footer-col-title">Product</div><div class="footer-links"><a href="register.html">Get Started</a><a href="login.html">Sign In</a><a href="app/dashboard-admin.html">Demo</a><a href="help.html">Help</a></div></div>
+      <div><div class="footer-col-title">Legal</div><div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms</a></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Ummah Platform.</span><span>Built with ❤️ for community organisations</span></div>
+  </div>
+</footer>
+
+<script src="assets/js/mock-data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('[type=submit]');
+    btn.disabled = true; btn.textContent = 'Sending...';
+    setTimeout(() => {
+      this.style.display = 'none';
+      document.getElementById('successBox').style.display = 'block';
+    }, 1200);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .auth-page { min-height:100vh;display:flex; }
+    .auth-left  { flex:1;background:linear-gradient(160deg,var(--color-primary-dark) 0%,var(--color-primary) 50%,var(--color-accent) 100%);display:none;flex-direction:column;justify-content:center;padding:4rem; }
+    .auth-right { flex:0 0 560px;overflow-y:auto;background:var(--color-surface);padding:3rem 2.5rem;display:flex;align-items:flex-start;justify-content:center; }
+    .auth-box   { width:100%;max-width:460px;padding-top:2rem;padding-bottom:2rem; }
+    @media(min-width:992px){ .auth-left{display:flex;} }
+    @media(max-width:768px){ .auth-right{flex:1;} }
+    .strength-bar { height:4px;border-radius:2px;background:var(--color-bg-alt);margin-top:.5rem;overflow:hidden; }
+    .strength-fill { height:100%;border-radius:2px;transition:width .3s,background .3s; width:0; }
+  </style>
+</head>
+<body>
+<div class="auth-page">
+
+  <!-- LEFT -->
+  <div class="auth-left">
+    <div class="nav-logo" style="color:white;margin-bottom:2.5rem;font-size:1.25rem;">
+      <div class="logo-icon" style="background:rgba(255,255,255,.2);">U</div>
+      Ummah Platform
+    </div>
+    <h2 style="font-size:2rem;color:white;line-height:1.3;margin-bottom:1rem;">Join 500+ community organisations</h2>
+    <p style="color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:2rem;">Set up your organisation in minutes. Start tracking contributions, verifying members, and disbursing support transparently.</p>
+    <div style="display:flex;flex-direction:column;gap:.875rem;">
+      <div style="display:flex;align-items:center;gap:.75rem;color:rgba(255,255,255,.85);font-size:.875rem;"><span>✅</span> Free to start — no credit card</div>
+      <div style="display:flex;align-items:center;gap:.75rem;color:rgba(255,255,255,.85);font-size:.875rem;"><span>✅</span> Set up in under 10 minutes</div>
+      <div style="display:flex;align-items:center;gap:.75rem;color:rgba(255,255,255,.85);font-size:.875rem;"><span>✅</span> Full KYC verification included</div>
+      <div style="display:flex;align-items:center;gap:.75rem;color:rgba(255,255,255,.85);font-size:.875rem;"><span>✅</span> 30-day Professional trial</div>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="auth-right">
+    <div class="auth-box">
+      <div class="auth-logo">
+        <div class="auth-logo-icon">U</div>
+        <span class="auth-logo-text">Ummah Platform</span>
+      </div>
+
+      <h1 class="auth-title">Create your account</h1>
+      <p class="auth-subtitle">Start a free organisation or join an existing one.</p>
+
+      <form id="registerForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name <span class="required">*</span></label>
+            <input type="text" class="form-control" placeholder="Rahim" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name <span class="required">*</span></label>
+            <input type="text" class="form-control" placeholder="Ahmed" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address <span class="required">*</span></label>
+          <input type="email" class="form-control" placeholder="rahim.ahmed@example.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Mobile Number <span class="required">*</span></label>
+          <input type="tel" class="form-control" placeholder="+44 7700 900123" required />
+          <div class="form-hint">Used for account verification. Include country code.</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password <span class="required">*</span></label>
+          <input type="password" class="form-control" id="pwField" placeholder="Create a strong password" required />
+          <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+          <div class="form-hint" id="strengthLabel">Password strength: —</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Confirm Password <span class="required">*</span></label>
+          <input type="password" class="form-control" placeholder="Re-enter password" required />
+        </div>
+
+        <hr style="margin:1.5rem 0;" />
+
+        <div class="form-section-title" style="margin-bottom:1rem;">What do you want to do?</div>
+        <div style="display:flex;flex-direction:column;gap:.75rem;margin-bottom:1.5rem;">
+          <label style="display:flex;align-items:flex-start;gap:.875rem;padding:1rem;border:2px solid var(--color-border);border-radius:var(--radius-md);cursor:pointer;transition:all .15s;" id="createOrgOpt">
+            <input type="radio" name="intent" value="create" style="margin-top:3px;accent-color:var(--color-primary);" checked onchange="selectIntent(this)" />
+            <div>
+              <div style="font-weight:600;font-size:.875rem;margin-bottom:.25rem;">🏢 Create a new organisation</div>
+              <div style="font-size:.8rem;color:var(--color-text-muted);">Set up a new welfare trust, mosque fund, or community group as an Admin.</div>
+            </div>
+          </label>
+          <label style="display:flex;align-items:flex-start;gap:.875rem;padding:1rem;border:2px solid var(--color-border);border-radius:var(--radius-md);cursor:pointer;transition:all .15s;" id="joinOrgOpt">
+            <input type="radio" name="intent" value="join" style="margin-top:3px;accent-color:var(--color-primary);" onchange="selectIntent(this)" />
+            <div>
+              <div style="font-weight:600;font-size:.875rem;margin-bottom:.25rem;">👥 Join an existing organisation</div>
+              <div style="font-size:.8rem;color:var(--color-text-muted);">Apply to join an existing organisation as a member.</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="form-check" style="margin-bottom:1.5rem;">
+          <input type="checkbox" required />
+          <label class="form-check-label">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. I understand that my data will be used to manage my membership.</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-full btn-lg">Create Account &amp; Continue</button>
+      </form>
+
+      <p style="text-align:center;font-size:.825rem;color:var(--color-text-muted);margin-top:1.5rem;">
+        Already have an account? <a href="login.html" style="color:var(--color-primary);font-weight:600;">Sign in</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/mock-data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+  function selectIntent(radio) {
+    document.getElementById('createOrgOpt').style.borderColor = 'var(--color-border)';
+    document.getElementById('joinOrgOpt').style.borderColor   = 'var(--color-border)';
+    if (radio.value === 'create') document.getElementById('createOrgOpt').style.borderColor = 'var(--color-primary)';
+    else document.getElementById('joinOrgOpt').style.borderColor = 'var(--color-primary)';
+  }
+  selectIntent({ value: 'create' });
+
+  document.getElementById('pwField').addEventListener('input', function() {
+    const v = this.value;
+    let score = 0;
+    if (v.length >= 8) score++;
+    if (/[A-Z]/.test(v)) score++;
+    if (/[0-9]/.test(v)) score++;
+    if (/[^A-Za-z0-9]/.test(v)) score++;
+    const fill = document.getElementById('strengthFill');
+    const label = document.getElementById('strengthLabel');
+    const map = [
+      { w:'0%',   c:'transparent', t:'Too short' },
+      { w:'25%',  c:'var(--color-danger)',  t:'Weak' },
+      { w:'50%',  c:'var(--color-warning)', t:'Fair' },
+      { w:'75%',  c:'var(--color-info)',    t:'Good' },
+      { w:'100%', c:'var(--color-success)', t:'Strong' },
+    ];
+    fill.style.width      = map[score].w;
+    fill.style.background = map[score].c;
+    label.textContent = `Password strength: ${map[score].t}`;
+  });
+
+  document.getElementById('registerForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('[type=submit]');
+    btn.disabled = true; btn.textContent = 'Creating account...';
+    setTimeout(() => { window.location.href = 'onboarding/verify.html'; }, 900);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member Dashboard — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">U</div>
+      <span class="sidebar-brand">Ummah Platform</span>
+    </div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar" style="background:#7F8C8D;">SK</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Sadia Karim</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Member</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="#">Sylhet Welfare Trust</a>
+          <span class="sep">›</span>
+          <span class="current">My Dashboard</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Welcome back, Sadia 👋</h1>
+            <p class="page-subtitle">Member since June 2015 · Verified · 3 nominees registered</p>
+          </div>
+          <div class="page-actions">
+            <a href="contributions/contribute.html" class="btn btn-primary">+ Contribute</a>
+            <a href="nominees/add.html" class="btn btn-outline">Add Nominee</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROFILE COMPLETENESS BANNER -->
+      <div class="alert alert-info" style="margin-bottom:1.5rem;">
+        <span class="alert-icon">💡</span>
+        <div class="alert-content">
+          <div class="alert-title">Complete your profile</div>
+          <div>Your profile is 85% complete. <a href="members/profile.html">Add a profile photo and secondary contact</a> to complete verification.</div>
+        </div>
+        <button class="alert-dismiss">✕</button>
+      </div>
+
+      <!-- STAT CARDS -->
+      <div class="grid grid-4" style="margin-bottom:2rem;">
+        <div class="stat-card" style="--stat-color:#2E86AB;--stat-bg:#EBF5FB;">
+          <div class="stat-card-icon">💰</div>
+          <div class="stat-card-value">£8,400</div>
+          <div class="stat-card-label">Total Contributed</div>
+          <div class="stat-card-change up">22 contributions</div>
+        </div>
+        <div class="stat-card" style="--stat-color:#27AE60;--stat-bg:#EAFAF1;">
+          <div class="stat-card-icon">👨‍👩‍👧</div>
+          <div class="stat-card-value">3</div>
+          <div class="stat-card-label">Nominees</div>
+          <div class="stat-card-change up">1 pending review</div>
+        </div>
+        <div class="stat-card" style="--stat-color:#1B4F72;--stat-bg:#EBF5FB;">
+          <div class="stat-card-icon">💚</div>
+          <div class="stat-card-value">4</div>
+          <div class="stat-card-label">Active Causes</div>
+          <div class="stat-card-change up">You contributed to 3</div>
+        </div>
+        <div class="stat-card" style="--stat-color:#F39C12;--stat-bg:#FDEBD0;">
+          <div class="stat-card-icon">⏳</div>
+          <div class="stat-card-value">1</div>
+          <div class="stat-card-label">Pending Review</div>
+          <div class="stat-card-change down">NatWest receipt</div>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="margin-bottom:2rem;">
+
+        <!-- CAUSES I CAN CONTRIBUTE TO -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Active Causes</div>
+            <a href="causes/list.html" class="btn btn-ghost btn-sm">Browse all →</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:1.25rem;">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem;">
+                <div>
+                  <div style="font-size:.875rem;font-weight:600;">🌙 Ramadan Zakat 2026</div>
+                  <div style="font-size:.75rem;color:var(--color-success);margin-top:1px;">✅ You contributed £400</div>
+                </div>
+                <span class="badge badge-published badge-dot" style="font-size:.7rem;">Open</span>
+              </div>
+              <div class="progress-label"><span>£38,200 / £50,000</span><span>76%</span></div>
+              <div class="progress"><div class="progress-bar" data-progress="76"></div></div>
+              <a href="contributions/contribute.html" class="btn btn-sm btn-outline" style="margin-top:.75rem;">Contribute more</a>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem;">
+                <div>
+                  <div style="font-size:.875rem;font-weight:600;">🕊️ Death Support — Nurul Islam</div>
+                  <div style="font-size:.75rem;color:var(--color-text-muted);">Not yet contributed</div>
+                </div>
+                <span class="badge badge-pending badge-dot" style="font-size:.7rem;">Urgent</span>
+              </div>
+              <div class="progress-label"><span>£12,400 / £15,000</span><span>83%</span></div>
+              <div class="progress"><div class="progress-bar success" data-progress="83"></div></div>
+              <a href="contributions/contribute.html" class="btn btn-sm btn-primary" style="margin-top:.75rem;">Contribute now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- MY RECENT CONTRIBUTIONS -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">My Recent Contributions</div>
+            <a href="contributions/list.html" class="btn btn-ghost btn-sm">View all →</a>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:.75rem 0;border-bottom:1px solid var(--color-border-light);">
+              <div>
+                <div style="font-size:.875rem;font-weight:500;">🌙 Zakat Fund 2026</div>
+                <div style="font-size:.75rem;color:var(--color-text-muted);">22 Mar · NatWest Transfer</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-weight:700;">£400</div>
+                <span class="badge badge-review" style="font-size:.65rem;">Under review</span>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:.75rem 0;border-bottom:1px solid var(--color-border-light);">
+              <div>
+                <div style="font-size:.875rem;font-weight:500;">🕊️ Death Support</div>
+                <div style="font-size:.75rem;color:var(--color-text-muted);">19 Mar · Cash</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-weight:700;">£200</div>
+                <span class="badge badge-approved" style="font-size:.65rem;">Approved</span>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:.75rem 0;border-bottom:1px solid var(--color-border-light);">
+              <div>
+                <div style="font-size:.875rem;font-weight:500;">🕌 Mosque Renovation</div>
+                <div style="font-size:.75rem;color:var(--color-text-muted);">10 Feb · Bank Transfer</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-weight:700;">£300</div>
+                <span class="badge badge-approved" style="font-size:.65rem;">Approved</span>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:.75rem 0;">
+              <div>
+                <div style="font-size:.875rem;font-weight:500;">🌙 Zakat Fund 2025</div>
+                <div style="font-size:.75rem;color:var(--color-text-muted);">Mar 2025 · Bank Transfer</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-weight:700;">£350</div>
+                <span class="badge badge-approved" style="font-size:.65rem;">Approved</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MY NOMINEES -->
+      <div class="grid grid-2" style="margin-bottom:2rem;">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">My Nominees</div>
+            <a href="nominees/list.html" class="btn btn-ghost btn-sm">Manage →</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.75rem;">
+            <div style="display:flex;align-items:center;gap:.875rem;padding:.75rem;background:var(--color-bg);border-radius:var(--radius-md);">
+              <div class="table-avatar">KH</div>
+              <div style="flex:1;">
+                <div style="font-size:.875rem;font-weight:600;">Karim Hossain</div>
+                <div style="font-size:.75rem;color:var(--color-text-muted);">Spouse · 50% share</div>
+              </div>
+              <span class="badge badge-pending badge-dot" style="font-size:.7rem;">Pending</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:.875rem;padding:.75rem;background:var(--color-bg);border-radius:var(--radius-md);">
+              <div class="table-avatar">AK</div>
+              <div style="flex:1;">
+                <div style="font-size:.875rem;font-weight:600;">Amina Karim</div>
+                <div style="font-size:.75rem;color:var(--color-text-muted);">Daughter · 30% share</div>
+              </div>
+              <span class="badge badge-pending badge-dot" style="font-size:.7rem;">Pending</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:.875rem;padding:.75rem;background:var(--color-bg);border-radius:var(--radius-md);">
+              <div class="table-avatar">FB</div>
+              <div style="flex:1;">
+                <div style="font-size:.875rem;font-weight:600;">Fatima Begum</div>
+                <div style="font-size:.75rem;color:var(--color-text-muted);">Mother · 20% share</div>
+              </div>
+              <span class="badge badge-review badge-dot" style="font-size:.7rem;">Under Review</span>
+            </div>
+            <a href="nominees/add.html" class="btn btn-outline btn-sm w-full">+ Add Another Nominee</a>
+          </div>
+        </div>
+
+        <!-- NOTIFICATIONS PREVIEW -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Recent Notifications</div>
+            <a href="notifications/center.html" class="btn btn-ghost btn-sm">All →</a>
+          </div>
+          <div>
+            <div class="notif-item unread" style="border-radius:var(--radius-md);">
+              <div class="notif-icon" style="background:#EBF5FB;">💰</div>
+              <div class="notif-body">
+                <div class="notif-title">Contribution Under Review</div>
+                <div class="notif-desc">Your £400 NatWest Zakat receipt is being reviewed.</div>
+              </div>
+              <div class="notif-time">5h ago</div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-icon" style="background:#EAFAF1;">✅</div>
+              <div class="notif-body">
+                <div class="notif-title">Contribution Approved</div>
+                <div class="notif-desc">Your £200 cash contribution for Death Support was approved.</div>
+              </div>
+              <div class="notif-time">20 Mar</div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-icon" style="background:#FDEBD0;">📢</div>
+              <div class="notif-body">
+                <div class="notif-title">AGM — 12 April 2026</div>
+                <div class="notif-desc">Annual General Meeting at Green Street Community Hall.</div>
+              </div>
+              <div class="notif-time">25 Mar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUICK ACTIONS -->
+      <div class="card">
+        <div class="card-title" style="margin-bottom:1.25rem;">Quick Actions</div>
+        <div class="grid grid-4" style="gap:1rem;">
+          <a href="contributions/contribute.html" class="btn btn-outline" style="height:auto;padding:1rem;flex-direction:column;gap:.5rem;font-size:.8rem;">
+            <span style="font-size:1.5rem;">💰</span>Make Contribution
+          </a>
+          <a href="nominees/add.html" class="btn btn-outline" style="height:auto;padding:1rem;flex-direction:column;gap:.5rem;font-size:.8rem;">
+            <span style="font-size:1.5rem;">👨‍👩‍👧</span>Add Nominee
+          </a>
+          <a href="verification/upload.html" class="btn btn-outline" style="height:auto;padding:1rem;flex-direction:column;gap:.5rem;font-size:.8rem;">
+            <span style="font-size:1.5rem;">📎</span>Upload Document
+          </a>
+          <a href="members/profile.html" class="btn btn-outline" style="height:auto;padding:1rem;flex-direction:column;gap:.5rem;font-size:.8rem;">
+            <span style="font-size:1.5rem;">👤</span>Edit Profile
+          </a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('dashboard', '../');
+    renderTopbar('Dashboard', '../');
+  });
+</script>
+</body>
+</html>

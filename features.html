@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .features-hero { background: linear-gradient(135deg,var(--color-primary) 0%,var(--color-accent) 100%); color:white; padding:4rem 2rem;text-align:center; }
+    .feature-module {
+      display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;
+      padding:4rem 0; border-bottom:1px solid var(--color-border);
+    }
+    .feature-module:last-child { border-bottom:none; }
+    .feature-module.reverse { direction:rtl; }
+    .feature-module.reverse > * { direction:ltr; }
+    .module-visual {
+      background:var(--color-bg); border:1px solid var(--color-border);
+      border-radius:var(--radius-xl); padding:2rem; box-shadow:var(--shadow-md);
+    }
+    .module-tag {
+      display:inline-block; background:var(--color-primary);color:white;
+      font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+      padding:.3rem .8rem;border-radius:var(--radius-full);margin-bottom:1rem;
+    }
+    .check-list { display:flex;flex-direction:column;gap:.6rem;margin:1.25rem 0; }
+    .check-item { display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem; }
+    .check-item .ck { color:var(--color-success);font-size:1rem;flex-shrink:0;margin-top:1px; }
+    .role-pill {
+      display:inline-flex;align-items:center;gap:.4rem;
+      background:var(--color-bg);border:1px solid var(--color-border);
+      border-radius:var(--radius-full);padding:.25rem .75rem;
+      font-size:.75rem;font-weight:600;color:var(--color-text-muted);
+      margin:.25rem;
+    }
+  </style>
+</head>
+<body class="public-page">
+
+<nav class="public-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-icon">U</div>Ummah Platform</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a><a href="about.html">About</a>
+      <a href="features.html" class="active">Features</a>
+      <a href="pricing.html">Pricing</a><a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-outline-muted btn-sm">Sign In</a>
+      <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<section class="features-hero">
+  <div class="public-main">
+    <div class="badge badge-info" style="margin-bottom:1rem;background:rgba(255,255,255,.2);color:white;border:1px solid rgba(255,255,255,.4);">Complete Feature Set</div>
+    <h1 style="font-size:2.5rem;margin-bottom:1rem;">Every feature your organisation needs</h1>
+    <p style="font-size:1.05rem;opacity:.85;max-width:600px;margin:0 auto;">From member onboarding to disbursement — a complete end-to-end platform built for community welfare organisations.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+
+    <!-- MODULE 1: Member Management -->
+    <div class="feature-module">
+      <div>
+        <div class="module-tag">Members</div>
+        <h2 style="font-size:1.75rem;margin-bottom:1rem;">Complete Member Lifecycle</h2>
+        <p style="color:var(--color-text-muted);">Manage members from initial request to verified active status. Full profile management, role assignment, and KYC identity verification.</p>
+        <div class="check-list">
+          <div class="check-item"><span class="ck">✓</span> Membership request and approval workflow</div>
+          <div class="check-item"><span class="ck">✓</span> NID / Passport / Driving licence verification</div>
+          <div class="check-item"><span class="ck">✓</span> Role assignment: Admin, Treasurer, Auditor, Member</div>
+          <div class="check-item"><span class="ck">✓</span> Nominee registration and verification</div>
+          <div class="check-item"><span class="ck">✓</span> Member suspension and reinstatement</div>
+          <div class="check-item"><span class="ck">✓</span> Invite by email or link</div>
+        </div>
+        <div>
+          <span class="role-pill">🔑 Admin</span>
+          <span class="role-pill">✅ Treasurer</span>
+          <span class="role-pill">👥 Member</span>
+        </div>
+        <a href="app/members/list.html" class="btn btn-primary mt-4" style="margin-top:1.5rem;">See Member Management →</a>
+      </div>
+      <div class="module-visual">
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;">
+          <div style="background:var(--color-bg);padding:.75rem 1rem;border-bottom:1px solid var(--color-border);font-size:.8rem;font-weight:600;color:var(--color-text-muted);">Members List</div>
+          <div style="padding:.75rem 0;">
+            <div style="display:flex;align-items:center;gap:.75rem;padding:.6rem 1rem;border-bottom:1px solid var(--color-border-light);">
+              <div style="width:32px;height:32px;border-radius:50%;background:var(--color-primary);display:flex;align-items:center;justify-content:center;color:white;font-size:.7rem;font-weight:700;flex-shrink:0;">RA</div>
+              <div style="flex:1;"><div style="font-size:.825rem;font-weight:600;">Rahim Ahmed</div><div style="font-size:.7rem;color:var(--color-text-muted);">Admin · Birmingham</div></div>
+              <span class="badge badge-active badge-dot">Active</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:.75rem;padding:.6rem 1rem;border-bottom:1px solid var(--color-border-light);">
+              <div style="width:32px;height:32px;border-radius:50%;background:var(--color-accent);display:flex;align-items:center;justify-content:center;color:white;font-size:.7rem;font-weight:700;flex-shrink:0;">SK</div>
+              <div style="flex:1;"><div style="font-size:.825rem;font-weight:600;">Sadia Karim</div><div style="font-size:.7rem;color:var(--color-text-muted);">Member · Verified</div></div>
+              <span class="badge badge-verified badge-dot">Verified</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:.75rem;padding:.6rem 1rem;">
+              <div style="width:32px;height:32px;border-radius:50%;background:var(--color-warning);display:flex;align-items:center;justify-content:center;color:white;font-size:.7rem;font-weight:700;flex-shrink:0;">AK</div>
+              <div style="flex:1;"><div style="font-size:.825rem;font-weight:600;">Abdul Karim</div><div style="font-size:.7rem;color:var(--color-text-muted);">Member · Pending KYC</div></div>
+              <span class="badge badge-pending badge-dot">Pending</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODULE 2: Causes -->
+    <div class="feature-module reverse">
+      <div>
+        <div class="module-tag">Causes</div>
+        <h2 style="font-size:1.75rem;margin-bottom:1rem;">Support Causes &amp; Campaigns</h2>
+        <p style="color:var(--color-text-muted);">Create, manage, and publish support causes. Track progress, post updates, and close causes with full disbursement records.</p>
+        <div class="check-list">
+          <div class="check-item"><span class="ck">✓</span> Death support, medical, Zakat, mosque, flood relief</div>
+          <div class="check-item"><span class="ck">✓</span> Target amount with visual progress tracking</div>
+          <div class="check-item"><span class="ck">✓</span> Admin publish/review before going live</div>
+          <div class="check-item"><span class="ck">✓</span> Cause update timeline for transparency</div>
+          <div class="check-item"><span class="ck">✓</span> Closure report with full financial summary</div>
+        </div>
+        <a href="app/causes/list.html" class="btn btn-primary" style="margin-top:1.5rem;">Explore Causes Module →</a>
+      </div>
+      <div class="module-visual">
+        <div class="cause-card" style="pointer-events:none;">
+          <div class="cause-card-img" style="height:100px;font-size:2rem;">🕊️
+            <span class="cause-card-badge badge badge-published badge-dot">Published</span>
+          </div>
+          <div class="cause-card-body">
+            <div class="cause-card-category">Death Support</div>
+            <div class="cause-card-title">Death Support Fund — Nurul Islam Family</div>
+            <div class="progress-label"><span>£12,400 raised</span><span>83%</span></div>
+            <div class="progress"><div class="progress-bar success" style="width:83%;"></div></div>
+            <div class="cause-card-meta"><span>48 contributors</span><span>£2,600 remaining</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODULE 3: Contributions & Receipts -->
+    <div class="feature-module">
+      <div>
+        <div class="module-tag">Contributions</div>
+        <h2 style="font-size:1.75rem;margin-bottom:1rem;">Contributions &amp; Receipt Verification</h2>
+        <p style="color:var(--color-text-muted);">Members contribute manually and upload payment receipts. Treasurers verify receipts before contributions are counted.</p>
+        <div class="check-list">
+          <div class="check-item"><span class="ck">✓</span> Bank transfer, cash, mobile banking (bKash, Nagad)</div>
+          <div class="check-item"><span class="ck">✓</span> Receipt upload (PDF, JPG, PNG)</div>
+          <div class="check-item"><span class="ck">✓</span> Treasurer receipt verification workflow</div>
+          <div class="check-item"><span class="ck">✓</span> Approve / reject with reason</div>
+          <div class="check-item"><span class="ck">✓</span> Member notified on status change</div>
+          <div class="check-item"><span class="ck">✓</span> Contribution history per member and cause</div>
+        </div>
+        <a href="app/contributions/list.html" class="btn btn-primary" style="margin-top:1.5rem;">See Contributions Module →</a>
+      </div>
+      <div class="module-visual">
+        <div style="display:flex;flex-direction:column;gap:.75rem;">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:.75rem;background:var(--color-success-light);border:1px solid var(--color-success);border-radius:var(--radius-md);">
+            <div><div style="font-size:.825rem;font-weight:600;">Rahim Ahmed — £500</div><div style="font-size:.7rem;color:var(--color-text-muted);">Bank Transfer · Lloyds</div></div>
+            <span class="badge badge-approved badge-dot">Approved</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:.75rem;background:var(--status-pending-bg);border:1px solid var(--color-warning);border-radius:var(--radius-md);">
+            <div><div style="font-size:.825rem;font-weight:600;">Imran Hossain — £300</div><div style="font-size:.7rem;color:var(--color-text-muted);">bKash · Receipt uploaded</div></div>
+            <span class="badge badge-pending badge-dot">Pending</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:.75rem;background:var(--color-bg);border:1px solid var(--color-border);border-radius:var(--radius-md);">
+            <div><div style="font-size:.825rem;font-weight:600;">Sadia Karim — £400</div><div style="font-size:.7rem;color:var(--color-text-muted);">NatWest · Under review</div></div>
+            <span class="badge badge-review badge-dot">Review</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODULE 4: Disbursements -->
+    <div class="feature-module reverse">
+      <div>
+        <div class="module-tag">Disbursements</div>
+        <h2 style="font-size:1.75rem;margin-bottom:1rem;">Disbursement Workflows</h2>
+        <p style="color:var(--color-text-muted);">Request, approve, and record disbursements with multi-level authorisation. Supports GBP, BDT, and other currencies.</p>
+        <div class="check-list">
+          <div class="check-item"><span class="ck">✓</span> Treasurer creates disbursement request</div>
+          <div class="check-item"><span class="ck">✓</span> Admin approval required before payment</div>
+          <div class="check-item"><span class="ck">✓</span> Mark as paid with payment reference</div>
+          <div class="check-item"><span class="ck">✓</span> International transfer support (BDT, GBP)</div>
+          <div class="check-item"><span class="ck">✓</span> Full audit trail on every disbursement</div>
+        </div>
+        <a href="app/disbursements/list.html" class="btn btn-primary" style="margin-top:1.5rem;">See Disbursements →</a>
+      </div>
+      <div class="module-visual">
+        <div style="border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;">
+          <div style="padding:1rem;background:var(--color-warning-light);border-bottom:1px solid var(--color-warning);">
+            <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;color:var(--color-warning);margin-bottom:.25rem;">⏳ Pending Approval</div>
+            <div style="font-size:.925rem;font-weight:600;">Mosque Roof Repair — Phase 1</div>
+            <div style="font-size:.8rem;color:var(--color-text-muted);">Al-Noor Construction Ltd</div>
+          </div>
+          <div style="padding:1rem;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:.5rem;font-size:.8rem;"><span style="color:var(--color-text-muted);">Amount</span><span style="font-weight:700;">£15,000</span></div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:.5rem;font-size:.8rem;"><span style="color:var(--color-text-muted);">Method</span><span>Bank Transfer</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:.8rem;"><span style="color:var(--color-text-muted);">Requested</span><span>26 Mar 2026</span></div>
+            <div style="display:flex;gap:.5rem;margin-top:1rem;">
+              <button class="btn btn-success btn-sm" style="flex:1;">✓ Approve</button>
+              <button class="btn btn-danger btn-sm" style="flex:1;">✕ Reject</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODULE 5: Reports & Audit -->
+    <div class="feature-module">
+      <div>
+        <div class="module-tag">Reports &amp; Audit</div>
+        <h2 style="font-size:1.75rem;margin-bottom:1rem;">Full Transparency &amp; Audit Trail</h2>
+        <p style="color:var(--color-text-muted);">Every action is logged. Generate comprehensive reports for members, auditors, and regulators. Export to CSV.</p>
+        <div class="check-list">
+          <div class="check-item"><span class="ck">✓</span> Collections report: by cause, by month, by member</div>
+          <div class="check-item"><span class="ck">✓</span> Disbursements report with payment status</div>
+          <div class="check-item"><span class="ck">✓</span> Immutable audit log with IP and timestamp</div>
+          <div class="check-item"><span class="ck">✓</span> Activity log for all platform actions</div>
+          <div class="check-item"><span class="ck">✓</span> Role-based auditor access (read-only)</div>
+          <div class="check-item"><span class="ck">✓</span> CSV and print export</div>
+        </div>
+        <a href="app/reports/overview.html" class="btn btn-primary" style="margin-top:1.5rem;">View Reports →</a>
+      </div>
+      <div class="module-visual">
+        <div style="margin-bottom:1rem;">
+          <div style="display:flex;justify-content:space-between;font-size:.75rem;color:var(--color-text-muted);margin-bottom:.4rem;"><span>Collections This Year</span><span style="font-weight:700;color:var(--color-text);">£132,400</span></div>
+          <div class="progress progress-lg"><div class="progress-bar" style="width:75%;"></div></div>
+        </div>
+        <div style="margin-bottom:1rem;">
+          <div style="display:flex;justify-content:space-between;font-size:.75rem;color:var(--color-text-muted);margin-bottom:.4rem;"><span>Disbursements</span><span style="font-weight:700;color:var(--color-text);">£31,320</span></div>
+          <div class="progress progress-lg"><div class="progress-bar warning" style="width:24%;"></div></div>
+        </div>
+        <div data-chart-bar="8200,11400,14200,9800,22400,38200" style="height:100px;margin-top:1rem;"></div>
+        <div style="font-size:.7rem;color:var(--color-text-muted);text-align:center;margin-top:.5rem;">Monthly Collections (Oct–Mar)</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ROLE CAPABILITIES -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <h2 class="section-title">Role-Based Access</h2>
+    <p class="section-desc">The right tools for the right people — nothing more, nothing less.</p>
+    <div class="grid grid-4" style="gap:1.25rem;">
+      <div class="card text-center">
+        <div style="font-size:2rem;margin-bottom:.75rem;">🔑</div>
+        <h4 style="margin-bottom:.5rem;">Admin</h4>
+        <p style="font-size:.8rem;color:var(--color-text-muted);">Full access. Manage all members, causes, verifications, and organisation settings.</p>
+      </div>
+      <div class="card text-center">
+        <div style="font-size:2rem;margin-bottom:.75rem;">💰</div>
+        <h4 style="margin-bottom:.5rem;">Treasurer</h4>
+        <p style="font-size:.8rem;color:var(--color-text-muted);">Manage contributions, verify receipts, process disbursements, and export financial reports.</p>
+      </div>
+      <div class="card text-center">
+        <div style="font-size:2rem;margin-bottom:.75rem;">🔍</div>
+        <h4 style="margin-bottom:.5rem;">Auditor</h4>
+        <p style="font-size:.8rem;color:var(--color-text-muted);">Read-only access to all financial data, reports, and audit logs.</p>
+      </div>
+      <div class="card text-center">
+        <div style="font-size:2rem;margin-bottom:.75rem;">👤</div>
+        <h4 style="margin-bottom:.5rem;">Member</h4>
+        <p style="font-size:.8rem;color:var(--color-text-muted);">Contribute to causes, manage nominees, view own contribution history and notifications.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" style="background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-accent) 100%);padding:4rem 2rem;text-align:center;color:white;">
+  <div class="section-inner">
+    <h2 style="font-size:2rem;margin-bottom:1rem;">See it in action</h2>
+    <p style="opacity:.85;max-width:480px;margin:0 auto 2rem;">Explore a live demo or start your free organisation today.</p>
+    <div class="hero-actions">
+      <a href="app/dashboard-admin.html" class="btn btn-white btn-lg">Open Demo Dashboard</a>
+      <a href="register.html" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.5);color:white;">Create Organisation</a>
+    </div>
+  </div>
+</section>
+
+<footer class="public-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div><div class="nav-logo" style="color:white;margin-bottom:1rem;"><div class="logo-icon">U</div>Ummah Platform</div><p class="footer-brand">Transparent, trustworthy fund management for community organisations worldwide.</p></div>
+      <div><div class="footer-col-title">Platform</div><div class="footer-links"><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="contact.html">Contact</a></div></div>
+      <div><div class="footer-col-title">Product</div><div class="footer-links"><a href="register.html">Get Started</a><a href="login.html">Sign In</a><a href="app/dashboard-admin.html">Demo</a><a href="help.html">Help</a></div></div>
+      <div><div class="footer-col-title">Legal</div><div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms</a></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Ummah Platform.</span><span>Built with ❤️ for community organisations</span></div>
+  </div>
+</footer>
+
+<script src="assets/js/mock-data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

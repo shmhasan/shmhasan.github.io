@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Treasurer Dashboard — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar" style="background:#2E86AB;">FI</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Farzana Islam</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Treasurer</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="#">Sylhet Welfare Trust</a><span class="sep">›</span>
+          <span class="current">Finance Dashboard</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Finance Dashboard</h1>
+            <p class="page-subtitle">Treasurer view · 29 March 2026</p>
+          </div>
+          <div class="page-actions">
+            <a href="disbursements/create.html" class="btn btn-primary">+ New Disbursement</a>
+            <a href="reports/exports.html" class="btn btn-outline">Export Report</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALERT: pending receipts -->
+      <div class="approval-bar pending" style="margin-bottom:1.5rem;">
+        <div class="approval-bar-info">
+          <div class="approval-bar-title">⏳ 2 receipts pending verification</div>
+          <div class="approval-bar-desc">Imran Hossain (£300 bKash) and Sadia Karim (£400 NatWest) are awaiting your review.</div>
+        </div>
+        <div class="approval-bar-actions">
+          <a href="receipts/list.html" class="btn btn-warning">Review Receipts</a>
+        </div>
+      </div>
+
+      <!-- STATS -->
+      <div class="grid grid-4" style="margin-bottom:2rem;">
+        <div class="stat-card" style="--stat-color:#1B4F72;--stat-bg:#EBF5FB;">
+          <div class="stat-card-icon">💰</div>
+          <div class="stat-card-value">£38,200</div>
+          <div class="stat-card-label">Collected (March)</div>
+          <div class="stat-card-change up">▲ 71% vs February</div>
+        </div>
+        <div class="stat-card" style="--stat-color:#E74C3C;--stat-bg:#FADBD8;">
+          <div class="stat-card-icon">📤</div>
+          <div class="stat-card-value">£18,420</div>
+          <div class="stat-card-label">Disbursed (March)</div>
+          <div class="stat-card-change up">2 payments made</div>
+        </div>
+        <div class="stat-card" style="--stat-color:#27AE60;--stat-bg:#EAFAF1;">
+          <div class="stat-card-icon">💵</div>
+          <div class="stat-card-value">£19,780</div>
+          <div class="stat-card-label">Net Balance (March)</div>
+          <div class="stat-card-change up">↑ Positive</div>
+        </div>
+        <div class="stat-card" style="--stat-color:#F39C12;--stat-bg:#FDEBD0;">
+          <div class="stat-card-icon">🧾</div>
+          <div class="stat-card-value">2</div>
+          <div class="stat-card-label">Receipts Pending</div>
+          <div class="stat-card-change down">£700 total to verify</div>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="margin-bottom:2rem;">
+
+        <!-- PENDING RECEIPTS -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Receipts to Verify</div>
+            <a href="receipts/list.html" class="btn btn-ghost btn-sm">All receipts →</a>
+          </div>
+          <div>
+            <div data-action-group style="padding:1rem;background:var(--color-warning-light);border:1px solid var(--color-warning);border-radius:var(--radius-md);margin-bottom:.75rem;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.75rem;">
+                <div>
+                  <div style="font-weight:600;font-size:.875rem;">Imran Hossain</div>
+                  <div style="font-size:.75rem;color:var(--color-text-muted);">£300 · bKash · Medical Support · 27 Mar</div>
+                </div>
+                <span class="badge badge-pending badge-dot">Pending</span>
+              </div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);margin-bottom:.75rem;">File: bkash-screenshot-27mar.jpg</div>
+              <div style="display:flex;gap:.5rem;">
+                <a href="receipts/verify.html" class="btn btn-sm btn-primary" style="flex:1;">Review Receipt</a>
+              </div>
+            </div>
+            <div data-action-group style="padding:1rem;background:var(--color-info-light);border:1px solid var(--color-info);border-radius:var(--radius-md);">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.75rem;">
+                <div>
+                  <div style="font-weight:600;font-size:.875rem;">Sadia Karim</div>
+                  <div style="font-size:.75rem;color:var(--color-text-muted);">£400 · NatWest · Zakat Fund · 22 Mar</div>
+                </div>
+                <span class="badge badge-review badge-dot">Under Review</span>
+              </div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);margin-bottom:.75rem;">File: natwest-zakat-22mar.pdf</div>
+              <div style="display:flex;gap:.5rem;">
+                <a href="receipts/verify.html" class="btn btn-sm btn-outline" style="flex:1;">Continue Review</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PENDING DISBURSEMENTS -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Pending Disbursements</div>
+            <a href="disbursements/list.html" class="btn btn-ghost btn-sm">All →</a>
+          </div>
+          <div>
+            <div style="padding:.875rem;border:1px solid var(--color-border);border-radius:var(--radius-md);margin-bottom:.75rem;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem;">
+                <div style="font-size:.875rem;font-weight:600;">Mosque Roof — Phase 1 Advance</div>
+                <span class="badge badge-pending badge-dot">Pending Admin</span>
+              </div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);">Al-Noor Construction · £15,000 · Bank Transfer</div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);margin-top:.25rem;">Requested: 26 Mar 2026</div>
+              <a href="disbursements/approve.html" class="btn btn-sm btn-outline" style="margin-top:.75rem;width:100%;">View Details</a>
+            </div>
+            <div style="padding:.875rem;border:1px solid var(--color-border);border-radius:var(--radius-md);">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem;">
+                <div style="font-size:.875rem;font-weight:600;">Zakat Distribution — Batch 1</div>
+                <span class="badge badge-pending badge-dot">Pending Admin</span>
+              </div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);">14 recipients · £12,000 · Multiple</div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);margin-top:.25rem;">Requested: 28 Mar 2026</div>
+              <a href="disbursements/approve.html" class="btn btn-sm btn-outline" style="margin-top:.75rem;width:100%;">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FINANCIAL SUMMARY -->
+      <div class="grid grid-2" style="margin-bottom:2rem;">
+        <div class="chart-card">
+          <div class="card-header">
+            <div class="card-title">Monthly Collections</div>
+            <a href="reports/collections.html" class="btn btn-ghost btn-sm">Full report →</a>
+          </div>
+          <div data-chart-bar="8200,11400,14200,9800,22400,38200" style="height:100px;"></div>
+          <div style="display:flex;justify-content:space-between;margin-top:.75rem;font-size:.7rem;color:var(--color-text-muted);">
+            <span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Payment Method Breakdown</div>
+          </div>
+          <div style="display:flex;gap:2rem;align-items:center;">
+            <div class="donut-placeholder"></div>
+            <div class="chart-legend" style="flex:1;">
+              <div class="legend-item"><div class="legend-dot" style="background:var(--color-primary);"></div><span style="flex:1;">Bank Transfer</span><strong>72%</strong></div>
+              <div class="legend-item"><div class="legend-dot" style="background:var(--color-accent);"></div><span style="flex:1;">Cash</span><strong>14%</strong></div>
+              <div class="legend-item"><div class="legend-dot" style="background:var(--color-success);"></div><span style="flex:1;">Mobile Banking</span><strong>9%</strong></div>
+              <div class="legend-item"><div class="legend-dot" style="background:var(--color-warning);"></div><span style="flex:1;">Card Payment</span><strong>5%</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUICK ACTIONS -->
+      <div class="card">
+        <div class="card-title" style="margin-bottom:1.25rem;">Quick Actions</div>
+        <div class="grid grid-4" style="gap:1rem;">
+          <a href="receipts/list.html" class="btn btn-outline" style="height:auto;padding:1rem;flex-direction:column;gap:.5rem;font-size:.8rem;"><span style="font-size:1.5rem;">🧾</span>Verify Receipts</a>
+          <a href="disbursements/create.html" class="btn btn-outline" style="height:auto;padding:1rem;flex-direction:column;gap:.5rem;font-size:.8rem;"><span style="font-size:1.5rem;">📤</span>New Disbursement</a>
+          <a href="reports/collections.html" class="btn btn-outline" style="height:auto;padding:1rem;flex-direction:column;gap:.5rem;font-size:.8rem;"><span style="font-size:1.5rem;">📊</span>Collections Report</a>
+          <a href="reports/exports.html" class="btn btn-outline" style="height:auto;padding:1rem;flex-direction:column;gap:.5rem;font-size:.8rem;"><span style="font-size:1.5rem;">⬇️</span>Export Data</a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('dashboard', '../');
+    renderTopbar('Dashboard', '../');
+    // Override role in topbar to Treasurer
+    setTimeout(() => {
+      const av = document.getElementById('profileAvatar');
+      const nm = document.getElementById('profileName');
+      const rl = document.getElementById('profileRole');
+      if (av) { av.textContent='FI'; av.style.background='#2E86AB'; }
+      if (nm) nm.textContent = 'Farzana Islam';
+      if (rl) rl.textContent = 'Treasurer';
+      const rs = document.getElementById('roleSwitcher');
+      if (rs) rs.value = 'treasurer';
+    }, 100);
+  });
+</script>
+</body>
+</html>

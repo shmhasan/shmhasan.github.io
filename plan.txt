@@ -1,0 +1,259 @@
+================================================================================
+PROJECT PLAN: Community Support & Fund Management Platform
+Static HTML Prototype — GitHub Pages Ready
+================================================================================
+Created: 2026-03-29
+Source: prompt.md
+Note: tickets.txt not found. Plan derived entirely from prompt.md.
+      Add tickets.txt when available to extend/override specific items.
+================================================================================
+
+OVERVIEW
+--------
+Build a fully navigable, polished, multi-page static HTML prototype simulating
+a complete community fund management SaaS. No frameworks. Vanilla HTML/CSS/JS.
+~70+ pages across public, onboarding, and app sections.
+
+Delivery pattern: Files generated in batches, each batch self-contained.
+
+================================================================================
+BATCH 0 — FOUNDATION (Assets, Shared Styles, Mock Data, JS Helpers)
+================================================================================
+[ ] assets/css/styles.css
+    - Full design system: variables, reset, typography, layout
+    - Sidebar, topbar, breadcrumbs, cards, tables, badges, forms
+    - Modals, alerts/toasts, empty states, timeline, tabs
+    - Progress bars, approval bars, pseudo chart cards
+    - Responsive breakpoints
+
+[ ] assets/js/mock-data.js
+    - Organizations: Sylhet Welfare Trust, Dhaka Community Support Circle, UK-BD Mosque Fund
+    - Members: Rahim Ahmed, Sadia Karim, Farzana Islam, Imran Hossain, + more
+    - Nominees with relationships
+    - Causes: medical emergency, death support, zakat, mosque renovation, flood relief
+    - Contributions with amounts, timestamps, statuses
+    - Receipts, disbursements, notifications, audit logs
+    - Reports summary data
+
+[ ] assets/js/app.js
+    - Sidebar toggle (mobile)
+    - Active nav highlighting
+    - Role switcher demo
+    - Fake notification count
+    - Modal open/close helpers
+    - Toast/alert demo
+    - Tab switching
+    - Search/filter UI simulation
+    - Form stepper helpers
+    - Render helpers for tables and cards
+
+================================================================================
+BATCH 1 — PUBLIC WEBSITE (6 pages)
+================================================================================
+[ ] index.html             — Landing page (hero, features overview, CTA, testimonials)
+[ ] about.html             — About the platform, mission, team
+[ ] features.html          — Full features breakdown by role
+[ ] pricing.html           — Pricing tiers or Request Demo CTA
+[ ] contact.html           — Contact form, social links
+[ ] 404.html               — Custom 404 page
+[ ] 403.html               — Access denied page
+
+================================================================================
+BATCH 2 — AUTH PAGES (4 pages)
+================================================================================
+[ ] login.html             — Login form, role switcher hint
+[ ] register.html          — Registration form
+[ ] forgot-password.html   — Forgot password form
+[ ] reset-password.html    — Reset password form
+
+================================================================================
+BATCH 3 — ONBOARDING FLOW (6 pages)
+================================================================================
+[ ] onboarding/verify.html          — Mock OTP/email verification step
+[ ] onboarding/create-org.html      — Create new organization wizard step 1
+[ ] onboarding/join-org.html        — Join existing organization step
+[ ] onboarding/setup-wizard.html    — Setup wizard (multi-step stepper)
+[ ] onboarding/welcome.html         — Onboarding complete / welcome screen
+
+================================================================================
+BATCH 4 — DASHBOARDS (4 pages)
+================================================================================
+[ ] app/dashboard-member.html       — Member dashboard (causes, contributions, nominees)
+[ ] app/dashboard-admin.html        — Admin dashboard (requests, verifications, stats)
+[ ] app/dashboard-treasurer.html    — Treasurer dashboard (pending receipts, disbursements)
+[ ] app/dashboard-auditor.html      — Auditor dashboard (read-only, logs, reports)
+
+================================================================================
+BATCH 5 — ORGANIZATION MODULE (6 pages)
+================================================================================
+[ ] app/organization/overview.html          — Org overview: stats, quick actions
+[ ] app/organization/profile.html           — Org profile: name, logo, description
+[ ] app/organization/settings.html          — Org settings: roles, permissions, config
+[ ] app/organization/invite-member.html     — Invite member by email/phone
+[ ] app/organization/membership-requests.html — Approve/reject join requests
+[ ] app/organization/roles.html             — Role assignment for members
+
+================================================================================
+BATCH 6 — MEMBERS MODULE (4 pages)
+================================================================================
+[ ] app/members/list.html               — Members list with filters and search
+[ ] app/members/detail.html             — Member detail: info, status, actions
+[ ] app/members/profile.html            — Member profile (self-edit view)
+[ ] app/members/verification-status.html — Member KYC/NID verification status
+
+================================================================================
+BATCH 7 — NOMINEES MODULE (5 pages)
+================================================================================
+[ ] app/nominees/list.html      — Nominees list with status badges
+[ ] app/nominees/add.html       — Add nominee form
+[ ] app/nominees/detail.html    — Nominee detail page
+[ ] app/nominees/documents.html — Upload/view nominee documents
+[ ] app/nominees/review.html    — Admin nominee review + approve/reject
+
+================================================================================
+BATCH 8 — VERIFICATION MODULE (5 pages)
+================================================================================
+[ ] app/verification/queue.html          — Verification queue (members + nominees)
+[ ] app/verification/member-review.html  — Review member KYC documents
+[ ] app/verification/nominee-review.html — Review nominee documents
+[ ] app/verification/upload.html         — Document upload page
+[ ] app/verification/status.html         — Current verification status page
+
+================================================================================
+BATCH 9 — CAUSES MODULE (7 pages)
+================================================================================
+[ ] app/causes/list.html          — Causes list: active, pending, closed
+[ ] app/causes/detail.html        — Cause detail with progress bar, updates
+[ ] app/causes/create.html        — Create cause form
+[ ] app/causes/edit.html          — Edit cause form
+[ ] app/causes/publish-review.html — Admin publish review + approve
+[ ] app/causes/updates.html       — Cause updates timeline
+[ ] app/causes/close.html         — Cause closure page with summary
+
+================================================================================
+BATCH 10 — CONTRIBUTIONS MODULE (5 pages)
+================================================================================
+[ ] app/contributions/contribute.html  — Contribute to a cause form
+[ ] app/contributions/list.html        — Contributions list with filters
+[ ] app/contributions/detail.html      — Contribution detail
+[ ] app/contributions/review.html      — Admin contribution review
+[ ] app/contributions/success.html     — Submission success / pending approval page
+
+================================================================================
+BATCH 11 — RECEIPTS MODULE (3 pages)
+================================================================================
+[ ] app/receipts/list.html    — Receipt list with status
+[ ] app/receipts/detail.html  — Receipt detail with image preview
+[ ] app/receipts/verify.html  — Treasurer receipt verification page
+
+================================================================================
+BATCH 12 — DISBURSEMENTS MODULE (5 pages)
+================================================================================
+[ ] app/disbursements/list.html    — Disbursements list
+[ ] app/disbursements/create.html  — Create disbursement request
+[ ] app/disbursements/detail.html  — Disbursement detail
+[ ] app/disbursements/approve.html — Approve disbursement
+[ ] app/disbursements/paid.html    — Mark as paid confirmation
+
+================================================================================
+BATCH 13 — REPORTS MODULE (6 pages)
+================================================================================
+[ ] app/reports/overview.html       — Reports overview: summary stats + links
+[ ] app/reports/collections.html    — Collections report with pseudo charts
+[ ] app/reports/disbursements.html  — Disbursements report
+[ ] app/reports/causes.html         — Cause-wise breakdown report
+[ ] app/reports/members.html        — Member-wise contribution report
+[ ] app/reports/exports.html        — Export history and download options
+
+================================================================================
+BATCH 14 — NOTIFICATIONS & AUDIT MODULE (5 pages)
+================================================================================
+[ ] app/notifications/center.html              — Notification center
+[ ] app/notifications/announcements.html       — Announcements list
+[ ] app/notifications/announcement-detail.html — Announcement detail
+[ ] app/audit/activity-log.html                — Activity log table
+[ ] app/audit/audit-log.html                   — Audit log (financial/admin actions)
+
+================================================================================
+BATCH 15 — SETTINGS MODULE (3 pages)
+================================================================================
+[ ] app/settings/profile.html      — Profile settings (personal info, avatar)
+[ ] app/settings/security.html     — Security settings (password, 2FA mock)
+[ ] app/settings/preferences.html  — Preferences (notifications, language, theme)
+
+================================================================================
+BATCH 16 — SYSTEM PAGES & FINAL (3 pages + README)
+================================================================================
+[ ] help.html              — FAQ / Help page
+[ ] 403.html               — (move from Batch 1 if needed)
+[ ] 404.html               — (move from Batch 1 if needed)
+[ ] README.md              — Project overview, file structure, how to run
+
+================================================================================
+DELIVERY SEQUENCE SUMMARY
+================================================================================
+
+Batch 0:  Foundation (CSS + JS files) ............ 3 files
+Batch 1:  Public website ......................... 7 files
+Batch 2:  Auth pages ............................. 4 files
+Batch 3:  Onboarding ............................. 5 files
+Batch 4:  Dashboards ............................. 4 files
+Batch 5:  Organization module .................... 6 files
+Batch 6:  Members module ......................... 4 files
+Batch 7:  Nominees module ........................ 5 files
+Batch 8:  Verification module .................... 5 files
+Batch 9:  Causes module .......................... 7 files
+Batch 10: Contributions module ................... 5 files
+Batch 11: Receipts module ........................ 3 files
+Batch 12: Disbursements module ................... 5 files
+Batch 13: Reports module ......................... 6 files
+Batch 14: Notifications & Audit module ........... 5 files
+Batch 15: Settings module ........................ 3 files
+Batch 16: System pages & README .................. 4 files
+
+TOTAL: ~86 files
+================================================================================
+
+DESIGN SYSTEM SUMMARY (guiding all batches)
+--------------------------------------------
+Color palette:
+  Primary:    #1B4F72   (deep navy blue — trust)
+  Accent:     #2E86AB   (teal blue — action)
+  Success:    #27AE60   (green)
+  Warning:    #F39C12   (amber)
+  Danger:     #E74C3C   (red)
+  Neutral:    #F4F6F9   (background)
+  Text:       #2C3E50   (dark slate)
+  Muted:      #7F8C8D   (secondary text)
+
+Typography:
+  Font stack: 'Inter', system-ui, -apple-system, sans-serif
+  (loaded from Google Fonts CDN in <head>)
+
+Layout:
+  - Left sidebar (260px) + topbar (64px) for app area
+  - Full-width topnav for public pages
+  - Max content width: 1200px
+
+Status badge color map:
+  pending       → amber background
+  under_review  → blue background
+  approved      → green background
+  rejected      → red background
+  verified      → teal background
+  active        → green background
+  suspended     → grey background
+  published     → teal background
+  closed        → grey background
+  paid          → green background
+  draft         → light grey background
+
+================================================================================
+NOTES
+================================================================================
+- All inter-page links use relative paths
+- Mock data defined once in mock-data.js, referenced everywhere
+- Role switcher in topbar allows demo of different permission views
+- No backend, no build tools — open index.html directly to start
+- GitHub Pages compatible (no server-side routing needed)
+================================================================================

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setup Wizard — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <style>
+    body { min-height:100vh;display:flex;flex-direction:column;background:var(--color-bg); }
+    .onboarding-header { background:var(--color-surface);border-bottom:1px solid var(--color-border);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between; }
+    .onboarding-body   { flex:1;padding:2rem;max-width:720px;margin:0 auto;width:100%; }
+    .wizard-step { display:none; }
+    .wizard-step.active { display:block; }
+    .setting-row { display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--color-border-light); }
+    .setting-row:last-child { border-bottom:none; }
+    .toggle { width:44px;height:24px;border-radius:12px;background:var(--color-bg-alt);border:none;cursor:pointer;position:relative;transition:background .2s; }
+    .toggle.on { background:var(--color-primary); }
+    .toggle::after { content:'';position:absolute;width:18px;height:18px;border-radius:50%;background:white;top:3px;left:3px;transition:left .2s;box-shadow:0 1px 3px rgba(0,0,0,.2); }
+    .toggle.on::after { left:23px; }
+  </style>
+</head>
+<body>
+
+<div class="onboarding-header">
+  <a href="../index.html" class="nav-logo"><div class="logo-icon">U</div>Ummah Platform</a>
+  <a href="../login.html" style="font-size:.8rem;color:var(--color-text-muted);">Save &amp; exit</a>
+</div>
+
+<div style="background:var(--color-surface);border-bottom:1px solid var(--color-border);padding:1.5rem 2rem;">
+  <div class="stepper stepper-wrap" style="max-width:600px;margin:0 auto;justify-content:center;">
+    <div class="step completed"><div class="step-dot">✓</div><div class="step-label">Verify</div></div>
+    <div class="step completed"><div class="step-dot">✓</div><div class="step-label">Organisation</div></div>
+    <div class="step active"><div class="step-dot">3</div><div class="step-label">Setup</div></div>
+    <div class="step"><div class="step-dot">4</div><div class="step-label">Complete</div></div>
+  </div>
+</div>
+
+<div class="onboarding-body">
+  <!-- Progress indicator -->
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;">
+    <div style="font-size:.875rem;color:var(--color-text-muted);">Setup wizard — Step <span id="wizardStepNum">1</span> of 3</div>
+    <div style="font-size:.8rem;color:var(--color-text-muted);">Sylhet Welfare Trust</div>
+  </div>
+  <div class="progress" style="margin-bottom:2rem;"><div class="progress-bar" id="wizardProgress" data-progress="33" style="width:33%;"></div></div>
+
+  <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:2rem 2.5rem;">
+
+    <!-- WIZARD STEP 1: Membership settings -->
+    <div class="wizard-step active" id="ws1">
+      <h3 style="font-size:1.25rem;margin-bottom:.4rem;">Membership Settings</h3>
+      <p style="font-size:.875rem;color:var(--color-text-muted);margin-bottom:2rem;">Configure how members join and what verification is required.</p>
+
+      <div>
+        <div class="setting-row">
+          <div>
+            <div style="font-weight:600;font-size:.875rem;">Require approval for new members</div>
+            <div style="font-size:.8rem;color:var(--color-text-muted);">New members must be approved by an admin before becoming active.</div>
+          </div>
+          <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+        </div>
+        <div class="setting-row">
+          <div>
+            <div style="font-weight:600;font-size:.875rem;">Require KYC verification</div>
+            <div style="font-size:.8rem;color:var(--color-text-muted);">Members must verify identity (NID/passport) before contributing.</div>
+          </div>
+          <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+        </div>
+        <div class="setting-row">
+          <div>
+            <div style="font-weight:600;font-size:.875rem;">Allow nominee registration</div>
+            <div style="font-size:.8rem;color:var(--color-text-muted);">Members can register nominees to receive death support benefits.</div>
+          </div>
+          <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+        </div>
+        <div class="setting-row">
+          <div>
+            <div style="font-weight:600;font-size:.875rem;">Require nominee verification</div>
+            <div style="font-size:.8rem;color:var(--color-text-muted);">Nominees must be reviewed and approved by an admin.</div>
+          </div>
+          <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+        </div>
+        <div class="setting-row">
+          <div>
+            <div style="font-weight:600;font-size:.875rem;">Allow public join requests</div>
+            <div style="font-size:.8rem;color:var(--color-text-muted);">Anyone can find and request to join your organisation.</div>
+          </div>
+          <button class="toggle" onclick="this.classList.toggle('on')"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- WIZARD STEP 2: Financial settings -->
+    <div class="wizard-step" id="ws2">
+      <h3 style="font-size:1.25rem;margin-bottom:.4rem;">Financial Settings</h3>
+      <p style="font-size:.875rem;color:var(--color-text-muted);margin-bottom:2rem;">Set your default currency, payment methods, and contribution workflow.</p>
+
+      <div class="form-group">
+        <label class="form-label">Primary Currency</label>
+        <select class="form-control">
+          <option>GBP — British Pound (£)</option>
+          <option>BDT — Bangladeshi Taka (৳)</option>
+          <option>USD — US Dollar ($)</option>
+          <option>EUR — Euro (€)</option>
+          <option>CAD — Canadian Dollar</option>
+          <option>AUD — Australian Dollar</option>
+          <option>AED — UAE Dirham</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Accepted Payment Methods</label>
+        <div style="display:flex;flex-direction:column;gap:.5rem;">
+          <label class="form-check"><input type="checkbox" checked /><span class="form-check-label">Bank Transfer</span></label>
+          <label class="form-check"><input type="checkbox" checked /><span class="form-check-label">Cash (with receipt)</span></label>
+          <label class="form-check"><input type="checkbox" checked /><span class="form-check-label">Mobile Banking (bKash, Nagad, Rocket)</span></label>
+          <label class="form-check"><input type="checkbox" /><span class="form-check-label">Card Payment</span></label>
+          <label class="form-check"><input type="checkbox" /><span class="form-check-label">Cheque</span></label>
+        </div>
+      </div>
+      <div>
+        <div class="setting-row">
+          <div>
+            <div style="font-weight:600;font-size:.875rem;">Require receipt for all contributions</div>
+            <div style="font-size:.8rem;color:var(--color-text-muted);">Members must upload payment proof before contribution is counted.</div>
+          </div>
+          <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+        </div>
+        <div class="setting-row">
+          <div>
+            <div style="font-weight:600;font-size:.875rem;">Treasurer approval required</div>
+            <div style="font-size:.8rem;color:var(--color-text-muted);">All contributions must be approved by the treasurer.</div>
+          </div>
+          <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+        </div>
+        <div class="setting-row">
+          <div>
+            <div style="font-weight:600;font-size:.875rem;">Admin approval for disbursements</div>
+            <div style="font-size:.8rem;color:var(--color-text-muted);">Disbursements require admin sign-off before payment.</div>
+          </div>
+          <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- WIZARD STEP 3: Notifications -->
+    <div class="wizard-step" id="ws3">
+      <h3 style="font-size:1.25rem;margin-bottom:.4rem;">Notification Preferences</h3>
+      <p style="font-size:.875rem;color:var(--color-text-muted);margin-bottom:2rem;">Choose which events trigger notifications for you and your members.</p>
+      <div>
+        <div class="setting-row">
+          <div><div style="font-weight:600;font-size:.875rem;">New membership request</div><div style="font-size:.8rem;color:var(--color-text-muted);">Notify admins when someone requests to join.</div></div>
+          <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+        </div>
+        <div class="setting-row">
+          <div><div style="font-weight:600;font-size:.875rem;">Membership approved / rejected</div><div style="font-size:.8rem;color:var(--color-text-muted);">Notify the applicant of the decision.</div></div>
+          <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+        </div>
+        <div class="setting-row">
+          <div><div style="font-weight:600;font-size:.875rem;">Contribution submitted</div><div style="font-size:.8rem;color:var(--color-text-muted);">Notify treasurer when a new contribution is uploaded.</div></div>
+          <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+        </div>
+        <div class="setting-row">
+          <div><div style="font-weight:600;font-size:.875rem;">Contribution approved / rejected</div><div style="font-size:.8rem;color:var(--color-text-muted);">Notify member of review outcome.</div></div>
+          <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+        </div>
+        <div class="setting-row">
+          <div><div style="font-weight:600;font-size:.875rem;">Disbursement pending approval</div><div style="font-size:.8rem;color:var(--color-text-muted);">Notify admin when a disbursement request needs approval.</div></div>
+          <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+        </div>
+        <div class="setting-row">
+          <div><div style="font-weight:600;font-size:.875rem;">New cause published</div><div style="font-size:.8rem;color:var(--color-text-muted);">Notify all members when a new cause goes live.</div></div>
+          <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV buttons -->
+    <div style="display:flex;justify-content:space-between;gap:1rem;margin-top:2rem;">
+      <button class="btn btn-outline-muted" id="wizardPrev" onclick="wizardNav(-1)" style="display:none;">← Back</button>
+      <button class="btn btn-primary btn-lg" id="wizardNext" onclick="wizardNav(1)" style="margin-left:auto;">Next →</button>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script>
+  let ws = 1;
+  function wizardNav(dir) {
+    document.getElementById('ws' + ws).classList.remove('active');
+    ws += dir;
+    if (ws > 3) { window.location.href = 'welcome.html'; return; }
+    document.getElementById('ws' + ws).classList.add('active');
+    document.getElementById('wizardStepNum').textContent = ws;
+    document.getElementById('wizardProgress').style.width = (ws * 33) + '%';
+    document.getElementById('wizardPrev').style.display = ws > 1 ? '' : 'none';
+    document.getElementById('wizardNext').textContent = ws === 3 ? 'Finish Setup →' : 'Next →';
+  }
+</script>
+</body>
+</html>

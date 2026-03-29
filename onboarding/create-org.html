@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Organisation — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <style>
+    body { min-height:100vh;display:flex;flex-direction:column;background:var(--color-bg); }
+    .onboarding-header { background:var(--color-surface);border-bottom:1px solid var(--color-border);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between; }
+    .onboarding-body   { flex:1;padding:2rem;max-width:720px;margin:0 auto;width:100%; }
+    .type-card {
+      border:2px solid var(--color-border);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;
+      cursor:pointer;transition:all .15s;display:flex;align-items:flex-start;gap:1rem;
+    }
+    .type-card:hover,.type-card.selected { border-color:var(--color-primary);background:var(--color-info-light); }
+    .type-card input[type=radio] { accent-color:var(--color-primary);margin-top:3px;flex-shrink:0; }
+    .type-icon { font-size:1.5rem;flex-shrink:0;margin-top:1px; }
+  </style>
+</head>
+<body>
+
+<div class="onboarding-header">
+  <a href="../index.html" class="nav-logo"><div class="logo-icon">U</div>Ummah Platform</a>
+  <a href="../login.html" style="font-size:.8rem;color:var(--color-text-muted);">Save &amp; exit</a>
+</div>
+
+<div style="background:var(--color-surface);border-bottom:1px solid var(--color-border);padding:1.5rem 2rem;">
+  <div class="stepper stepper-wrap" style="max-width:600px;margin:0 auto;justify-content:center;">
+    <div class="step completed"><div class="step-dot">✓</div><div class="step-label">Verify</div></div>
+    <div class="step active"><div class="step-dot">2</div><div class="step-label">Organisation</div></div>
+    <div class="step"><div class="step-dot">3</div><div class="step-label">Setup</div></div>
+    <div class="step"><div class="step-dot">4</div><div class="step-label">Complete</div></div>
+  </div>
+</div>
+
+<div class="onboarding-body">
+  <div style="margin-bottom:2rem;">
+    <h2 style="font-size:1.75rem;font-weight:700;margin-bottom:.5rem;">Set up your organisation</h2>
+    <p style="color:var(--color-text-muted);">Tell us about your community organisation. You can always update this later.</p>
+  </div>
+
+  <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:2rem 2.5rem;">
+    <form id="orgForm">
+
+      <!-- Organisation type -->
+      <div class="form-section">
+        <div class="form-section-title">Organisation Type</div>
+        <div class="form-section-desc">Select the type that best describes your community group.</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
+          <label class="type-card selected" id="type1">
+            <input type="radio" name="orgType" value="welfare" checked onchange="selectType('type1')" />
+            <div class="type-icon">🤝</div>
+            <div>
+              <div style="font-weight:600;font-size:.875rem;">Welfare Association</div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);">Death support, emergency aid, general welfare</div>
+            </div>
+          </label>
+          <label class="type-card" id="type2">
+            <input type="radio" name="orgType" value="mosque" onchange="selectType('type2')" />
+            <div class="type-icon">🕌</div>
+            <div>
+              <div style="font-weight:600;font-size:.875rem;">Mosque Fund</div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);">Mosque renovation, Islamic welfare, Zakat</div>
+            </div>
+          </label>
+          <label class="type-card" id="type3">
+            <input type="radio" name="orgType" value="charity" onchange="selectType('type3')" />
+            <div class="type-icon">💚</div>
+            <div>
+              <div style="font-weight:600;font-size:.875rem;">Charitable Trust</div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);">Registered charity, humanitarian aid</div>
+            </div>
+          </label>
+          <label class="type-card" id="type4">
+            <input type="radio" name="orgType" value="community" onchange="selectType('type4')" />
+            <div class="type-icon">🌍</div>
+            <div>
+              <div style="font-weight:600;font-size:.875rem;">Community Group</div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);">Local support group, diaspora network</div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Basic info -->
+      <div class="form-section">
+        <div class="form-section-title">Organisation Details</div>
+        <div class="form-group">
+          <label class="form-label">Organisation Name <span class="required">*</span></label>
+          <input type="text" class="form-control" placeholder="e.g. Sylhet Welfare Trust" required value="Sylhet Welfare Trust" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Country <span class="required">*</span></label>
+            <select class="form-control" required>
+              <option>United Kingdom</option>
+              <option>Bangladesh</option>
+              <option>United States</option>
+              <option>Canada</option>
+              <option>Australia</option>
+              <option>United Arab Emirates</option>
+              <option>Malaysia</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">City</label>
+            <input type="text" class="form-control" placeholder="e.g. Birmingham" value="Birmingham" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Description <span class="optional">(optional)</span></label>
+          <textarea class="form-control" rows="3" placeholder="Briefly describe your organisation's purpose and who you serve..." data-maxlength="500">A community-led welfare trust serving the Sylheti diaspora in the UK. We provide emergency financial support, death assistance, and educational grants to registered members and their families.</textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Registration Number <span class="optional">(if registered charity)</span></label>
+          <input type="text" class="form-control" placeholder="e.g. 1234567 (Charity Commission)" />
+          <div class="form-hint">Leave blank if not a registered charity.</div>
+        </div>
+      </div>
+
+      <!-- Invite treasurer -->
+      <div class="form-section">
+        <div class="form-section-title">Invite a Treasurer <span style="font-size:.75rem;font-weight:400;color:var(--color-text-muted);">(recommended)</span></div>
+        <div class="form-section-desc">Invite someone to manage contributions and receipts as Treasurer. You can do this later too.</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Treasurer Email</label>
+            <input type="email" class="form-control" placeholder="farzana@example.com" value="farzana.islam@example.com" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Treasurer Name</label>
+            <input type="text" class="form-control" placeholder="Farzana Islam" value="Farzana Islam" />
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:1rem;justify-content:space-between;">
+        <a href="verify.html" class="btn btn-outline-muted">← Back</a>
+        <button type="submit" class="btn btn-primary btn-lg">Continue to Setup →</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- ALTERNATIVE: Join existing org -->
+  <div style="text-align:center;margin-top:1.5rem;">
+    <span style="font-size:.875rem;color:var(--color-text-muted);">Want to join an existing organisation instead?</span>
+    <a href="join-org.html" style="font-size:.875rem;font-weight:600;color:var(--color-accent);margin-left:.5rem;">Join an organisation →</a>
+  </div>
+</div>
+
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script>
+  function selectType(selectedId) {
+    ['type1','type2','type3','type4'].forEach(id => {
+      document.getElementById(id).classList.toggle('selected', id === selectedId);
+    });
+  }
+
+  document.getElementById('orgForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    window.location.href = 'setup-wizard.html';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+
+  <!-- SIDEBAR OVERLAY -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">U</div>
+      <span class="sidebar-brand">Ummah Platform</span>
+    </div>
+    <nav class="sidebar-nav" id="sidebarNav">
+      <!-- Rendered by JS -->
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="app-content" id="appContent">
+
+    <!-- TOPBAR -->
+    <header class="app-topbar" id="appTopbar"></header>
+
+    <main class="app-main">
+      <!-- Page Header -->
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="#">Sylhet Welfare Trust</a>
+          <span class="sep">›</span>
+          <span class="current">Dashboard</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Admin Dashboard</h1>
+            <p class="page-subtitle">Sunday, 29 March 2026 · Ramadan 1447</p>
+          </div>
+          <div class="page-actions">
+            <a href="causes/create.html" class="btn btn-primary">+ New Cause</a>
+            <a href="organization/invite-member.html" class="btn btn-outline">Invite Member</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PENDING ACTIONS BANNER -->
+      <div class="warning-banner">
+        <span style="font-size:1.2rem;">⚠️</span>
+        <div>
+          <strong>7 items need your attention:</strong>
+          3 membership requests, 2 pending receipts, 2 pending disbursements.
+          <a href="organization/membership-requests.html" style="margin-left:.5rem;font-weight:600;color:inherit;text-decoration:underline;">Review now →</a>
+        </div>
+      </div>
+
+      <!-- STAT CARDS -->
+      <div class="grid grid-4" style="margin-bottom:2rem;">
+        <div class="stat-card" style="--stat-color:#1B4F72;--stat-bg:#EBF5FB;">
+          <div class="stat-card-icon">👥</div>
+          <div class="stat-card-value">214</div>
+          <div class="stat-card-label">Total Members</div>
+          <div class="stat-card-change up">▲ 12 this month</div>
+        </div>
+        <div class="stat-card" style="--stat-color:#27AE60;--stat-bg:#EAFAF1;">
+          <div class="stat-card-icon">💰</div>
+          <div class="stat-card-value">£38,200</div>
+          <div class="stat-card-label">Collected This Month</div>
+          <div class="stat-card-change up">▲ 71% vs last month</div>
+        </div>
+        <div class="stat-card" style="--stat-color:#2E86AB;--stat-bg:#EBF5FB;">
+          <div class="stat-card-icon">💚</div>
+          <div class="stat-card-value">4</div>
+          <div class="stat-card-label">Active Causes</div>
+          <div class="stat-card-change up">1 urgent, 3 normal</div>
+        </div>
+        <div class="stat-card" style="--stat-color:#F39C12;--stat-bg:#FDEBD0;">
+          <div class="stat-card-icon">⏳</div>
+          <div class="stat-card-value">7</div>
+          <div class="stat-card-label">Pending Actions</div>
+          <div class="stat-card-change down">▼ Requires attention</div>
+        </div>
+      </div>
+
+      <!-- MIDDLE ROW -->
+      <div class="grid grid-2" style="margin-bottom:2rem;">
+
+        <!-- ACTIVE CAUSES -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Active Causes</div>
+              <div class="card-subtitle">4 causes currently collecting</div>
+            </div>
+            <a href="causes/list.html" class="btn btn-ghost btn-sm">View all →</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:1.25rem;">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem;">
+                <div style="font-size:.875rem;font-weight:600;">🕊️ Death Support — Nurul Islam</div>
+                <span class="badge badge-published badge-dot" style="font-size:.7rem;">Urgent</span>
+              </div>
+              <div class="progress-label"><span>£12,400 / £15,000</span><span style="font-weight:700;">83%</span></div>
+              <div class="progress"><div class="progress-bar success" data-progress="83"></div></div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);margin-top:.35rem;">48 contributors · closes 15 Apr</div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem;">
+                <div style="font-size:.875rem;font-weight:600;">🏥 Medical — Nasreen Begum</div>
+                <span class="badge badge-published badge-dot" style="font-size:.7rem;">Urgent</span>
+              </div>
+              <div class="progress-label"><span>£3,750 / £4,200</span><span style="font-weight:700;">89%</span></div>
+              <div class="progress"><div class="progress-bar success" data-progress="89"></div></div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);margin-top:.35rem;">23 contributors · closes 10 Apr</div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem;">
+                <div style="font-size:.875rem;font-weight:600;">🌙 Ramadan Zakat 2026</div>
+                <span class="badge badge-published badge-dot" style="font-size:.7rem;">Normal</span>
+              </div>
+              <div class="progress-label"><span>£38,200 / £50,000</span><span style="font-weight:700;">76%</span></div>
+              <div class="progress"><div class="progress-bar" data-progress="76"></div></div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);margin-top:.35rem;">142 contributors · closes 9 Apr</div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem;">
+                <div style="font-size:.875rem;font-weight:600;">🕌 Mosque Renovation</div>
+              </div>
+              <div class="progress-label"><span>£67,000 / £120,000</span><span style="font-weight:700;">56%</span></div>
+              <div class="progress"><div class="progress-bar warning" data-progress="56"></div></div>
+              <div style="font-size:.75rem;color:var(--color-text-muted);margin-top:.35rem;">88 contributors · closes 30 Jun</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PENDING ACTIONS -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Pending Actions</div>
+            <span class="badge badge-warning">7 total</span>
+          </div>
+          <div class="activity-feed">
+            <div class="activity-item">
+              <div class="activity-icon" style="background:var(--color-info-light);">👤</div>
+              <div class="activity-content">
+                <div class="activity-text"><strong>3 membership requests</strong> awaiting review</div>
+                <div class="activity-time">Latest: Tarek Miah — 2 hours ago</div>
+              </div>
+              <a href="organization/membership-requests.html" class="btn btn-sm btn-outline" style="margin-left:auto;flex-shrink:0;">Review</a>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon" style="background:var(--color-success-light);">💰</div>
+              <div class="activity-content">
+                <div class="activity-text"><strong>2 receipts</strong> pending verification</div>
+                <div class="activity-time">Latest: Imran Hossain — 5 hours ago</div>
+              </div>
+              <a href="receipts/list.html" class="btn btn-sm btn-outline" style="margin-left:auto;flex-shrink:0;">Review</a>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon" style="background:var(--color-warning-light);">📤</div>
+              <div class="activity-content">
+                <div class="activity-text"><strong>2 disbursements</strong> need approval</div>
+                <div class="activity-time">Total: £42,000 pending</div>
+              </div>
+              <a href="disbursements/list.html" class="btn btn-sm btn-outline" style="margin-left:auto;flex-shrink:0;">Review</a>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon" style="background:var(--color-bg);">✅</div>
+              <div class="activity-content">
+                <div class="activity-text"><strong>1 nominee</strong> awaiting verification</div>
+                <div class="activity-time">Fatima Begum — yesterday</div>
+              </div>
+              <a href="nominees/review.html" class="btn btn-sm btn-outline" style="margin-left:auto;flex-shrink:0;">Review</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOTTOM ROW -->
+      <div class="grid grid-2" style="margin-bottom:2rem;">
+
+        <!-- COLLECTIONS CHART -->
+        <div class="chart-card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Collections Overview</div>
+              <div class="card-subtitle">Oct 2025 – Mar 2026</div>
+            </div>
+            <a href="reports/collections.html" class="btn btn-ghost btn-sm">Full report →</a>
+          </div>
+          <div data-chart-bar="8200,11400,14200,9800,22400,38200" style="height:120px;"></div>
+          <div style="display:flex;justify-content:space-between;margin-top:1rem;font-size:.75rem;color:var(--color-text-muted);">
+            <span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span>
+          </div>
+          <div style="display:flex;gap:2rem;margin-top:1.25rem;">
+            <div><div style="font-size:1.25rem;font-weight:700;">£132,400</div><div style="font-size:.75rem;color:var(--color-text-muted);">This year</div></div>
+            <div><div style="font-size:1.25rem;font-weight:700;color:var(--color-success);">+35%</div><div style="font-size:.75rem;color:var(--color-text-muted);">vs last year</div></div>
+          </div>
+        </div>
+
+        <!-- RECENT ACTIVITY -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Recent Activity</div>
+            <a href="audit/activity-log.html" class="btn btn-ghost btn-sm">View all →</a>
+          </div>
+          <div class="activity-feed">
+            <div class="activity-item">
+              <div class="activity-avatar">FI</div>
+              <div class="activity-content">
+                <div class="activity-text"><strong>Farzana Islam</strong> marked disbursement paid — BDT 85,000 Nurul Islam</div>
+                <div class="activity-time">Today at 14:32</div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-avatar">IH</div>
+              <div class="activity-content">
+                <div class="activity-text"><strong>Imran Hossain</strong> submitted £300 contribution for Medical Support</div>
+                <div class="activity-time">Yesterday at 18:42</div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-avatar">TM</div>
+              <div class="activity-content">
+                <div class="activity-text"><strong>Tarek Miah</strong> requested membership</div>
+                <div class="activity-time">Yesterday at 12:11</div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-avatar">SK</div>
+              <div class="activity-content">
+                <div class="activity-text"><strong>Sadia Karim</strong> uploaded receipt — NatWest £400 Zakat</div>
+                <div class="activity-time">22 Mar at 17:30</div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-avatar">RA</div>
+              <div class="activity-content">
+                <div class="activity-text"><strong>Rahim Ahmed</strong> created cause draft: Widow Support — Hasna Khanom</div>
+                <div class="activity-time">28 Mar at 10:00</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div class="card">
+        <div class="card-title" style="margin-bottom:1.25rem;">Quick Actions</div>
+        <div class="grid grid-4" style="gap:1rem;">
+          <a href="organization/membership-requests.html" class="btn btn-outline" style="height:auto;padding:1rem;flex-direction:column;gap:.5rem;font-size:.8rem;">
+            <span style="font-size:1.5rem;">📥</span>Membership Requests
+          </a>
+          <a href="verification/queue.html" class="btn btn-outline" style="height:auto;padding:1rem;flex-direction:column;gap:.5rem;font-size:.8rem;">
+            <span style="font-size:1.5rem;">✅</span>Verify Members
+          </a>
+          <a href="causes/create.html" class="btn btn-outline" style="height:auto;padding:1rem;flex-direction:column;gap:.5rem;font-size:.8rem;">
+            <span style="font-size:1.5rem;">💚</span>New Cause
+          </a>
+          <a href="disbursements/approve.html" class="btn btn-outline" style="height:auto;padding:1rem;flex-direction:column;gap:.5rem;font-size:.8rem;">
+            <span style="font-size:1.5rem;">📤</span>Approve Disbursement
+          </a>
+          <a href="reports/overview.html" class="btn btn-outline" style="height:auto;padding:1rem;flex-direction:column;gap:.5rem;font-size:.8rem;">
+            <span style="font-size:1.5rem;">📊</span>View Reports
+          </a>
+          <a href="audit/audit-log.html" class="btn btn-outline" style="height:auto;padding:1rem;flex-direction:column;gap:.5rem;font-size:.8rem;">
+            <span style="font-size:1.5rem;">🔍</span>Audit Log
+          </a>
+          <a href="notifications/announcements.html" class="btn btn-outline" style="height:auto;padding:1rem;flex-direction:column;gap:.5rem;font-size:.8rem;">
+            <span style="font-size:1.5rem;">📢</span>Announcements
+          </a>
+          <a href="organization/settings.html" class="btn btn-outline" style="height:auto;padding:1rem;flex-direction:column;gap:.5rem;font-size:.8rem;">
+            <span style="font-size:1.5rem;">⚙️</span>Org Settings
+          </a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('dashboard', '../');
+    renderTopbar('Dashboard', '../');
+  });
+</script>
+</body>
+</html>

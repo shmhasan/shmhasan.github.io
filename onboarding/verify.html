@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verify Account — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <style>
+    body { min-height:100vh;display:flex;flex-direction:column;background:var(--color-bg); }
+    .onboarding-header { background:var(--color-surface);border-bottom:1px solid var(--color-border);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between; }
+    .onboarding-body   { flex:1;display:flex;align-items:center;justify-content:center;padding:2rem; }
+    .onboarding-card   { background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:3rem;width:100%;max-width:480px;box-shadow:var(--shadow-md); }
+  </style>
+</head>
+<body>
+
+<div class="onboarding-header">
+  <a href="../index.html" class="nav-logo"><div class="logo-icon">U</div>Ummah Platform</a>
+  <div style="font-size:.8rem;color:var(--color-text-muted);">Step 1 of 4 — Verify Account</div>
+</div>
+
+<!-- STEPPER -->
+<div style="background:var(--color-surface);border-bottom:1px solid var(--color-border);padding:1.5rem 2rem;">
+  <div class="stepper stepper-wrap" style="max-width:600px;margin:0 auto;justify-content:center;">
+    <div class="step active">
+      <div class="step-dot">1</div>
+      <div class="step-label">Verify</div>
+    </div>
+    <div class="step">
+      <div class="step-dot">2</div>
+      <div class="step-label">Organisation</div>
+    </div>
+    <div class="step">
+      <div class="step-dot">3</div>
+      <div class="step-label">Setup</div>
+    </div>
+    <div class="step">
+      <div class="step-dot">4</div>
+      <div class="step-label">Complete</div>
+    </div>
+  </div>
+</div>
+
+<div class="onboarding-body">
+  <div class="onboarding-card">
+
+    <div id="emailStep">
+      <div style="font-size:3rem;text-align:center;margin-bottom:1rem;">📧</div>
+      <h2 style="text-align:center;margin-bottom:.5rem;">Verify your email</h2>
+      <p style="text-align:center;font-size:.875rem;color:var(--color-text-muted);margin-bottom:2rem;">We sent a 6-digit verification code to <strong>rahim.ahmed@example.com</strong></p>
+
+      <div class="otp-inputs">
+        <input type="text" class="otp-input" maxlength="1" placeholder="•" />
+        <input type="text" class="otp-input" maxlength="1" placeholder="•" />
+        <input type="text" class="otp-input" maxlength="1" placeholder="•" />
+        <input type="text" class="otp-input" maxlength="1" placeholder="•" />
+        <input type="text" class="otp-input" maxlength="1" placeholder="•" />
+        <input type="text" class="otp-input" maxlength="1" placeholder="•" />
+      </div>
+
+      <div class="alert alert-info" style="margin-bottom:1.5rem;">
+        <span class="alert-icon">💡</span>
+        <div>Demo mode: enter any 6 digits, or click <strong>Verify &amp; Continue</strong> to proceed.</div>
+      </div>
+
+      <button class="btn btn-primary w-full btn-lg" onclick="showPhoneStep()">Verify &amp; Continue</button>
+
+      <p style="text-align:center;font-size:.8rem;color:var(--color-text-muted);margin-top:1.25rem;">
+        Didn't receive it? <a href="#" style="color:var(--color-accent);">Resend code</a>
+        <span style="color:var(--color-text-light);">· Code expires in 10:00</span>
+      </p>
+    </div>
+
+    <div id="phoneStep" style="display:none;">
+      <div style="font-size:3rem;text-align:center;margin-bottom:1rem;">📱</div>
+      <h2 style="text-align:center;margin-bottom:.5rem;">Verify your mobile</h2>
+      <p style="text-align:center;font-size:.875rem;color:var(--color-text-muted);margin-bottom:2rem;">Enter the 6-digit SMS code sent to <strong>+44 7700 900123</strong></p>
+
+      <div class="otp-inputs">
+        <input type="text" class="otp-input" maxlength="1" placeholder="•" />
+        <input type="text" class="otp-input" maxlength="1" placeholder="•" />
+        <input type="text" class="otp-input" maxlength="1" placeholder="•" />
+        <input type="text" class="otp-input" maxlength="1" placeholder="•" />
+        <input type="text" class="otp-input" maxlength="1" placeholder="•" />
+        <input type="text" class="otp-input" maxlength="1" placeholder="•" />
+      </div>
+
+      <div class="alert alert-success" style="margin-bottom:1.5rem;">
+        <span class="alert-icon">✅</span>
+        <div>Email verified successfully!</div>
+      </div>
+
+      <button class="btn btn-primary w-full btn-lg" onclick="proceedToOrg()">Verify &amp; Continue</button>
+      <button class="btn btn-ghost w-full" onclick="document.getElementById('phoneStep').style.display='none';document.getElementById('emailStep').style.display='';" style="margin-top:.5rem;">← Back</button>
+    </div>
+
+  </div>
+</div>
+
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script>
+  function showPhoneStep() {
+    document.getElementById('emailStep').style.display = 'none';
+    document.getElementById('phoneStep').style.display = '';
+  }
+  function proceedToOrg() {
+    window.location.href = 'create-org.html';
+  }
+</script>
+</body>
+</html>

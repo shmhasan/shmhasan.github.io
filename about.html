@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .about-hero { background: var(--color-primary); color: white; padding: 4rem 2rem; text-align: center; }
+    .about-hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .about-hero p  { font-size: 1.1rem; opacity: .85; max-width: 640px; margin: 0 auto; }
+    .mission-card {
+      border-left: 4px solid var(--color-primary);
+      padding: 1.5rem 2rem;
+      background: var(--color-surface);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.5rem;
+    }
+    .team-card {
+      text-align: center;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem;
+    }
+    .team-avatar {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: var(--color-primary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; font-weight: 700; color: white;
+      margin: 0 auto 1rem;
+    }
+    .value-item {
+      display: flex; gap: 1rem; align-items: flex-start;
+      padding: 1.5rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+    }
+    .value-icon { font-size: 2rem; flex-shrink: 0; }
+  </style>
+</head>
+<body class="public-page">
+
+<nav class="public-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-icon">U</div>Ummah Platform</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="features.html">Features</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-outline-muted btn-sm">Sign In</a>
+      <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<section class="about-hero">
+  <div class="public-main">
+    <h1>Built for Communities That Care</h1>
+    <p>Ummah Platform was born from the real struggles of diaspora welfare organisations — managing funds on WhatsApp, tracking contributions in spreadsheets, and losing trust when things went wrong.</p>
+  </div>
+</section>
+
+<!-- OUR STORY -->
+<section class="section">
+  <div class="section-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
+      <div>
+        <div class="badge badge-primary" style="margin-bottom:1rem;">Our Story</div>
+        <h2 style="font-size:2rem;margin-bottom:1.5rem;">From WhatsApp groups to a trusted platform</h2>
+        <p>In 2019, a group of Bangladeshi community leaders in Birmingham were managing a welfare fund for 180+ families. Every month, money was collected via bank transfers, acknowledged on WhatsApp, and disbursed based on handwritten notes.</p>
+        <p>When a dispute arose over a death support payout, the lack of transparency nearly tore the community apart. That experience inspired Ummah Platform.</p>
+        <p>We built the system we wished we had — transparent, auditable, easy to use, and culturally appropriate for Muslim community organisations, welfare trusts, and diaspora support groups around the world.</p>
+        <a href="register.html" class="btn btn-primary mt-4">Join Us Today</a>
+      </div>
+      <div>
+        <div class="mission-card">
+          <div style="font-size:1.5rem;margin-bottom:.5rem;">🎯</div>
+          <h3 style="margin-bottom:.5rem;">Our Mission</h3>
+          <p style="color:var(--color-text-muted);font-size:.9rem;">To make community fund management transparent, accountable, and trustworthy — so organisations can focus on impact, not administration.</p>
+        </div>
+        <div class="mission-card">
+          <div style="font-size:1.5rem;margin-bottom:.5rem;">👁️</div>
+          <h3 style="margin-bottom:.5rem;">Our Vision</h3>
+          <p style="color:var(--color-text-muted);font-size:.9rem;">A world where every community organisation, from a 10-member mosque committee to a 10,000-member diaspora trust, can manage funds with the same rigour as a professional charity.</p>
+        </div>
+        <div class="mission-card">
+          <div style="font-size:1.5rem;margin-bottom:.5rem;">🌍</div>
+          <h3 style="margin-bottom:.5rem;">Who We Serve</h3>
+          <p style="color:var(--color-text-muted);font-size:.9rem;">Bangladeshi diaspora organisations worldwide, UK mosque committees, South Asian welfare trusts, and any faith-based or community group managing shared funds.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <h2 class="section-title">Our Values</h2>
+    <p class="section-desc">Everything we build is guided by these principles.</p>
+    <div class="grid grid-2" style="gap:1.25rem;">
+      <div class="value-item">
+        <div class="value-icon">🔍</div>
+        <div>
+          <h4 style="margin-bottom:.4rem;">Transparency First</h4>
+          <p style="font-size:.875rem;color:var(--color-text-muted);margin:0;">Every fund movement is logged, timestamped, and visible to authorised stakeholders. No hidden transactions, ever.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">🤝</div>
+        <div>
+          <h4 style="margin-bottom:.4rem;">Community Centred</h4>
+          <p style="font-size:.875rem;color:var(--color-text-muted);margin:0;">We build with community leaders, not just for them. Our features come from real feedback from real organisations.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">🔒</div>
+        <div>
+          <h4 style="margin-bottom:.4rem;">Privacy &amp; Security</h4>
+          <p style="font-size:.875rem;color:var(--color-text-muted);margin:0;">Member data, KYC documents, and financial records are protected with industry-standard security. Your data is yours.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">⚖️</div>
+        <div>
+          <h4 style="margin-bottom:.4rem;">Accountability</h4>
+          <p style="font-size:.875rem;color:var(--color-text-muted);margin:0;">Role-based access, approval workflows, and immutable audit logs ensure no single person can act without oversight.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">🌙</div>
+        <div>
+          <h4 style="margin-bottom:.4rem;">Cultural Sensitivity</h4>
+          <p style="font-size:.875rem;color:var(--color-text-muted);margin:0;">We understand Zakat, death support, mosque funding, and the values that drive Islamic community welfare. Our platform reflects this.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">📱</div>
+        <div>
+          <h4 style="margin-bottom:.4rem;">Accessibility</h4>
+          <p style="font-size:.875rem;color:var(--color-text-muted);margin:0;">Simple enough for a treasurer in retirement, powerful enough for a charity finance director. No training required.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section">
+  <div class="section-inner">
+    <h2 class="section-title">The Team Behind Ummah</h2>
+    <p class="section-desc">Community members first, technologists second.</p>
+    <div class="grid grid-4" style="gap:1.5rem;">
+      <div class="team-card">
+        <div class="team-avatar">KR</div>
+        <div style="font-weight:700;margin-bottom:.25rem;">Khalid Rahman</div>
+        <div style="font-size:.8rem;color:var(--color-accent);margin-bottom:.75rem;">Founder &amp; CEO</div>
+        <p style="font-size:.8rem;color:var(--color-text-muted);">Former welfare fund treasurer for 8 years. Built Ummah to solve the problems he lived.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:var(--color-accent);">NI</div>
+        <div style="font-weight:700;margin-bottom:.25rem;">Nadia Islam</div>
+        <div style="font-size:.8rem;color:var(--color-accent);margin-bottom:.75rem;">Head of Product</div>
+        <p style="font-size:.8rem;color:var(--color-text-muted);">10 years in fintech UX. Passionate about making finance accessible to everyone.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:var(--color-success);">AM</div>
+        <div style="font-weight:700;margin-bottom:.25rem;">Arif Miah</div>
+        <div style="font-size:.8rem;color:var(--color-accent);margin-bottom:.75rem;">CTO</div>
+        <p style="font-size:.8rem;color:var(--color-text-muted);">Ex-Monzo engineer. Leads our security-first engineering approach.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:var(--color-warning);">SB</div>
+        <div style="font-weight:700;margin-bottom:.25rem;">Shahida Begum</div>
+        <div style="font-size:.8rem;color:var(--color-accent);margin-bottom:.75rem;">Head of Community</div>
+        <p style="font-size:.8rem;color:var(--color-text-muted);">Liaison to 50+ community organisations. Speaks your language, literally and figuratively.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <h2 class="section-title">Our Impact So Far</h2>
+    <div class="grid grid-4" style="gap:1.5rem;text-align:center;">
+      <div class="card">
+        <div style="font-size:2.5rem;font-weight:800;color:var(--color-primary);">500+</div>
+        <div style="font-size:.875rem;color:var(--color-text-muted);margin-top:.5rem;">Active Organisations</div>
+      </div>
+      <div class="card">
+        <div style="font-size:2.5rem;font-weight:800;color:var(--color-accent);">£12M+</div>
+        <div style="font-size:.875rem;color:var(--color-text-muted);margin-top:.5rem;">Funds Managed</div>
+      </div>
+      <div class="card">
+        <div style="font-size:2.5rem;font-weight:800;color:var(--color-success);">48,000+</div>
+        <div style="font-size:.875rem;color:var(--color-text-muted);margin-top:.5rem;">Verified Members</div>
+      </div>
+      <div class="card">
+        <div style="font-size:2.5rem;font-weight:800;color:var(--color-warning);">22 Countries</div>
+        <div style="font-size:.875rem;color:var(--color-text-muted);margin-top:.5rem;">Global Reach</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" style="background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-accent) 100%);padding:4rem 2rem;text-align:center;color:white;">
+  <div class="section-inner">
+    <h2 style="font-size:2rem;margin-bottom:1rem;">Be part of the movement</h2>
+    <p style="opacity:.85;max-width:500px;margin:0 auto 2rem;">Join 500+ community organisations who are making fund management transparent and trustworthy.</p>
+    <div class="hero-actions">
+      <a href="register.html" class="btn btn-white btn-lg">Start Your Organisation</a>
+      <a href="contact.html" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.5);color:white;">Talk to Us</a>
+    </div>
+  </div>
+</section>
+
+<footer class="public-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="nav-logo" style="color:white;margin-bottom:1rem;"><div class="logo-icon">U</div>Ummah Platform</div>
+        <p class="footer-brand">Transparent, trustworthy fund management for community organisations worldwide.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Platform</div>
+        <div class="footer-links">
+          <a href="features.html">Features</a><a href="pricing.html">Pricing</a>
+          <a href="about.html">About</a><a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Product</div>
+        <div class="footer-links">
+          <a href="register.html">Get Started</a><a href="login.html">Sign In</a>
+          <a href="app/dashboard-admin.html">Demo</a><a href="help.html">Help</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Legal</div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ummah Platform. All rights reserved.</span>
+      <span>Built with ❤️ for community organisations</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/mock-data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

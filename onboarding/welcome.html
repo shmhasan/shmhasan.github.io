@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome! — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <style>
+    body { min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--color-primary-dark) 0%,var(--color-primary) 60%,var(--color-accent) 100%);padding:2rem; }
+    .welcome-card { background:var(--color-surface);border-radius:var(--radius-xl);padding:3rem;max-width:600px;width:100%;box-shadow:var(--shadow-xl);text-align:center; }
+    .confetti { font-size:3rem;margin-bottom:1.5rem; }
+    .checklist { text-align:left;margin:2rem 0; }
+    .checklist-item {
+      display:flex;align-items:center;gap:1rem;padding:.875rem 1rem;
+      border-radius:var(--radius-md);background:var(--color-bg);
+      margin-bottom:.625rem;font-size:.875rem;
+    }
+    .checklist-item .ci { font-size:1.25rem;flex-shrink:0; }
+    .next-link {
+      display:flex;align-items:center;justify-content:space-between;
+      padding:1rem 1.25rem;border:1px solid var(--color-border);border-radius:var(--radius-lg);
+      margin-bottom:.75rem;text-decoration:none;color:var(--color-text);
+      transition:all .15s;background:var(--color-surface);
+    }
+    .next-link:hover { background:var(--color-bg);border-color:var(--color-primary);color:var(--color-text); }
+  </style>
+</head>
+<body>
+<div class="welcome-card">
+  <div class="confetti">🎉</div>
+  <h1 style="font-size:2rem;margin-bottom:.75rem;">You're all set!</h1>
+  <p style="color:var(--color-text-muted);margin-bottom:.5rem;">Welcome to Ummah Platform.</p>
+  <p style="font-weight:600;font-size:1.1rem;color:var(--color-primary);margin-bottom:2rem;">Sylhet Welfare Trust is ready to go.</p>
+
+  <div class="checklist">
+    <div style="font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--color-text-muted);margin-bottom:.75rem;">Your setup is complete:</div>
+    <div class="checklist-item"><span class="ci">✅</span> Account verified (email + mobile)</div>
+    <div class="checklist-item"><span class="ci">✅</span> Organisation created — Sylhet Welfare Trust</div>
+    <div class="checklist-item"><span class="ci">✅</span> Membership settings configured</div>
+    <div class="checklist-item"><span class="ci">✅</span> Financial settings configured</div>
+    <div class="checklist-item"><span class="ci">✅</span> Notifications set up</div>
+    <div class="checklist-item"><span class="ci">📧</span> Treasurer invite sent to Farzana Islam</div>
+  </div>
+
+  <div style="text-align:left;margin-bottom:2rem;">
+    <div style="font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--color-text-muted);margin-bottom:.75rem;">Suggested next steps:</div>
+    <a href="../app/organization/invite-member.html" class="next-link">
+      <div style="display:flex;align-items:center;gap:.875rem;"><span style="font-size:1.2rem;">👥</span><div><div style="font-weight:600;font-size:.875rem;">Invite members</div><div style="font-size:.75rem;color:var(--color-text-muted);">Add your first members to the organisation</div></div></div>
+      <span style="color:var(--color-text-light);">→</span>
+    </a>
+    <a href="../app/causes/create.html" class="next-link">
+      <div style="display:flex;align-items:center;gap:.875rem;"><span style="font-size:1.2rem;">💚</span><div><div style="font-weight:600;font-size:.875rem;">Create your first cause</div><div style="font-size:.75rem;color:var(--color-text-muted);">Set up a support fund for your community</div></div></div>
+      <span style="color:var(--color-text-light);">→</span>
+    </a>
+    <a href="../app/verification/queue.html" class="next-link">
+      <div style="display:flex;align-items:center;gap:.875rem;"><span style="font-size:1.2rem;">✅</span><div><div style="font-weight:600;font-size:.875rem;">Set up KYC verification</div><div style="font-size:.75rem;color:var(--color-text-muted);">Configure your verification queue</div></div></div>
+      <span style="color:var(--color-text-light);">→</span>
+    </a>
+  </div>
+
+  <a href="../app/dashboard-admin.html" class="btn btn-primary btn-xl w-full">Go to Dashboard →</a>
+  <p style="font-size:.8rem;color:var(--color-text-light);margin-top:1rem;">Need help? Visit our <a href="../help.html" style="color:var(--color-accent);">Help Centre</a> or <a href="../contact.html" style="color:var(--color-accent);">contact support</a>.</p>
+</div>
+
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auditor Dashboard — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar" style="background:#148F77;">JU</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Jamal Uddin</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Auditor</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="#">Sylhet Welfare Trust</a><span class="sep">›</span>
+          <span class="current">Audit Dashboard</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Audit Dashboard</h1>
+            <p class="page-subtitle">Read-only view · Financial Year 2025–26</p>
+          </div>
+          <div class="page-actions">
+            <a href="reports/exports.html" class="btn btn-outline">Export Report</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- READ-ONLY BANNER -->
+      <div class="alert alert-info" style="margin-bottom:1.5rem;">
+        <span class="alert-icon">🔍</span>
+        <div class="alert-content">
+          <div class="alert-title">Auditor — Read-Only Access</div>
+          <div>You have read-only access to all financial records, reports, and audit logs. Contact an admin if you need to flag an issue.</div>
+        </div>
+      </div>
+
+      <!-- FINANCIAL SUMMARY STATS -->
+      <div class="grid grid-4" style="margin-bottom:2rem;">
+        <div class="stat-card" style="--stat-color:#1B4F72;--stat-bg:#EBF5FB;">
+          <div class="stat-card-icon">💰</div>
+          <div class="stat-card-value">£132,400</div>
+          <div class="stat-card-label">Total Collected (FY26)</div>
+          <div class="stat-card-change up">▲ 35% vs FY25</div>
+        </div>
+        <div class="stat-card" style="--stat-color:#E74C3C;--stat-bg:#FADBD8;">
+          <div class="stat-card-icon">📤</div>
+          <div class="stat-card-value">£31,320</div>
+          <div class="stat-card-label">Total Disbursed (FY26)</div>
+          <div class="stat-card-change up">8 disbursements</div>
+        </div>
+        <div class="stat-card" style="--stat-color:#27AE60;--stat-bg:#EAFAF1;">
+          <div class="stat-card-icon">💵</div>
+          <div class="stat-card-value">£101,080</div>
+          <div class="stat-card-label">Net Surplus (FY26)</div>
+          <div class="stat-card-change up">↑ Healthy balance</div>
+        </div>
+        <div class="stat-card" style="--stat-color:#148F77;--stat-bg:#E8F8F5;">
+          <div class="stat-card-icon">🔍</div>
+          <div class="stat-card-value">842</div>
+          <div class="stat-card-label">Audit Log Entries</div>
+          <div class="stat-card-change up">Full trail available</div>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="margin-bottom:2rem;">
+        <!-- COLLECTIONS OVERVIEW -->
+        <div class="chart-card">
+          <div class="card-header">
+            <div class="card-title">Collections Overview</div>
+            <a href="reports/collections.html" class="btn btn-ghost btn-sm">Details →</a>
+          </div>
+          <div data-chart-bar="8200,11400,14200,9800,22400,38200" style="height:110px;"></div>
+          <div style="display:flex;justify-content:space-between;margin-top:.75rem;font-size:.7rem;color:var(--color-text-muted);">
+            <span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span>
+          </div>
+          <div class="quick-stats" style="margin-top:1rem;padding:.75rem;gap:1.5rem;">
+            <div class="quick-stat-item"><div class="quick-stat-value">£132K</div><div class="quick-stat-label">FY26 Total</div></div>
+            <div class="quick-stat-divider"></div>
+            <div class="quick-stat-item"><div class="quick-stat-value">£98K</div><div class="quick-stat-label">FY25 Total</div></div>
+            <div class="quick-stat-divider"></div>
+            <div class="quick-stat-item"><div class="quick-stat-value">+35%</div><div class="quick-stat-label">YoY Growth</div></div>
+          </div>
+        </div>
+
+        <!-- DISBURSEMENT BREAKDOWN -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Disbursements by Cause</div>
+            <a href="reports/disbursements.html" class="btn btn-ghost btn-sm">Report →</a>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid var(--color-border-light);">
+              <span style="font-size:.875rem;">🕊️ Death Support</span>
+              <div style="text-align:right;"><div style="font-weight:600;font-size:.875rem;">£620</div><div style="font-size:.7rem;color:var(--color-text-muted);">1 payment · Paid</div></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid var(--color-border-light);">
+              <span style="font-size:.875rem;">🏥 Medical Emergency</span>
+              <div style="text-align:right;"><div style="font-weight:600;font-size:.875rem;">£2,800</div><div style="font-size:.7rem;color:var(--color-text-muted);">1 payment · Approved</div></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid var(--color-border-light);">
+              <span style="font-size:.875rem;">🌊 Flood Relief</span>
+              <div style="text-align:right;"><div style="font-weight:600;font-size:.875rem;">£22,500</div><div style="font-size:.7rem;color:var(--color-text-muted);">1 payment · Paid (FY25)</div></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;">
+              <span style="font-size:.875rem;">🕌 Mosque Renovation</span>
+              <div style="text-align:right;"><div style="font-weight:600;font-size:.875rem;">£15,000</div><div style="font-size:.7rem;color:var(--color-warning);">Pending approval</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RECENT AUDIT LOG -->
+      <div class="card" style="margin-bottom:2rem;">
+        <div class="card-header">
+          <div class="card-title">Recent Audit Log Entries</div>
+          <a href="audit/audit-log.html" class="btn btn-ghost btn-sm">View full log →</a>
+        </div>
+        <div class="table-wrapper">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Timestamp</th>
+                <th>Actor</th>
+                <th>Action</th>
+                <th>Target</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-size:.75rem;color:var(--color-text-muted);white-space:nowrap;">2026-03-28 14:32</td>
+                <td><span style="font-size:.875rem;font-weight:500;">Farzana Islam</span><div style="font-size:.7rem;color:var(--color-text-muted);">Treasurer</div></td>
+                <td><span class="badge badge-paid" style="font-size:.7rem;">DISBURSEMENT_PAID</span></td>
+                <td style="font-size:.8rem;">Disbursement dis-001</td>
+                <td style="font-size:.8rem;color:var(--color-text-muted);">BDT 85,000 — Nurul Islam funeral</td>
+              </tr>
+              <tr>
+                <td style="font-size:.75rem;color:var(--color-text-muted);white-space:nowrap;">2026-03-24 11:05</td>
+                <td><span style="font-size:.875rem;font-weight:500;">Rahim Ahmed</span><div style="font-size:.7rem;color:var(--color-text-muted);">Admin</div></td>
+                <td><span class="badge badge-approved" style="font-size:.7rem;">DISBURSEMENT_APPROVED</span></td>
+                <td style="font-size:.8rem;">Disbursement dis-002</td>
+                <td style="font-size:.8rem;color:var(--color-text-muted);">£2,800 — Spire Hospital</td>
+              </tr>
+              <tr>
+                <td style="font-size:.75rem;color:var(--color-text-muted);white-space:nowrap;">2026-03-20 16:10</td>
+                <td><span style="font-size:.875rem;font-weight:500;">Rahim Ahmed</span><div style="font-size:.7rem;color:var(--color-text-muted);">Admin</div></td>
+                <td><span class="badge badge-approved" style="font-size:.7rem;">MEMBER_APPROVED</span></td>
+                <td style="font-size:.8rem;">Member Dilnoza Khanom</td>
+                <td style="font-size:.8rem;color:var(--color-text-muted);">New member approved</td>
+              </tr>
+              <tr>
+                <td style="font-size:.75rem;color:var(--color-text-muted);white-space:nowrap;">2026-03-16 08:44</td>
+                <td><span style="font-size:.875rem;font-weight:500;">Rahim Ahmed</span><div style="font-size:.7rem;color:var(--color-text-muted);">Admin</div></td>
+                <td><span class="badge badge-published" style="font-size:.7rem;">CAUSE_PUBLISHED</span></td>
+                <td style="font-size:.8rem;">Cause cause-001</td>
+                <td style="font-size:.8rem;color:var(--color-text-muted);">Death Support Fund published</td>
+              </tr>
+              <tr>
+                <td style="font-size:.75rem;color:var(--color-text-muted);white-space:nowrap;">2026-03-12 13:50</td>
+                <td><span style="font-size:.875rem;font-weight:500;">Rahim Ahmed</span><div style="font-size:.7rem;color:var(--color-text-muted);">Admin</div></td>
+                <td><span class="badge badge-suspended" style="font-size:.7rem;">MEMBER_SUSPENDED</span></td>
+                <td style="font-size:.8rem;">Member Ruhul Amin Sheikh</td>
+                <td style="font-size:.8rem;color:var(--color-text-muted);">Suspended — disciplinary review</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- QUICK ACCESS -->
+      <div class="card">
+        <div class="card-title" style="margin-bottom:1.25rem;">Auditor Quick Access (Read-Only)</div>
+        <div class="grid grid-4" style="gap:1rem;">
+          <a href="audit/audit-log.html" class="btn btn-outline" style="height:auto;padding:1rem;flex-direction:column;gap:.5rem;font-size:.8rem;"><span style="font-size:1.5rem;">🔍</span>Audit Log</a>
+          <a href="audit/activity-log.html" class="btn btn-outline" style="height:auto;padding:1rem;flex-direction:column;gap:.5rem;font-size:.8rem;"><span style="font-size:1.5rem;">📋</span>Activity Log</a>
+          <a href="reports/overview.html" class="btn btn-outline" style="height:auto;padding:1rem;flex-direction:column;gap:.5rem;font-size:.8rem;"><span style="font-size:1.5rem;">📈</span>All Reports</a>
+          <a href="reports/exports.html" class="btn btn-outline" style="height:auto;padding:1rem;flex-direction:column;gap:.5rem;font-size:.8rem;"><span style="font-size:1.5rem;">⬇️</span>Export Data</a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('dashboard', '../');
+    renderTopbar('Dashboard', '../');
+    setTimeout(() => {
+      const av = document.getElementById('profileAvatar');
+      const nm = document.getElementById('profileName');
+      const rl = document.getElementById('profileRole');
+      if (av) { av.textContent='JU'; av.style.background='#148F77'; }
+      if (nm) nm.textContent = 'Jamal Uddin';
+      if (rl) rl.textContent = 'Auditor';
+      const rs = document.getElementById('roleSwitcher');
+      if (rs) rs.value = 'auditor';
+    }, 100);
+  });
+</script>
+</body>
+</html>

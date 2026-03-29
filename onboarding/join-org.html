@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join Organisation — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <style>
+    body { min-height:100vh;display:flex;flex-direction:column;background:var(--color-bg); }
+    .onboarding-header { background:var(--color-surface);border-bottom:1px solid var(--color-border);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between; }
+    .onboarding-body   { flex:1;padding:2rem;max-width:680px;margin:0 auto;width:100%; }
+    .org-result {
+      display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;
+      border:2px solid var(--color-border);border-radius:var(--radius-lg);cursor:pointer;
+      transition:all .15s; margin-bottom:.75rem; background:var(--color-surface);
+    }
+    .org-result:hover,.org-result.selected { border-color:var(--color-primary);background:var(--color-info-light); }
+    .org-icon { width:44px;height:44px;border-radius:var(--radius-md);background:var(--color-primary);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0; }
+  </style>
+</head>
+<body>
+
+<div class="onboarding-header">
+  <a href="../index.html" class="nav-logo"><div class="logo-icon">U</div>Ummah Platform</a>
+  <a href="../login.html" style="font-size:.8rem;color:var(--color-text-muted);">Save &amp; exit</a>
+</div>
+
+<div style="background:var(--color-surface);border-bottom:1px solid var(--color-border);padding:1.5rem 2rem;">
+  <div class="stepper stepper-wrap" style="max-width:600px;margin:0 auto;justify-content:center;">
+    <div class="step completed"><div class="step-dot">✓</div><div class="step-label">Verify</div></div>
+    <div class="step active"><div class="step-dot">2</div><div class="step-label">Organisation</div></div>
+    <div class="step"><div class="step-dot">3</div><div class="step-label">Setup</div></div>
+    <div class="step"><div class="step-dot">4</div><div class="step-label">Complete</div></div>
+  </div>
+</div>
+
+<div class="onboarding-body">
+  <div style="margin-bottom:2rem;">
+    <h2 style="font-size:1.75rem;font-weight:700;margin-bottom:.5rem;">Join an existing organisation</h2>
+    <p style="color:var(--color-text-muted);">Search for your organisation by name, location, or invite code. Your request will be reviewed by an admin.</p>
+  </div>
+
+  <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:2rem 2.5rem;">
+
+    <!-- Search -->
+    <div class="form-group">
+      <label class="form-label">Search Organisation</label>
+      <div class="search-box" style="margin-bottom:1rem;">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="orgSearch" placeholder="Search by name, city, or country..." oninput="filterOrgs(this.value)" />
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div id="orgResults">
+      <div class="org-result" onclick="selectOrg(this, 'org-001')">
+        <div class="org-icon">🕌</div>
+        <div style="flex:1;">
+          <div style="font-weight:600;font-size:.9rem;">Sylhet Welfare Trust</div>
+          <div style="font-size:.8rem;color:var(--color-text-muted);">Welfare Association · Birmingham, UK · 214 members</div>
+        </div>
+        <span class="badge badge-verified">Verified</span>
+      </div>
+      <div class="org-result" onclick="selectOrg(this, 'org-002')">
+        <div class="org-icon">🤝</div>
+        <div style="flex:1;">
+          <div style="font-weight:600;font-size:.9rem;">Dhaka Community Support Circle</div>
+          <div style="font-size:.8rem;color:var(--color-text-muted);">Community Group · Dhaka, Bangladesh · 312 members</div>
+        </div>
+        <span class="badge badge-verified">Verified</span>
+      </div>
+      <div class="org-result" onclick="selectOrg(this, 'org-003')">
+        <div class="org-icon">🕋</div>
+        <div style="flex:1;">
+          <div style="font-weight:600;font-size:.9rem;">UK-BD Mosque Fund</div>
+          <div style="font-size:.8rem;color:var(--color-text-muted);">Mosque Fund · London, UK · 560 members</div>
+        </div>
+        <span class="badge badge-verified">Verified</span>
+      </div>
+      <div class="org-result" onclick="selectOrg(this, 'org-004')">
+        <div class="org-icon">💚</div>
+        <div style="flex:1;">
+          <div style="font-weight:600;font-size:.9rem;">Chittagong Relief Network</div>
+          <div style="font-size:.8rem;color:var(--color-text-muted);">Charitable Trust · Chittagong, BD · 88 members</div>
+        </div>
+        <span class="badge badge-active">Active</span>
+      </div>
+    </div>
+
+    <!-- OR invite code -->
+    <div style="margin:1.5rem 0;border-top:1px solid var(--color-border);padding-top:1.5rem;">
+      <div class="form-section-title" style="margin-bottom:.75rem;">Have an invite code?</div>
+      <div class="flex gap-3">
+        <input type="text" class="form-control" placeholder="Enter invite code (e.g. SWT-INVITE-2024)" style="flex:1;" />
+        <button class="btn btn-outline" onclick="showToast('Invite code applied!','success')">Apply</button>
+      </div>
+    </div>
+
+    <!-- Message -->
+    <div id="requestSection" style="display:none;margin-top:1rem;">
+      <div class="form-group">
+        <label class="form-label">Message to Admin <span class="optional">(optional)</span></label>
+        <textarea class="form-control" rows="3" placeholder="Introduce yourself and explain why you'd like to join...">I am a long-time resident of the Birmingham Bangladeshi community and would like to join to support the welfare activities and contribute towards the cause.</textarea>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:1rem;justify-content:space-between;margin-top:1.5rem;">
+      <a href="create-org.html" class="btn btn-outline-muted">← Create organisation instead</a>
+      <button class="btn btn-primary btn-lg" id="requestBtn" disabled onclick="submitRequest()">Send Join Request</button>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="requestSuccessModal">
+  <div class="modal modal-sm">
+    <div class="modal-body" style="text-align:center;padding:2.5rem 2rem;">
+      <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+      <h3 style="margin-bottom:.75rem;">Request Sent!</h3>
+      <p style="font-size:.875rem;color:var(--color-text-muted);margin-bottom:1.5rem;">Your membership request has been sent to the organisation admin. You'll receive a notification once it's reviewed — usually within 1–2 business days.</p>
+      <a href="../login.html" class="btn btn-primary w-full">Go to Login</a>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script>
+  let selectedOrg = null;
+  function selectOrg(el, orgId) {
+    document.querySelectorAll('.org-result').forEach(r => r.classList.remove('selected'));
+    el.classList.add('selected');
+    selectedOrg = orgId;
+    document.getElementById('requestBtn').disabled = false;
+    document.getElementById('requestSection').style.display = '';
+  }
+  function filterOrgs(q) {
+    document.querySelectorAll('.org-result').forEach(r => {
+      r.style.display = r.textContent.toLowerCase().includes(q.toLowerCase()) ? '' : 'none';
+    });
+  }
+  function submitRequest() {
+    openModal('requestSuccessModal');
+  }
+</script>
+</body>
+</html>
