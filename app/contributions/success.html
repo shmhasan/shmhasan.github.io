@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contribution Submitted — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">SK</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Sadia Karim</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Member</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="contribute.html">Contribute</a>
+          <span class="sep">›</span>
+          <span class="current">Submission Successful</span>
+        </div>
+      </div>
+
+      <div class="card" style="text-align:center;max-width:720px;margin:2rem auto;">
+        <div class="card-body" style="padding:2.5rem 2rem;">
+          <div style="width:64px;height:64px;border-radius:50%;background:#EAFAF1;color:#27AE60;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;">✓</div>
+          <h2 style="margin-bottom:.5rem;">Contribution Submitted</h2>
+          <p class="text-muted" style="margin-bottom:1.5rem;">Your receipt has been submitted and is awaiting verification by the Treasurer.</p>
+
+          <div class="grid grid-2" style="gap:1rem;text-align:left;">
+            <div>
+              <div class="text-sm text-muted">Reference</div>
+              <div style="font-weight:700;font-family:monospace;">CON-2026-0345</div>
+            </div>
+            <div>
+              <div class="text-sm text-muted">Amount</div>
+              <div style="font-weight:700;">£300</div>
+            </div>
+            <div>
+              <div class="text-sm text-muted">Cause</div>
+              <div style="font-weight:600;">Mosque Renovation Fund</div>
+            </div>
+            <div>
+              <div class="text-sm text-muted">Payment Method</div>
+              <div style="font-weight:600;">Cash</div>
+            </div>
+          </div>
+
+          <div class="alert alert-info" style="margin:1.5rem 0 0;">
+            <strong>Next steps:</strong> You will receive a notification once the receipt is verified.
+          </div>
+
+          <div style="display:flex;gap:.5rem;justify-content:center;margin-top:1.5rem;">
+            <a href="list.html" class="btn btn-outline">View Contributions</a>
+            <a href="../receipts/detail.html" class="btn btn-primary">View Receipt</a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('contributions', '../../');
+    renderTopbar('Contribution Submitted', '../../');
+  });
+</script>
+</body>
+</html>
