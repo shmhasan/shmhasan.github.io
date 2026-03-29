@@ -161,11 +161,13 @@ function applyTheme(theme) {
   const href = main.getAttribute('href') || '';
   const baseHref = href.includes('styles-mono.css')
     ? href.replace('styles-mono.css', 'styles.css')
+    : href.includes('styles-minimal.css')
+      ? href.replace('styles-minimal.css', 'styles.css')
     : href;
 
-  const nextHref = theme === 'mono'
-    ? baseHref.replace('styles.css', 'styles-mono.css')
-    : baseHref;
+  let nextHref = baseHref;
+  if (theme === 'mono') nextHref = baseHref.replace('styles.css', 'styles-mono.css');
+  if (theme === 'minimal') nextHref = baseHref.replace('styles.css', 'styles-minimal.css');
 
   if (href !== nextHref) main.setAttribute('href', nextHref);
   document.documentElement.setAttribute('data-theme', theme);
@@ -800,6 +802,7 @@ function renderTopbar(pageTitle, baseUrl = '') {
         <select id="themeSwitcher">
           <option value="default">Default</option>
           <option value="mono">Mono</option>
+          <option value="minimal">Minimal</option>
         </select>
       </div>
       <div class="role-switcher">
