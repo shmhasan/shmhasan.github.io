@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Announcements — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="center.html">Notifications</a>
+          <span class="sep">›</span>
+          <span class="current">Announcements</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Announcements</h1>
+            <p class="page-subtitle">Community-wide updates and official notices</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-outline" onclick="showToast('Announcement draft saved','success')">+ New Announcement</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="table-toolbar">
+          <div class="table-filters">
+            <div class="search-box" style="width:240px;">
+              <span class="search-icon">🔍</span>
+              <input type="text" placeholder="Search title or tag..." data-search-table="annTable" />
+            </div>
+            <select class="form-control" style="width:160px;" data-filter-table="annTable" data-filter-col="3">
+              <option value="">All Tags</option>
+              <option>Event</option>
+              <option>Finance</option>
+              <option>Policy</option>
+              <option>Community</option>
+            </select>
+            <select class="form-control" style="width:140px;" data-filter-table="annTable" data-filter-col="4">
+              <option value="">All Status</option>
+              <option>Published</option>
+              <option>Scheduled</option>
+              <option>Draft</option>
+            </select>
+          </div>
+          <span class="table-count">Showing 5 of 12</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="table" id="annTable">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Audience</th>
+                <th>Author</th>
+                <th>Tag</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="table-name"><a href="announcement-detail.html">AGM — 12 April 2026</a></div>
+                  <div class="text-sm text-muted">Annual General Meeting at Green Street Community Hall</div>
+                </td>
+                <td class="text-sm">All Members</td>
+                <td class="text-sm">Rahim Ahmed</td>
+                <td><span class="badge badge-published">Event</span></td>
+                <td><span class="badge badge-verified badge-dot">Published</span></td>
+                <td class="text-sm text-muted">25 Mar 2026</td>
+                <td><a href="announcement-detail.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-name"><a href="announcement-detail.html">Zakat 2026 Collection Update</a></div>
+                  <div class="text-sm text-muted">Mid-month totals and contribution guidance</div>
+                </td>
+                <td class="text-sm">Donors</td>
+                <td class="text-sm">Farzana Islam</td>
+                <td><span class="badge badge-info">Finance</span></td>
+                <td><span class="badge badge-verified badge-dot">Published</span></td>
+                <td class="text-sm text-muted">22 Mar 2026</td>
+                <td><a href="announcement-detail.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-name"><a href="announcement-detail.html">Membership Renewal Window</a></div>
+                  <div class="text-sm text-muted">Renew by 15 April to keep voting rights</div>
+                </td>
+                <td class="text-sm">Members</td>
+                <td class="text-sm">Sadia Karim</td>
+                <td><span class="badge badge-warning">Policy</span></td>
+                <td><span class="badge badge-pending badge-dot">Scheduled</span></td>
+                <td class="text-sm text-muted">01 Apr 2026</td>
+                <td><a href="announcement-detail.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-name"><a href="announcement-detail.html">Community Iftar Night</a></div>
+                  <div class="text-sm text-muted">RSVP required by 30 March</div>
+                </td>
+                <td class="text-sm">All Members</td>
+                <td class="text-sm">Jamal Uddin</td>
+                <td><span class="badge badge-published">Community</span></td>
+                <td><span class="badge badge-verified badge-dot">Published</span></td>
+                <td class="text-sm text-muted">18 Mar 2026</td>
+                <td><a href="announcement-detail.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-name"><a href="announcement-detail.html">Audit Committee Guidelines</a></div>
+                  <div class="text-sm text-muted">Updated compliance and documentation policy</div>
+                </td>
+                <td class="text-sm">Admins & Auditors</td>
+                <td class="text-sm">Jamal Uddin</td>
+                <td><span class="badge badge-info">Policy</span></td>
+                <td><span class="badge badge-draft badge-dot">Draft</span></td>
+                <td class="text-sm text-muted">16 Mar 2026</td>
+                <td><a href="announcement-detail.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <span class="text-muted text-sm">Showing 5 of 12 announcements</span>
+          <div class="pagination-pages">
+            <span class="page-btn active">1</span>
+            <a href="#" class="page-btn">2</a>
+            <a href="#" class="page-btn">3</a>
+            <a href="#" class="page-btn" style="font-size:.75rem;">Next →</a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('announcements', '../../');
+    renderTopbar('Announcements', '../../');
+  });
+</script>
+</body>
+</html>

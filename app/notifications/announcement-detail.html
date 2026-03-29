@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Announcement Detail — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="center.html">Notifications</a>
+          <span class="sep">›</span>
+          <a href="announcements.html">Announcements</a>
+          <span class="sep">›</span>
+          <span class="current">AGM — 12 April 2026</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">AGM — 12 April 2026</h1>
+            <p class="page-subtitle">Annual General Meeting details and agenda</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-outline" onclick="showToast('Announcement sent reminder','info')">Send Reminder</button>
+            <button class="btn btn-primary" onclick="showToast('Announcement updated','success')">Edit Announcement</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-3" style="gap:1.5rem;">
+        <div class="card" style="grid-column:span 2;">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Announcement</div>
+              <div class="card-subtitle">Published 25 Mar 2026 by Rahim Ahmed</div>
+            </div>
+            <span class="badge badge-verified badge-dot">Published</span>
+          </div>
+          <div class="card-body">
+            <p style="margin-bottom:1rem;">Assalamu Alaikum,</p>
+            <p style="margin-bottom:1rem;">We will hold our Annual General Meeting on <strong>Saturday, 12 April 2026</strong> at Green Street Community Hall. Please arrive by 6:30 PM for registration. The meeting will start at 7:00 PM with a short recitation and opening remarks.</p>
+            <p style="margin-bottom:1rem;"><strong>Agenda highlights:</strong></p>
+            <ul style="margin:0 0 1rem 1rem;">
+              <li>2025-26 financial review</li>
+              <li>Audit committee report</li>
+              <li>New cause approvals</li>
+              <li>Member Q&A</li>
+            </ul>
+            <p style="margin-bottom:1rem;">If you have questions or wish to add a topic, please reply before 8 April.</p>
+            <div class="alert alert-info" style="margin-top:1rem;">
+              <strong>Venue:</strong> Green Street Community Hall, 14 Green St, London E7
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Announcement Meta</div>
+          </div>
+          <div class="card-body" style="display:flex;flex-direction:column;gap:.75rem;">
+            <div>
+              <div class="text-muted text-sm">Audience</div>
+              <div style="font-weight:600;">All Members</div>
+            </div>
+            <div>
+              <div class="text-muted text-sm">Tag</div>
+              <span class="badge badge-published">Event</span>
+            </div>
+            <div>
+              <div class="text-muted text-sm">Delivery</div>
+              <div style="font-weight:600;">Email + In-app notification</div>
+            </div>
+            <div>
+              <div class="text-muted text-sm">Reads</div>
+              <div style="font-weight:600;">142 of 214</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:1.5rem;">
+        <div class="card-header">
+          <div class="card-title">Comments & Replies</div>
+          <span class="badge badge-info">4 Replies</span>
+        </div>
+        <div class="activity-feed">
+          <div class="activity-item">
+            <div class="activity-icon" style="background:var(--color-bg);">🗨️</div>
+            <div class="activity-content">
+              <div class="activity-text"><strong>Imran Hossain</strong> asked about parking options.</div>
+              <div class="activity-time">1 day ago</div>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon" style="background:var(--color-bg);">🗨️</div>
+            <div class="activity-content">
+              <div class="activity-text"><strong>Nasreen Begum</strong> requested a livestream link.</div>
+              <div class="activity-time">2 days ago</div>
+            </div>
+          </div>
+        </div>
+        <div style="padding:0 1.5rem 1.5rem;">
+          <div class="form-group">
+            <label class="form-label">Post a reply</label>
+            <textarea class="form-control" rows="3" placeholder="Write a short update for members..."></textarea>
+          </div>
+          <button class="btn btn-primary" onclick="showToast('Reply sent','success')">Send Reply</button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('announcements', '../../');
+    renderTopbar('Announcement Detail', '../../');
+  });
+</script>
+</body>
+</html>

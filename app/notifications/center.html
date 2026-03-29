@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notification Center — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <span class="current">Notifications</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Notification Center</h1>
+            <p class="page-subtitle">All alerts, approvals, and system updates</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-outline" onclick="showToast('All notifications marked as read','success')">Mark all read</button>
+            <a href="../settings/preferences.html" class="btn btn-primary">Notification Preferences</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="quick-stats" style="margin-bottom:1.5rem;">
+        <div class="quick-stat-item"><div class="quick-stat-value">28</div><div class="quick-stat-label">Total</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-warning);">6</div><div class="quick-stat-label">Unread</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-success);">9</div><div class="quick-stat-label">Approvals</div></div>
+        <div class="quick-stat-divider"></div>
+        <div class="quick-stat-item"><div class="quick-stat-value" style="color:var(--color-primary);">4</div><div class="quick-stat-label">System</div></div>
+      </div>
+
+      <div class="card" data-tab-group>
+        <div class="card-header" style="padding-bottom:0;">
+          <div class="tabs">
+            <button class="tab-btn active" data-tab-target="tab-all">All</button>
+            <button class="tab-btn" data-tab-target="tab-approvals">Approvals</button>
+            <button class="tab-btn" data-tab-target="tab-finance">Finance</button>
+            <button class="tab-btn" data-tab-target="tab-system">System</button>
+          </div>
+          <div class="search-box" style="width:240px;">
+            <span class="search-icon">🔍</span>
+            <input type="text" placeholder="Search notifications..." data-search-table="notifTable" />
+          </div>
+        </div>
+
+        <div class="card-body" data-tab-panels>
+          <div class="tab-panel active" id="tab-all">
+            <div class="notif-item unread">
+              <div class="notif-icon" style="background:#EBF5FB;">📥</div>
+              <div class="notif-body">
+                <div class="notif-title">3 membership requests waiting</div>
+                <div class="notif-desc">New applicants from Sylhet Welfare Trust need review.</div>
+              </div>
+              <div class="notif-time">2h ago</div>
+            </div>
+            <div class="notif-item unread">
+              <div class="notif-icon" style="background:#EAFAF1;">✅</div>
+              <div class="notif-body">
+                <div class="notif-title">Receipt verified</div>
+                <div class="notif-desc">CON-2026-0342 marked as verified by Treasurer.</div>
+              </div>
+              <div class="notif-time">5h ago</div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-icon" style="background:#FDEBD0;">📢</div>
+              <div class="notif-body">
+                <div class="notif-title">AGM — 12 April 2026</div>
+                <div class="notif-desc">Annual General Meeting at Green Street Community Hall.</div>
+              </div>
+              <div class="notif-time">25 Mar</div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-icon" style="background:#F4F6F9;">📊</div>
+              <div class="notif-body">
+                <div class="notif-title">Monthly report ready</div>
+                <div class="notif-desc">Collections and disbursements summary is now available.</div>
+              </div>
+              <div class="notif-time">24 Mar</div>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="tab-approvals">
+            <div class="notif-item unread">
+              <div class="notif-icon" style="background:#EBF5FB;">👤</div>
+              <div class="notif-body">
+                <div class="notif-title">Membership request: Tarek Miah</div>
+                <div class="notif-desc">Pending verification documents.</div>
+              </div>
+              <div class="notif-time">3h ago</div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-icon" style="background:#EAFAF1;">✅</div>
+              <div class="notif-body">
+                <div class="notif-title">Nominee approved</div>
+                <div class="notif-desc">Fatima Begum verified by Admin.</div>
+              </div>
+              <div class="notif-time">23 Mar</div>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="tab-finance">
+            <div class="notif-item">
+              <div class="notif-icon" style="background:#EBF5FB;">💰</div>
+              <div class="notif-body">
+                <div class="notif-title">2 receipts pending review</div>
+                <div class="notif-desc">Total pending value £800.</div>
+              </div>
+              <div class="notif-time">Yesterday</div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-icon" style="background:#FDEBD0;">📤</div>
+              <div class="notif-body">
+                <div class="notif-title">Disbursement requires approval</div>
+                <div class="notif-desc">£12,500 emergency medical support request.</div>
+              </div>
+              <div class="notif-time">20 Mar</div>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="tab-system">
+            <div class="notif-item">
+              <div class="notif-icon" style="background:#F4F6F9;">🛡️</div>
+              <div class="notif-body">
+                <div class="notif-title">Security reminder</div>
+                <div class="notif-desc">Enable two-factor authentication for admins.</div>
+              </div>
+              <div class="notif-time">22 Mar</div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-icon" style="background:#F4F6F9;">🧾</div>
+              <div class="notif-body">
+                <div class="notif-title">Audit trail updated</div>
+                <div class="notif-desc">8 new events logged this week.</div>
+              </div>
+              <div class="notif-time">18 Mar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('notifications', '../../');
+    renderTopbar('Notifications', '../../');
+  });
+</script>
+</body>
+</html>

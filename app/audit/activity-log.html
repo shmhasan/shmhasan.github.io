@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Activity Log — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <span class="current">Activity Log</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Activity Log</h1>
+            <p class="page-subtitle">Recent actions across members, causes, and approvals</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-outline" onclick="showToast('Export queued','info')">Export CSV</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="table-toolbar">
+          <div class="table-filters">
+            <div class="search-box" style="width:240px;">
+              <span class="search-icon">🔍</span>
+              <input type="text" placeholder="Search name or action..." data-search-table="activityTable" />
+            </div>
+            <select class="form-control" style="width:160px;" data-filter-table="activityTable" data-filter-col="2">
+              <option value="">All Types</option>
+              <option>Membership</option>
+              <option>Receipts</option>
+              <option>Disbursements</option>
+              <option>Causes</option>
+              <option>System</option>
+            </select>
+            <select class="form-control" style="width:140px;" data-filter-table="activityTable" data-filter-col="4">
+              <option value="">All Status</option>
+              <option>Completed</option>
+              <option>Pending</option>
+              <option>Rejected</option>
+            </select>
+          </div>
+          <span class="table-count">Showing 8 of 214</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="table" id="activityTable">
+            <thead>
+              <tr>
+                <th>Actor</th>
+                <th>Action</th>
+                <th>Type</th>
+                <th>Target</th>
+                <th>Status</th>
+                <th>Time</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar" style="background:#1B4F72;">RA</div>
+                    <div><div class="table-name">Rahim Ahmed</div></div>
+                  </div>
+                </td>
+                <td class="text-sm">Approved membership</td>
+                <td class="text-sm">Membership</td>
+                <td class="text-sm">Tarek Miah</td>
+                <td><span class="badge badge-verified badge-dot">Completed</span></td>
+                <td class="text-sm text-muted">2h ago</td>
+                <td><a href="../organization/membership-requests.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar">FI</div>
+                    <div><div class="table-name">Farzana Islam</div></div>
+                  </div>
+                </td>
+                <td class="text-sm">Verified receipt</td>
+                <td class="text-sm">Receipts</td>
+                <td class="text-sm">CON-2026-0342</td>
+                <td><span class="badge badge-verified badge-dot">Completed</span></td>
+                <td class="text-sm text-muted">5h ago</td>
+                <td><a href="../receipts/list.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar" style="background:#2E86AB;">JU</div>
+                    <div><div class="table-name">Jamal Uddin</div></div>
+                  </div>
+                </td>
+                <td class="text-sm">Submitted audit note</td>
+                <td class="text-sm">System</td>
+                <td class="text-sm">Zakat 2026</td>
+                <td><span class="badge badge-info badge-dot">Completed</span></td>
+                <td class="text-sm text-muted">Yesterday</td>
+                <td><a href="audit-log.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar">SK</div>
+                    <div><div class="table-name">Sadia Karim</div></div>
+                  </div>
+                </td>
+                <td class="text-sm">Uploaded receipt</td>
+                <td class="text-sm">Receipts</td>
+                <td class="text-sm">CON-2026-0345</td>
+                <td><span class="badge badge-pending badge-dot">Pending</span></td>
+                <td class="text-sm text-muted">18 Mar</td>
+                <td><a href="../receipts/list.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar">IH</div>
+                    <div><div class="table-name">Imran Hossain</div></div>
+                  </div>
+                </td>
+                <td class="text-sm">Created cause</td>
+                <td class="text-sm">Causes</td>
+                <td class="text-sm">Medical Emergency</td>
+                <td><span class="badge badge-verified badge-dot">Completed</span></td>
+                <td class="text-sm text-muted">15 Mar</td>
+                <td><a href="../causes/list.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar" style="background:var(--color-danger);">RS</div>
+                    <div><div class="table-name">Ruhul Amin Sheikh</div></div>
+                  </div>
+                </td>
+                <td class="text-sm">Receipt rejected</td>
+                <td class="text-sm">Receipts</td>
+                <td class="text-sm">CON-2026-0318</td>
+                <td><span class="badge badge-rejected badge-dot">Rejected</span></td>
+                <td class="text-sm text-muted">05 Mar</td>
+                <td><a href="../receipts/list.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar">NB</div>
+                    <div><div class="table-name">Nasreen Begum</div></div>
+                  </div>
+                </td>
+                <td class="text-sm">Requested disbursement</td>
+                <td class="text-sm">Disbursements</td>
+                <td class="text-sm">£12,500 Medical Aid</td>
+                <td><span class="badge badge-pending badge-dot">Pending</span></td>
+                <td class="text-sm text-muted">02 Mar</td>
+                <td><a href="../disbursements/list.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar">FB</div>
+                    <div><div class="table-name">Fatima Begum</div></div>
+                  </div>
+                </td>
+                <td class="text-sm">Nominee verified</td>
+                <td class="text-sm">Membership</td>
+                <td class="text-sm">Member: Sadia Karim</td>
+                <td><span class="badge badge-verified badge-dot">Completed</span></td>
+                <td class="text-sm text-muted">27 Feb</td>
+                <td><a href="../nominees/list.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <span class="text-muted text-sm">Showing 8 of 214 activities</span>
+          <div class="pagination-pages">
+            <span class="page-btn active">1</span>
+            <a href="#" class="page-btn">2</a>
+            <a href="#" class="page-btn">3</a>
+            <span style="padding:0 .25rem;color:var(--color-text-muted);">…</span>
+            <a href="#" class="page-btn">27</a>
+            <a href="#" class="page-btn" style="font-size:.75rem;">Next →</a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('activity', '../../');
+    renderTopbar('Activity Log', '../../');
+  });
+</script>
+</body>
+</html>

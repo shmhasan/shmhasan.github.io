@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audit Log — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <span class="current">Audit Log</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Audit Log</h1>
+            <p class="page-subtitle">Immutable record of financial and admin actions</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-outline" onclick="showToast('Audit export queued','info')">Export Audit Report</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="warning-banner" style="margin-bottom:1.25rem;">
+        <span style="font-size:1.2rem;">🔒</span>
+        <div>
+          <strong>Audit logs are read-only.</strong> All edits and deletions are permanently tracked.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="table-toolbar">
+          <div class="table-filters">
+            <div class="search-box" style="width:240px;">
+              <span class="search-icon">🔍</span>
+              <input type="text" placeholder="Search reference or actor..." data-search-table="auditTable" />
+            </div>
+            <select class="form-control" style="width:160px;" data-filter-table="auditTable" data-filter-col="2">
+              <option value="">All Categories</option>
+              <option>Financial</option>
+              <option>Membership</option>
+              <option>Cause</option>
+              <option>Security</option>
+            </select>
+            <select class="form-control" style="width:140px;" data-filter-table="auditTable" data-filter-col="5">
+              <option value="">All Severity</option>
+              <option>Normal</option>
+              <option>High</option>
+              <option>Critical</option>
+            </select>
+          </div>
+          <span class="table-count">Showing 6 of 98</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="table" id="auditTable">
+            <thead>
+              <tr>
+                <th>Timestamp</th>
+                <th>Actor</th>
+                <th>Category</th>
+                <th>Action</th>
+                <th>Reference</th>
+                <th>Severity</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-sm text-muted">30 Mar 2026 · 09:12</td>
+                <td class="text-sm">Farzana Islam</td>
+                <td class="text-sm">Financial</td>
+                <td class="text-sm">Verified receipt</td>
+                <td class="text-sm" style="font-family:monospace;">CON-2026-0342</td>
+                <td><span class="badge badge-verified">Normal</span></td>
+                <td><a href="../receipts/list.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+              <tr>
+                <td class="text-sm text-muted">29 Mar 2026 · 18:05</td>
+                <td class="text-sm">Rahim Ahmed</td>
+                <td class="text-sm">Membership</td>
+                <td class="text-sm">Approved member</td>
+                <td class="text-sm" style="font-family:monospace;">MBR-1029</td>
+                <td><span class="badge badge-info">Normal</span></td>
+                <td><a href="../organization/membership-requests.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+              <tr>
+                <td class="text-sm text-muted">28 Mar 2026 · 21:44</td>
+                <td class="text-sm">Jamal Uddin</td>
+                <td class="text-sm">Security</td>
+                <td class="text-sm">2FA enabled</td>
+                <td class="text-sm" style="font-family:monospace;">USR-4412</td>
+                <td><span class="badge badge-warning">High</span></td>
+                <td><a href="../settings/security.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+              <tr>
+                <td class="text-sm text-muted">27 Mar 2026 · 13:08</td>
+                <td class="text-sm">Rahim Ahmed</td>
+                <td class="text-sm">Cause</td>
+                <td class="text-sm">Published cause</td>
+                <td class="text-sm" style="font-family:monospace;">CAUSE-2201</td>
+                <td><span class="badge badge-info">Normal</span></td>
+                <td><a href="../causes/list.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+              <tr>
+                <td class="text-sm text-muted">21 Mar 2026 · 10:54</td>
+                <td class="text-sm">Farzana Islam</td>
+                <td class="text-sm">Financial</td>
+                <td class="text-sm">Approved disbursement</td>
+                <td class="text-sm" style="font-family:monospace;">DIS-7782</td>
+                <td><span class="badge badge-warning">High</span></td>
+                <td><a href="../disbursements/list.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+              <tr>
+                <td class="text-sm text-muted">15 Mar 2026 · 08:20</td>
+                <td class="text-sm">System</td>
+                <td class="text-sm">Security</td>
+                <td class="text-sm">Login failed threshold hit</td>
+                <td class="text-sm" style="font-family:monospace;">SYS-LOCK-002</td>
+                <td><span class="badge badge-danger">Critical</span></td>
+                <td><button class="btn btn-sm btn-ghost" onclick="showToast('Incident report opened','info')">View</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <span class="text-muted text-sm">Showing 6 of 98 entries</span>
+          <div class="pagination-pages">
+            <span class="page-btn active">1</span>
+            <a href="#" class="page-btn">2</a>
+            <a href="#" class="page-btn">3</a>
+            <span style="padding:0 .25rem;color:var(--color-text-muted);">…</span>
+            <a href="#" class="page-btn">17</a>
+            <a href="#" class="page-btn" style="font-size:.75rem;">Next →</a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('audit', '../../');
+    renderTopbar('Audit Log', '../../');
+  });
+</script>
+</body>
+</html>
