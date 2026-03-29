@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verify Receipt — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="list.html">Receipts</a>
+          <span class="sep">›</span>
+          <a href="detail.html">Receipt Detail</a>
+          <span class="sep">›</span>
+          <span class="current">Verify</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Verify Receipt</h1>
+            <p class="page-subtitle">Review payment evidence and approve or reject</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-outline" onclick="showToast('Receipt flagged for review','warning')">Flag for Audit</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-3" style="gap:1.5rem;">
+        <div class="card" style="grid-column:span 2;">
+          <div class="card-header">
+            <div class="card-title">Verification Checklist</div>
+            <span class="badge badge-pending badge-dot">Pending</span>
+          </div>
+          <div class="card-body">
+            <div class="form-group" style="display:flex;align-items:center;justify-content:space-between;">
+              <div>
+                <div style="font-weight:600;">Amount matches submission</div>
+                <div class="text-sm text-muted">£500 matches contribution form.</div>
+              </div>
+              <input type="checkbox" checked />
+            </div>
+            <div class="form-group" style="display:flex;align-items:center;justify-content:space-between;">
+              <div>
+                <div style="font-weight:600;">Bank reference valid</div>
+                <div class="text-sm text-muted">"Ummah DSF" appears on slip.</div>
+              </div>
+              <input type="checkbox" checked />
+            </div>
+            <div class="form-group" style="display:flex;align-items:center;justify-content:space-between;">
+              <div>
+                <div style="font-weight:600;">Contributor verified</div>
+                <div class="text-sm text-muted">Imran Hossain is an active member.</div>
+              </div>
+              <input type="checkbox" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Verification Notes</label>
+              <textarea class="form-control" rows="3" placeholder="Add any notes for the audit trail..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Receipt Summary</div>
+          </div>
+          <div class="card-body" style="display:flex;flex-direction:column;gap:.75rem;">
+            <div>
+              <div class="text-sm text-muted">Reference</div>
+              <div style="font-weight:600;font-family:monospace;">CON-2026-0344</div>
+            </div>
+            <div>
+              <div class="text-sm text-muted">Amount</div>
+              <div style="font-weight:700;font-size:1.25rem;">£500</div>
+            </div>
+            <div>
+              <div class="text-sm text-muted">Member</div>
+              <div style="font-weight:600;">Imran Hossain</div>
+            </div>
+            <div>
+              <div class="text-sm text-muted">Cause</div>
+              <div style="font-weight:600;">Death Support Fund</div>
+            </div>
+            <div>
+              <div class="text-sm text-muted">Submitted</div>
+              <div style="font-weight:600;">12 Mar 2026</div>
+            </div>
+            <a href="detail.html" class="btn btn-outline btn-sm">View Receipt Detail</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:1.5rem;">
+        <div class="card-header">
+          <div class="card-title">Receipt Preview</div>
+        </div>
+        <div class="card-body">
+          <div style="border:1px dashed var(--color-border);border-radius:var(--radius-md);padding:1.5rem;text-align:center;">
+            <div style="font-size:2rem;">🧾</div>
+            <div style="font-weight:600;">Bank Transfer Slip</div>
+            <div class="text-sm text-muted">Uploaded PDF preview</div>
+            <button class="btn btn-sm btn-outline" style="margin-top:.5rem;" onclick="showToast('Preview opened','info')">Open Preview</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="approval-bar" data-action-group style="margin-top:1.5rem;">
+        <div>
+          <div style="font-weight:600;">Ready to approve?</div>
+          <div class="text-sm text-muted">This action notifies the member immediately.</div>
+        </div>
+        <div style="display:flex;gap:.5rem;">
+          <button class="btn btn-danger" data-action="reject" data-label="receipt">Reject</button>
+          <button class="btn btn-success" data-action="approve" data-label="receipt">Approve</button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('receipts', '../../');
+    renderTopbar('Verify Receipt', '../../');
+  });
+</script>
+</body>
+</html>

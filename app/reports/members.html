@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member Contributions Report — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="overview.html">Reports</a>
+          <span class="sep">›</span>
+          <span class="current">Members</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Member Contributions</h1>
+            <p class="page-subtitle">Contribution totals and compliance status</p>
+          </div>
+          <div class="page-actions">
+            <a href="exports.html" class="btn btn-outline">Export</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-3" style="gap:1rem;margin-bottom:1.5rem;">
+        <div class="card" style="text-align:center;padding:1.25rem;">
+          <div style="font-size:2rem;font-weight:800;color:var(--color-primary);">214</div>
+          <div style="font-size:.8rem;color:var(--color-text-muted);margin-top:.25rem;">Total Members</div>
+        </div>
+        <div class="card" style="text-align:center;padding:1.25rem;">
+          <div style="font-size:2rem;font-weight:800;color:var(--color-success);">194</div>
+          <div style="font-size:.8rem;color:var(--color-text-muted);margin-top:.25rem;">Contributed This Year</div>
+        </div>
+        <div class="card" style="text-align:center;padding:1.25rem;">
+          <div style="font-size:2rem;font-weight:800;color:var(--color-warning);">20</div>
+          <div style="font-size:.8rem;color:var(--color-text-muted);margin-top:.25rem;">Pending Contributions</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="table-toolbar">
+          <div class="table-filters">
+            <div class="search-box" style="width:240px;">
+              <span class="search-icon">🔍</span>
+              <input type="text" placeholder="Search member..." data-search-table="memberReportTable" />
+            </div>
+            <select class="form-control" style="width:170px;" data-filter-table="memberReportTable" data-filter-col="4">
+              <option value="">All Status</option>
+              <option>Compliant</option>
+              <option>Pending</option>
+              <option>Inactive</option>
+            </select>
+          </div>
+          <span class="table-count">Showing 6 of 214</span>
+        </div>
+        <div class="table-wrapper">
+          <table class="table" id="memberReportTable">
+            <thead>
+              <tr>
+                <th>Member</th>
+                <th>Role</th>
+                <th>Total Contributed</th>
+                <th>Last Contribution</th>
+                <th>Status</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar">RA</div>
+                    <div><div class="table-name">Rahim Ahmed</div></div>
+                  </div>
+                </td>
+                <td class="text-sm text-muted">Admin</td>
+                <td><strong>£2,400</strong></td>
+                <td class="text-sm text-muted">15 Mar 2026</td>
+                <td><span class="badge badge-verified badge-dot">Compliant</span></td>
+                <td><a href="../members/detail.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar">SK</div>
+                    <div><div class="table-name">Sadia Karim</div></div>
+                  </div>
+                </td>
+                <td class="text-sm text-muted">Member</td>
+                <td><strong>£1,850</strong></td>
+                <td class="text-sm text-muted">12 Mar 2026</td>
+                <td><span class="badge badge-verified badge-dot">Compliant</span></td>
+                <td><a href="../members/detail.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar" style="background:#2E86AB;">FI</div>
+                    <div><div class="table-name">Farzana Islam</div></div>
+                  </div>
+                </td>
+                <td class="text-sm text-muted">Treasurer</td>
+                <td><strong>£3,200</strong></td>
+                <td class="text-sm text-muted">18 Mar 2026</td>
+                <td><span class="badge badge-verified badge-dot">Compliant</span></td>
+                <td><a href="../members/detail.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar">IH</div>
+                    <div><div class="table-name">Imran Hossain</div></div>
+                  </div>
+                </td>
+                <td class="text-sm text-muted">Member</td>
+                <td><strong>£950</strong></td>
+                <td class="text-sm text-muted">08 Mar 2026</td>
+                <td><span class="badge badge-pending badge-dot">Pending</span></td>
+                <td><a href="../members/detail.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar">NB</div>
+                    <div><div class="table-name">Nasreen Begum</div></div>
+                  </div>
+                </td>
+                <td class="text-sm text-muted">Member</td>
+                <td><strong>£1,150</strong></td>
+                <td class="text-sm text-muted">02 Mar 2026</td>
+                <td><span class="badge badge-warning badge-dot">Pending</span></td>
+                <td><a href="../members/detail.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-member">
+                    <div class="table-avatar" style="background:var(--color-danger);">RS</div>
+                    <div><div class="table-name">Ruhul Amin Sheikh</div></div>
+                  </div>
+                </td>
+                <td class="text-sm text-muted">Member</td>
+                <td><strong>£120</strong></td>
+                <td class="text-sm text-muted">05 Jan 2026</td>
+                <td><span class="badge badge-danger badge-dot">Inactive</span></td>
+                <td><a href="../members/detail.html" class="btn btn-sm btn-ghost">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('reports', '../../');
+    renderTopbar('Member Contributions', '../../');
+  });
+</script>
+</body>
+</html>

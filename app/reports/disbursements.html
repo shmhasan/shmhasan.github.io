@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disbursements Report — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="overview.html">Reports</a>
+          <span class="sep">›</span>
+          <span class="current">Disbursements</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Disbursements Report</h1>
+            <p class="page-subtitle">Payments made to beneficiaries and causes</p>
+          </div>
+          <div class="page-actions">
+            <a href="exports.html" class="btn btn-outline">Export</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-3" style="gap:1rem;margin-bottom:1.5rem;">
+        <div class="card" style="text-align:center;padding:1.25rem;">
+          <div style="font-size:2rem;font-weight:800;color:var(--color-danger);">£28,400</div>
+          <div style="font-size:.8rem;color:var(--color-text-muted);margin-top:.25rem;">Total Disbursed</div>
+        </div>
+        <div class="card" style="text-align:center;padding:1.25rem;">
+          <div style="font-size:2rem;font-weight:800;color:var(--color-warning);">6</div>
+          <div style="font-size:.8rem;color:var(--color-text-muted);margin-top:.25rem;">Pending Requests</div>
+        </div>
+        <div class="card" style="text-align:center;padding:1.25rem;">
+          <div style="font-size:2rem;font-weight:800;color:var(--color-success);">94%</div>
+          <div style="font-size:.8rem;color:var(--color-text-muted);margin-top:.25rem;">On-time Payments</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:1.5rem;">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Monthly Disbursements</div>
+            <div class="card-subtitle">FY 2025-26</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div data-chart-bar="0,0,0,0,0,0,0,0,0,0,8,0" style="height:180px;"></div>
+          <div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--color-text-muted);margin-top:.5rem;">
+            <span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="table-toolbar">
+          <div class="table-filters">
+            <div class="search-box" style="width:240px;">
+              <span class="search-icon">🔍</span>
+              <input type="text" placeholder="Search beneficiary or cause..." data-search-table="disbTable" />
+            </div>
+            <select class="form-control" style="width:160px;" data-filter-table="disbTable" data-filter-col="4">
+              <option value="">All Status</option>
+              <option>Paid</option>
+              <option>Pending</option>
+            </select>
+          </div>
+          <span class="table-count">Showing 5 of 24</span>
+        </div>
+        <div class="table-wrapper">
+          <table class="table" id="disbTable">
+            <thead>
+              <tr>
+                <th>Beneficiary</th>
+                <th>Cause</th>
+                <th>Amount</th>
+                <th>Method</th>
+                <th>Status</th>
+                <th>Paid Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nasreen Begum</td>
+                <td>Medical Emergency</td>
+                <td><strong>£12,500</strong></td>
+                <td class="text-sm text-muted">Bank Transfer</td>
+                <td><span class="badge badge-verified badge-dot">Paid</span></td>
+                <td class="text-sm text-muted">22 Feb 2026</td>
+              </tr>
+              <tr>
+                <td>Nurul Islam Family</td>
+                <td>Death Support Fund</td>
+                <td><strong>£8,200</strong></td>
+                <td class="text-sm text-muted">Bank Transfer</td>
+                <td><span class="badge badge-verified badge-dot">Paid</span></td>
+                <td class="text-sm text-muted">18 Feb 2026</td>
+              </tr>
+              <tr>
+                <td>Flood Relief Committee</td>
+                <td>Flood Relief 2025</td>
+                <td><strong>£4,800</strong></td>
+                <td class="text-sm text-muted">Bank Transfer</td>
+                <td><span class="badge badge-verified badge-dot">Paid</span></td>
+                <td class="text-sm text-muted">12 Jan 2026</td>
+              </tr>
+              <tr>
+                <td>Rahima Akter</td>
+                <td>Emergency Medical</td>
+                <td><strong>£2,900</strong></td>
+                <td class="text-sm text-muted">Cash</td>
+                <td><span class="badge badge-pending badge-dot">Pending</span></td>
+                <td class="text-sm text-muted">Awaiting approval</td>
+              </tr>
+              <tr>
+                <td>Community School Fund</td>
+                <td>Education Support</td>
+                <td><strong>£1,000</strong></td>
+                <td class="text-sm text-muted">Mobile Banking</td>
+                <td><span class="badge badge-pending badge-dot">Pending</span></td>
+                <td class="text-sm text-muted">Awaiting approval</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('reports', '../../');
+    renderTopbar('Disbursements Report', '../../');
+  });
+</script>
+</body>
+</html>

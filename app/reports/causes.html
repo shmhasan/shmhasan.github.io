@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Causes Report — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="overview.html">Reports</a>
+          <span class="sep">›</span>
+          <span class="current">Causes</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Causes Report</h1>
+            <p class="page-subtitle">Performance and progress across causes</p>
+          </div>
+          <div class="page-actions">
+            <a href="exports.html" class="btn btn-outline">Export</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-3" style="gap:1rem;margin-bottom:1.5rem;">
+        <div class="card" style="text-align:center;padding:1.25rem;">
+          <div style="font-size:2rem;font-weight:800;color:var(--color-primary);">9</div>
+          <div style="font-size:.8rem;color:var(--color-text-muted);margin-top:.25rem;">Active Causes</div>
+        </div>
+        <div class="card" style="text-align:center;padding:1.25rem;">
+          <div style="font-size:2rem;font-weight:800;color:var(--color-success);">3</div>
+          <div style="font-size:.8rem;color:var(--color-text-muted);margin-top:.25rem;">Closed This Year</div>
+        </div>
+        <div class="card" style="text-align:center;padding:1.25rem;">
+          <div style="font-size:2rem;font-weight:800;color:var(--color-warning);">2</div>
+          <div style="font-size:.8rem;color:var(--color-text-muted);margin-top:.25rem;">Under Review</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="table-toolbar">
+          <div class="table-filters">
+            <div class="search-box" style="width:240px;">
+              <span class="search-icon">🔍</span>
+              <input type="text" placeholder="Search cause..." data-search-table="causeReportTable" />
+            </div>
+            <select class="form-control" style="width:160px;" data-filter-table="causeReportTable" data-filter-col="4">
+              <option value="">All Status</option>
+              <option>Active</option>
+              <option>Closed</option>
+              <option>Draft</option>
+            </select>
+          </div>
+          <span class="table-count">Showing 5 of 12</span>
+        </div>
+        <div class="table-wrapper">
+          <table class="table" id="causeReportTable">
+            <thead>
+              <tr>
+                <th>Cause</th>
+                <th>Category</th>
+                <th>Target</th>
+                <th>Collected</th>
+                <th>Status</th>
+                <th>Contributors</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Death Support Fund</td>
+                <td class="text-sm text-muted">Emergency</td>
+                <td>£15,000</td>
+                <td>
+                  <div style="font-weight:600;">£12,400</div>
+                  <div class="progress" style="margin-top:.35rem;"><div class="progress-bar success" data-progress="83"></div></div>
+                </td>
+                <td><span class="badge badge-published badge-dot">Active</span></td>
+                <td>48</td>
+              </tr>
+              <tr>
+                <td>Medical Emergency</td>
+                <td class="text-sm text-muted">Medical</td>
+                <td>£4,200</td>
+                <td>
+                  <div style="font-weight:600;">£3,750</div>
+                  <div class="progress" style="margin-top:.35rem;"><div class="progress-bar success" data-progress="89"></div></div>
+                </td>
+                <td><span class="badge badge-published badge-dot">Active</span></td>
+                <td>23</td>
+              </tr>
+              <tr>
+                <td>Ramadan Zakat 2026</td>
+                <td class="text-sm text-muted">Zakat</td>
+                <td>£50,000</td>
+                <td>
+                  <div style="font-weight:600;">£38,200</div>
+                  <div class="progress" style="margin-top:.35rem;"><div class="progress-bar" data-progress="76"></div></div>
+                </td>
+                <td><span class="badge badge-published badge-dot">Active</span></td>
+                <td>142</td>
+              </tr>
+              <tr>
+                <td>Mosque Renovation</td>
+                <td class="text-sm text-muted">Infrastructure</td>
+                <td>£120,000</td>
+                <td>
+                  <div style="font-weight:600;">£67,000</div>
+                  <div class="progress" style="margin-top:.35rem;"><div class="progress-bar warning" data-progress="56"></div></div>
+                </td>
+                <td><span class="badge badge-published badge-dot">Active</span></td>
+                <td>88</td>
+              </tr>
+              <tr>
+                <td>Flood Relief 2025</td>
+                <td class="text-sm text-muted">Emergency</td>
+                <td>£20,000</td>
+                <td>
+                  <div style="font-weight:600;">£20,000</div>
+                  <div class="progress" style="margin-top:.35rem;"><div class="progress-bar success" data-progress="100"></div></div>
+                </td>
+                <td><span class="badge badge-verified badge-dot">Closed</span></td>
+                <td>120</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('reports', '../../');
+    renderTopbar('Causes Report', '../../');
+  });
+</script>
+</body>
+</html>

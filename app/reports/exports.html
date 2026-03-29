@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Export History — Ummah Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">U</div><span class="sidebar-brand">Ummah Platform</span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar">RA</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebarUserName">Rahim Ahmed</div>
+          <div class="sidebar-user-role" id="sidebarUserRole">Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-content" id="appContent">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-main">
+
+      <div class="page-header">
+        <div class="breadcrumbs">
+          <a href="overview.html">Reports</a>
+          <span class="sep">›</span>
+          <span class="current">Exports</span>
+        </div>
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-title">Export History</h1>
+            <p class="page-subtitle">Downloadable reports and data extracts</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-primary" onclick="showToast('Export queued','success')">New Export</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:1.5rem;">
+        <div class="card-header">
+          <div class="card-title">Quick Exports</div>
+        </div>
+        <div class="card-body">
+          <div class="grid grid-3" style="gap:1rem;">
+            <button class="btn btn-outline" onclick="showToast('Collections export queued','success')">Collections CSV</button>
+            <button class="btn btn-outline" onclick="showToast('Disbursements export queued','success')">Disbursements CSV</button>
+            <button class="btn btn-outline" onclick="showToast('Members export queued','success')">Members CSV</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="table-toolbar">
+          <div class="table-filters">
+            <div class="search-box" style="width:240px;">
+              <span class="search-icon">🔍</span>
+              <input type="text" placeholder="Search export name..." data-search-table="exportTable" />
+            </div>
+            <select class="form-control" style="width:160px;" data-filter-table="exportTable" data-filter-col="3">
+              <option value="">All Status</option>
+              <option>Completed</option>
+              <option>Processing</option>
+              <option>Failed</option>
+            </select>
+          </div>
+          <span class="table-count">Showing 4 of 18</span>
+        </div>
+        <div class="table-wrapper">
+          <table class="table" id="exportTable">
+            <thead>
+              <tr>
+                <th>Export Name</th>
+                <th>Type</th>
+                <th>Requested By</th>
+                <th>Status</th>
+                <th>Created</th>
+                <th>Download</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Collections - FY 2025-26</td>
+                <td class="text-sm text-muted">CSV</td>
+                <td class="text-sm">Rahim Ahmed</td>
+                <td><span class="badge badge-verified badge-dot">Completed</span></td>
+                <td class="text-sm text-muted">30 Mar 2026</td>
+                <td><button class="btn btn-sm btn-ghost" onclick="showToast('Download started','success')">Download</button></td>
+              </tr>
+              <tr>
+                <td>Disbursements - Feb 2026</td>
+                <td class="text-sm text-muted">CSV</td>
+                <td class="text-sm">Farzana Islam</td>
+                <td><span class="badge badge-verified badge-dot">Completed</span></td>
+                <td class="text-sm text-muted">22 Feb 2026</td>
+                <td><button class="btn btn-sm btn-ghost" onclick="showToast('Download started','success')">Download</button></td>
+              </tr>
+              <tr>
+                <td>Member Compliance List</td>
+                <td class="text-sm text-muted">XLSX</td>
+                <td class="text-sm">Jamal Uddin</td>
+                <td><span class="badge badge-pending badge-dot">Processing</span></td>
+                <td class="text-sm text-muted">20 Mar 2026</td>
+                <td><button class="btn btn-sm btn-ghost" onclick="showToast('Processing...','info')">Pending</button></td>
+              </tr>
+              <tr>
+                <td>Cause Summary - Q3</td>
+                <td class="text-sm text-muted">PDF</td>
+                <td class="text-sm">Sadia Karim</td>
+                <td><span class="badge badge-rejected badge-dot">Failed</span></td>
+                <td class="text-sm text-muted">12 Mar 2026</td>
+                <td><button class="btn btn-sm btn-ghost" onclick="showToast('Retry queued','warning')">Retry</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../../assets/js/mock-data.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar('reports', '../../');
+    renderTopbar('Export History', '../../');
+  });
+</script>
+</body>
+</html>
